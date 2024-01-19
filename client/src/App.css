@@ -1,0 +1,84 @@
+body {
+  cursor: pointer !important;
+}
+.avatar-img {
+  height: 4rem;
+  width: 4rem;
+}
+.preloader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* Add styles for your loading spinner or indicator here */
+
+.main-page,
+.register,
+.dashboard,
+.adminForm {
+  height: 90vh !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main-page h1 {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+.collabs,
+.entries,
+.discordsers {
+  width: 8rem;
+  height: 8rem;
+  font-size: 0.7rem;
+}
+
+.loginAdmin,
+.shadows {
+  box-shadow: 0px 1px 10px 6px rgba(135, 133, 141, 0.75) !important;
+}
+.dashboard button {
+  font-size: 0.7rem;
+}
+.dropdown-menu {
+  margin-left: -5rem !important;
+  margin-top: 0.5rem !important;
+}
+.navbar-nav {
+  text-align: end !important;
+}
+.actionBtn {
+  height: 2rem !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+img {
+  height: 2rem;
+  width: 2rem;
+}
+.overflow {
+  height: 16rem !important;
+  overflow: auto;
+}
+table tr {
+  font-size: 0.5rem !important;
+}
+@media screen and (min-width: 480px) {
+  table tr {
+    font-size: 1rem !important;
+  }
+  .collabs,
+  .entries,
+  .discordsers {
+    width: 15rem;
+    height: 15rem;
+    font-size: 1.2rem;
+  }
+  .dashboard button {
+    font-size: 1rem;
+  }
+}
