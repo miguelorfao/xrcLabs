@@ -16,13 +16,11 @@ function AdminLogin() {
                   Email
                 </label>
                 <input
-                  type="text"
+                  type="email"
                   className="form-control"
                   name="email"
                   id="email"
-                  aria-describedby="helpId"
                   placeholder="Email"
-                  //   onChange={handleChange}
                 />
               </div>
               <div className="mb-3">
@@ -30,16 +28,14 @@ function AdminLogin() {
                   Password
                 </label>
                 <input
-                  type="text"
+                  type="password"
                   className="form-control"
                   name="password"
                   id="password"
-                  aria-describedby="helpId"
                   placeholder="password"
-                  //   onChange={handleChange}
                 />
               </div>
-              {/* <span className="text-danger">{errorMessage}</span> */}
+              <span className="text-danger mb-3"></span>
               <div className="mb-3">
                 <Buttons
                   label="Login as Admin"

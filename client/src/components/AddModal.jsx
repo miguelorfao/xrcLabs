@@ -35,32 +35,45 @@ function AddModal() {
             </div>
             <div className="modal-body">
               <div className="container-fluid">
-                <div class="mb-3">
-                  <label for="" class="form-label">
-                    Email Address
-                  </label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    name=""
-                    id=""
-                    aria-describedby="helpId"
-                    placeholder=""
-                  />
-                </div>
-                <div class="mb-3">
-                  <label for="" class="form-label">
-                    Password
-                  </label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    name=""
-                    id=""
-                    aria-describedby="helpId"
-                    placeholder=""
-                  />
-                </div>
+                <form>
+                  <div class="mb-3">
+                    <label for="" class="form-label">
+                      Name
+                    </label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="fname"
+                      id="fname"
+                      placeholder="Name"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="" class="form-label">
+                      Email Address
+                    </label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      name="email"
+                      id="email"
+                      placeholder="Email"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="" class="form-label">
+                      Password
+                    </label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      name="password"
+                      id="password"
+                      placeholder="Password"
+                    />
+                  </div>
+                  <div className="text-danger"></div>
+                </form>
               </div>
             </div>
             <div className="modal-footer">

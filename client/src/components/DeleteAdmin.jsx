@@ -1,6 +1,6 @@
 import React from "react";
 
-function DeleteAdmin() {
+function DeleteAdmin({ onClick }) {
   return (
     <div>
       <p
@@ -38,7 +38,11 @@ function DeleteAdmin() {
               >
                 No
               </button>
-              <button type="button" className="btn btn-primary w-50">
+              <button
+                type="button"
+                className="btn btn-primary w-50"
+                onClick={onClick}
+              >
                 Yes
               </button>
             </div>
