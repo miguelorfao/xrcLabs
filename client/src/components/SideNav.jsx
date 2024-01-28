@@ -25,6 +25,9 @@ function SideNav() {
   const onClickHandleRefresh = () => {
     navigate("/CollabSheet");
   };
+  const onClickHandleSignOut = () => {
+    navigate("/");
+  };
   return (
     <div>
       <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
@@ -96,7 +99,11 @@ function SideNav() {
         </ul>
         <hr />
         <div class="dropdown pb-4 w-100">
-          <Buttons btnClass="btn bg-primary w-100" label="Sign Out" />
+          <Buttons
+            btnClass="btn bg-primary w-100"
+            label="Sign Out"
+            onClick={onClickHandleSignOut}
+          />
         </div>
       </div>
     </div>
