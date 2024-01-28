@@ -46,7 +46,7 @@ function Dashboard() {
                 <div className="row dashboard justify-content-center w-100">
                   <div className="col-12 col-md-12 mb-3 text-center">
                     <h3>
-                      welcome
+                      Welcome&nbsp;
                       <span id="userName" className="text-uppercase">
                         {userName}
                       </span>

@@ -65,6 +65,7 @@ function App() {
           </Route>
 
           <Route element={<AdminLogin />} path="/Admin" />
+          {/* <Route element={<ProjectSettings />} path="/ProjectSettings" /> */}
         </Routes>
       </BrowserRouter>
     </div>
