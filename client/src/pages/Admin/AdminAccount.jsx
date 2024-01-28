@@ -7,7 +7,7 @@ import axios from "axios";
 function AdminAccount() {
   const [adminUser, setAdminUser] = useState([]);
   const [editAdminUser, setEditAdminUser] = useState([
-    { name: "", email: "", password: "", adminAccess: "" },
+    { name: "", email: "", password: "" },
   ]);
   const [editAdminUserID, setEditAdminUserID] = useState("");
 
@@ -15,7 +15,6 @@ function AdminAccount() {
     name: "",
     email: "",
     password: "",
-    adminAccess: "",
   });
   useEffect(() => {
     const fetchAdmin = async () => {
@@ -55,6 +54,7 @@ function AdminAccount() {
   };
   const onSubmitHandler = async (e) => {
     console.log(editAdminUserID);
+    console.log(editAdminUser);
     e.preventDefault();
     try {
       await axios
@@ -63,7 +63,7 @@ function AdminAccount() {
           editAdminUser
         )
         .then(() => {
-          window.location.reload();
+          // window.location.reload();
           console.log("success");
         });
     } catch (error) {
@@ -182,22 +182,6 @@ function AdminAccount() {
             />
           </div>
 
-          <div class="mb-3">
-            <label for="" class="form-label">
-              Admin
-            </label>
-            <select
-              class="form-select form-select-md"
-              name="adminAccess"
-              id="adminAccess"
-              onChange={onChangeHandler}
-            >
-              <option value="">Please Select</option>
-              <option value="no">No</option>
-              <option value="yes">Yes</option>
-            </select>
-          </div>
-
           <div className="text-danger"></div>
         </form>
         <Buttons
@@ -256,22 +240,6 @@ function AdminAccount() {
               placeholder="Admin Password"
               onChange={onChangeEditHandler}
             />
-          </div>
-
-          <div class="mb-3">
-            <label for="" class="form-label">
-              Admin
-            </label>
-            <select
-              class="form-select form-select-md"
-              name="adminAccess"
-              id="editAdminAccess"
-              onChange={onChangeEditHandler}
-            >
-              <option value="">Please Select</option>
-              <option value="no">No</option>
-              <option value="yes">Yes</option>
-            </select>
           </div>
 
           <div className="text-danger"></div>

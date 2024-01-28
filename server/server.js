@@ -58,31 +58,25 @@ app.delete("/AdminAccount/:id", (req, res) => {
 });
 
 app.put("/AdminAccount/:id", (req, res) => {
-  const q =
-    "UPDATE admin SET Name = ?, Email = ?, Password = ?, AdminAccess = ? WHERE ID = ?";
+  const q = "UPDATE admin SET Name = ?, Email = ?, Password = ?, WHERE ID = ?";
   bcrypt.hash(req.body.password.toString(), salt, (err, hash) => {
     if (err) return res.json({ Error: "Error for hashing password" });
 
-    const values = [
-      req.body.name,
-      req.body.email,
-      hash,
-      req.body.adminAccess,
-      req.params.id,
-    ];
-
-    db.query(q, [values], (err, data) => {
-      if (err) return res.json(err);
-      return console.log(data);
-    });
+    db.query(
+      q,
+      [req.body.name, req.body.email, hash, req.params.id],
+      (err, data) => {
+        if (err) return console.log(err);
+        return console.log(data);
+      }
+    );
   });
 });
 app.post("/AdminAccount", (req, res) => {
-  const q =
-    "INSERT INTO `admin`(`Name`, `Email`,`Password`,`AdminAccess`) VALUES (?)";
+  const q = "INSERT INTO `admin`(`Name`, `Email`,`Password`) VALUES (?)";
   bcrypt.hash(req.body.password.toString(), salt, (err, hash) => {
     if (err) return res.json({ Error: "Error for hashing password" });
-    const values = [req.body.name, req.body.email, hash, req.body.adminAccess];
+    const values = [req.body.name, req.body.email, hash];
     db.query(q, [values], (err, data) => {
       if (err) return res.json(err);
       return res.json("success");
