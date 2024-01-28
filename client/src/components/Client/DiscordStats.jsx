@@ -1,9 +1,10 @@
 import React from "react";
 
-import Buttons from "../../components/Buttons";
+// import Buttons from "../../components/Buttons";
 
-import { useNavigate } from "react-router-dom";
-import SideNav from "../../components/SideNav";
+// import { useNavigate } from "react-router-dom";
+import SideNav from "../SideNav";
+
 
 function DiscordStat() {
   return (

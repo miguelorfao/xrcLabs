@@ -1,9 +1,11 @@
 import React from "react";
 
-import { useNavigate } from "react-router-dom";
-import SideNav from "../../components/SideNav";
+// import Buttons from "../../components/Buttons";
+// import { useNavigate } from "react-router-dom";
+import SideNav from "../SideNav";
 
-function CollabSheet() {
+
+function CollabStat() {
   return (
     <div>
       <main>
@@ -15,7 +17,8 @@ function CollabSheet() {
             <div class="col">
               {" "}
               <div className="container dashboard">
-                {/* insert data */}Collab sheet
+                {/* {insert data} */}
+                Collab stats
               </div>
             </div>
           </div>
@@ -338,4 +341,4 @@ function CollabSheet() {
   );
 }
 
-export default CollabSheet;
+export default CollabStat;

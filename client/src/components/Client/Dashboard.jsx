@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 
-import Buttons from "../../components/Buttons";
-import Collab from "../../components/Collab";
-import Entries from "../../components/Entries";
-import DiscordUsers from "../../components/DiscordUsers";
+// import Buttons from "../Buttons";
+import Collab from "../Collab";
+import Entries from "../Entries";
+import DiscordUsers from "../DiscordUsers";
 import { useNavigate } from "react-router-dom";
-import SideNav from "../../components/SideNav";
+import SideNav from "../SideNav";
 
 function Dashboard() {
   const [userName, setUserName] = useState();

@@ -1,18 +1,18 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import "./App.css";
-import Dashboard from "./pages/Client/Dashboard";
+import Dashboard from "./components/Client/Dashboard";
 import Main from "./pages/Main";
 import AdminLogin from "./pages/Admin/AdminLogin";
 import AdminDashboard from "./pages/Admin/AdminDashboard";
 import AdminProjects from "./pages/Admin/AdminProjects";
 import AdminCollabs from "./pages/Admin/AdminCollabs";
 import AdminAccount from "./pages/Admin/AdminAccount";
-import CollabStat from "./pages/Client/CollabStat";
-import CollabSheet from "./pages/Client/CollabSheet";
-import DiscordStat from "./pages/Client/DiscordStats";
-import ProjectSettings from "./pages/Client/ProjectSettings";
-import ProjectWl from "./pages/Client/ProjectWL";
+import CollabStat from "./components/Client/CollabStat";
+import CollabSheet from "./components/Client/CollabSheet";
+import DiscordStat from "./components/Client/DiscordStats";
+import ProjectSettings from "./components/Client/ProjectSettings";
+import ProjectWl from "./components/Client/ProjectWL";
 import SetUp from "./pages/FounderSetUp/SetUp";
 import ProjectsName from "./pages/FounderSetUp/ProjectsName";
 import ProjectsImage from "./pages/FounderSetUp/ProjectsImage";
