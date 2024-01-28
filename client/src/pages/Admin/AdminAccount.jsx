@@ -63,6 +63,7 @@ function AdminAccount() {
           editAdminUser
         )
         .then(() => {
+          window.location.reload();
           console.log("success");
         });
     } catch (error) {
@@ -77,6 +78,7 @@ function AdminAccount() {
         .delete("http://localhost:3001/AdminAccount/" + id)
         .then(() => {
           console.log("success");
+          window.location.reload();
         });
     } catch (error) {
       console.log(error);

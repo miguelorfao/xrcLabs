@@ -48,8 +48,8 @@ const verifyUser = (req, res, next) => {
 app.get("/Admin", verifyUser, (req, res) => {
   return res.json({ Status: "Success", name: req.name });
 });
-app.delete("AdminAccount/:id", (req, res) => {
-  const q = "DELETE FROM admin  WHERE ID = ?";
+app.delete("/AdminAccount/:id", (req, res) => {
+  const q = "DELETE FROM admin WHERE ID = ?";
 
   db.query(q, [req.params.id], (err, data) => {
     if (err) return res.json(err);
@@ -70,10 +70,10 @@ app.put("/AdminAccount/:id", (req, res) => {
       req.body.adminAccess,
       req.params.id,
     ];
-    console.log(values);
+
     db.query(q, [values], (err, data) => {
       if (err) return res.json(err);
-      return res.json("success");
+      return console.log(data);
     });
   });
 });
@@ -91,7 +91,6 @@ app.post("/AdminAccount", (req, res) => {
 });
 
 app.post("/Admin", (req, res) => {
-  console.log(req.body.password.toString());
   const q = "SELECT * FROM `admin` WHERE Email = ?";
   db.query(q, [req.body.email], (err, data) => {
     if (err) return res.json(err);
@@ -139,8 +138,6 @@ app.get("/AdminCollabs", (req, res) => {
 
 // adding data
 app.post("/AdminCollabs", (req, res) => {
-  console.log(req.body.fname);
-  console.log(req.body.email);
   const q =
     "INSERT INTO `collabs`(`Date`, `Server`,`Allocation`,`Entries`, `Platform`) VALUES (?)";
   const values = [
