@@ -1,9 +1,15 @@
 import React from "react";
 
-function Buttons({ btnClass, onClick, label }) {
+function Buttons({ type, btnClass, onClick, label, modal, modalTarget }) {
   return (
     <div className="w-100">
-      <button className={btnClass} onClick={onClick}>
+      <button
+        type={type}
+        className={btnClass}
+        onClick={onClick}
+        data-bs-toggle={modal}
+        data-bs-target={modalTarget}
+      >
         {label}
       </button>
     </div>

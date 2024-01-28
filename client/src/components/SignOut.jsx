@@ -1,6 +1,17 @@
+import axios from "axios";
 import React from "react";
 
 function SignOut() {
+  const signOutHandler = () => {
+    axios
+      .get("http://localhost:3001/Logout")
+      .then((res) => {
+        window.location.reload(true);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   return (
     <div>
       <div>
@@ -36,7 +47,11 @@ function SignOut() {
                 >
                   Close
                 </button>
-                <button type="button" className="btn btn-primary w-100">
+                <button
+                  type="button"
+                  className="btn btn-primary w-100"
+                  onClick={signOutHandler}
+                >
                   Sign out
                 </button>
               </div>

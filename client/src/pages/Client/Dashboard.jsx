@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import Buttons from "../../components/Buttons";
 import Collab from "../../components/Collab";
@@ -8,6 +8,29 @@ import { useNavigate } from "react-router-dom";
 import SideNav from "../../components/SideNav";
 
 function Dashboard() {
+  const [userName, setUserName] = useState();
+  const navigate = useNavigate();
+  useEffect(() => {
+    const fragment = new URLSearchParams(window.location.hash.slice(1));
+    const [accessToken, tokenType] = [
+      fragment.get("access_token"),
+      fragment.get("token_type"),
+    ];
+    if (!accessToken) {
+      navigate("/");
+    }
+    fetch("https://discord.com/api/users/@me", {
+      headers: {
+        authorization: `${tokenType} ${accessToken}`,
+      },
+    })
+      .then((result) => result.json())
+      .then((response) => {
+        console.log(response);
+        setUserName(response.username);
+      })
+      .catch(console.error);
+  }, []);
   return (
     <div>
       <main>
@@ -25,7 +48,7 @@ function Dashboard() {
                     <h3>
                       welcome
                       <span id="userName" className="text-uppercase">
-                        username
+                        {userName}
                       </span>
                     </h3>
                   </div>

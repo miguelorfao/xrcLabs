@@ -1,7 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import Buttons from "../../components/Buttons";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function AdminLogin() {
+  const navigate = useNavigate();
+  const [adminLogin, setAdmin] = useState({
+    email: "",
+    password: "",
+  });
+  const onChangeHandler = (event) => {
+    setAdmin((prev) => ({
+      ...prev,
+      [event.target.name]: event.target.value,
+    }));
+  };
+  const onSaveHandler = (event) => {
+    axios.defaults.withCredentials = true;
+    event.preventDefault();
+    try {
+      axios.post("http://localhost:3001/Admin", adminLogin).then((res) => {
+        if (res.data.Status === "Success") {
+          navigate("/AdminDashboard");
+        } else {
+          alert(res.data.Error);
+        }
+      });
+    } catch (err) {}
+  };
+
   return (
     <div>
       <div className="container text-center">
@@ -21,6 +48,7 @@ function AdminLogin() {
                   name="email"
                   id="email"
                   placeholder="Email"
+                  onChange={onChangeHandler}
                 />
               </div>
               <div className="mb-3">
@@ -28,11 +56,12 @@ function AdminLogin() {
                   Password
                 </label>
                 <input
-                  type="password"
+                  type="text"
                   className="form-control"
                   name="password"
                   id="password"
                   placeholder="password"
+                  onChange={onChangeHandler}
                 />
               </div>
               <span className="text-danger mb-3"></span>
@@ -40,6 +69,7 @@ function AdminLogin() {
                 <Buttons
                   label="Login as Admin"
                   btnClass="btn btn-outline-primary w-100"
+                  onClick={onSaveHandler}
                 />
               </div>
               <hr></hr>

@@ -49,7 +49,7 @@ function App() {
           <Route element={<DiscordStat />} path="/DiscordStats" />
           <Route element={<ProjectSettings />} path="/ProjectSettings" />
           <Route element={<ProjectWl />} path="/ProjectWL" />
-
+          <Route element={<AdminCollabs />} path="/AdminCollabs" />
           {/* Admin routes need to protection */}
           <Route element={<PrivateRoutes />}>
             <Route element={<AdminDashboard />} path="/AdminDashboard" />
@@ -58,10 +58,7 @@ function App() {
             {" "}
             <Route element={<AdminProjects />} path="/AdminProjects" />
           </Route>
-          <Route element={<PrivateRoutes />}>
-            {" "}
-            <Route element={<AdminCollabs />} path="/AdminCollabs" />
-          </Route>
+          <Route element={<PrivateRoutes />}> </Route>
           <Route element={<PrivateRoutes />}>
             {" "}
             <Route element={<AdminAccount />} path="/AdminAccount" />
