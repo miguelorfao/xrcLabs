@@ -109,38 +109,24 @@ function AdminAccount() {
                   <span>{userData.Name}</span>
                   <span>{userData.Email}</span>
                 </div>
-                {userData.AdminAccess === "yes" ? (
-                  <span className="d-flex w-25 gap-3">
-                    <Buttons
-                      btnClass="btn btn-primary w-100"
-                      label="Edit"
-                      modal="modal"
-                      modalTarget="#editAdmin"
-                      onClick={() => {
-                        onclickHandler(userData.ID);
-                      }}
-                    />
-                    <Buttons
-                      btnClass="btn btn-danger w-100"
-                      label="Delete"
-                      onClick={() => {
-                        deleteHandler(userData.ID);
-                      }}
-                    />
-                  </span>
-                ) : (
-                  <span className="d-flex w-25 gap-3">
-                    <Buttons
-                      btnClass="btn btn-primary w-100"
-                      label="Edit"
-                      modal="modal"
-                      modalTarget="#editAdmin"
-                      onClick={() => {
-                        onclickHandler(userData.ID);
-                      }}
-                    />
-                  </span>
-                )}
+                <span className="d-flex w-25 gap-3">
+                  <Buttons
+                    btnClass="btn btn-primary w-100"
+                    label="Edit"
+                    modal="modal"
+                    modalTarget="#editAdmin"
+                    onClick={() => {
+                      onclickHandler(userData.ID);
+                    }}
+                  />
+                  <Buttons
+                    btnClass="btn btn-danger w-100"
+                    label="Delete"
+                    onClick={() => {
+                      deleteHandler(userData.ID);
+                    }}
+                  />
+                </span>
               </li>
             ))}
           </ul>
