@@ -1,11 +1,12 @@
 import React from "react";
 
-import Buttons from "../../components/Buttons";
+// import Buttons from "../../components/Buttons";
 
-import { useNavigate } from "react-router-dom";
-import SideNav from "../../components/SideNav";
+// import { useNavigate } from "react-router-dom";
+import SideNav from "../SideNav";
 
-function ProjectWl() {
+
+function DiscordStat() {
   return (
     <div>
       <main>
@@ -17,8 +18,7 @@ function ProjectWl() {
             <div class="col">
               {" "}
               <div className="container dashboard">
-                {" "}
-                {/* needs data */} Project WL
+                {/* insert Data */}Discord stats
               </div>
             </div>
           </div>
@@ -341,4 +341,4 @@ function ProjectWl() {
   );
 }
 
-export default ProjectWl;
+export default DiscordStat;

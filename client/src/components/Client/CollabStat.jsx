@@ -1,11 +1,11 @@
 import React from "react";
 
-import Buttons from "../../components/Buttons";
+// import Buttons from "../../components/Buttons";
+// import { useNavigate } from "react-router-dom";
+import SideNav from "../SideNav";
 
-import { useNavigate } from "react-router-dom";
-import SideNav from "../../components/SideNav";
 
-function DiscordStat() {
+function CollabStat() {
   return (
     <div>
       <main>
@@ -17,7 +17,8 @@ function DiscordStat() {
             <div class="col">
               {" "}
               <div className="container dashboard">
-                {/* insert Data */}Discord stats
+                {/* {insert data} */}
+                Collab stats
               </div>
             </div>
           </div>
@@ -340,4 +341,4 @@ function DiscordStat() {
   );
 }
 
-export default DiscordStat;
+export default CollabStat;

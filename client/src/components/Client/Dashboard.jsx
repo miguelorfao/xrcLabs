@@ -1,21 +1,87 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
+// import Buttons from "../Buttons";
+import Collab from "../Collab";
+import Entries from "../Entries";
+import DiscordUsers from "../DiscordUsers";
 import { useNavigate } from "react-router-dom";
-import SideNav from "../../components/SideNav";
+import SideNav from "../SideNav";
 
-function CollabSheet() {
+function Dashboard() {
+  const [userName, setUserName] = useState("");
+  const [userImage, setUserImage] = useState("");
+  const [userBannerColor, setUserBannerCOlor] = useState("");
+  const navigate = useNavigate();
+  useEffect(() => {
+    const fragment = new URLSearchParams(window.location.hash.slice(1));
+    const [accessToken, tokenType] = [
+      fragment.get("access_token"),
+      fragment.get("token_type"),
+    ];
+    if (!accessToken) {
+      navigate("/");
+    }
+    fetch("https://discord.com/api/users/@me", {
+      headers: {
+        authorization: `${tokenType} ${accessToken}`,
+      },
+    })
+      .then((result) => result.json())
+      .then((response) => {
+        console.log(response);
+        const userName = response.username;
+        const avatar = response.avatar;
+        const id = response.id;
+        const bgColor = response.banner_color;
+        setUserName(userName);
+        setUserBannerCOlor(bgColor);
+        setUserImage(`https://cdn.discordapp.com/avatars/${id}/${avatar}.jpg`);
+        document.querySelector(".sideNav").style.backgroundColor = bgColor;
+      })
+      .catch(console.error);
+  }, []);
   return (
     <div>
       <main>
         <div class="container-fluid">
           <div class="row flex-nowrap">
-            <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
-              <SideNav />
+            <div class="col-auto col-md-3 col-xl-2  px-0 bg-dark">
+              <SideNav
+                navClassName="d-flex flex-column align-items-center align-items-sm-start text-white min-vh-100 sideNav"
+                style={userBannerColor}
+              >
+                <div className="card text-bg-dark">
+                  <img src={userImage} class="card-img" alt="..." />
+                  <div className="card-img-overlay d-flex justify-content-center align-items-center">
+                    <h3 className="card-title text-uppercase">{userName}</h3>
+                  </div>
+                </div>
+              </SideNav>
             </div>
             <div class="col">
               {" "}
               <div className="container dashboard">
-                {/* insert data */}Collab sheet
+                {" "}
+                <div className="row dashboard justify-content-center w-100">
+                  <div className="col-12 col-md-12 mb-3 text-center">
+                    <h3>
+                      Welcome&nbsp;
+                      <span id="userName" className="text-uppercase">
+                        {userName}
+                      </span>
+                    </h3>
+                  </div>
+                  <div className="col col-md-4 text-center d-flex justify-content-center mb-3">
+                    <Collab />
+                  </div>
+                  <div className="col-12 col-md-4 text-center d-flex justify-content-center mb-3">
+                    <Entries />
+                  </div>
+                  <div className="col-12 col-md-4 text-center d-flex justify-content-center mb-3">
+                    <DiscordUsers />
+                  </div>
+                  <div className="col-12 col-md-12 text-center gap-2 d-flex justify-content-between mb-3"></div>
+                </div>
               </div>
             </div>
           </div>
@@ -338,4 +404,4 @@ function CollabSheet() {
   );
 }
 
-export default CollabSheet;
+export default Dashboard;

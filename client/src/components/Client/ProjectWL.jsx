@@ -1,10 +1,11 @@
 import React from "react";
 
 import Buttons from "../../components/Buttons";
-import { useNavigate } from "react-router-dom";
+
+// import { useNavigate } from "react-router-dom";
 import SideNav from "../../components/SideNav";
 
-function CollabStat() {
+function ProjectWl() {
   return (
     <div>
       <main>
@@ -16,8 +17,8 @@ function CollabStat() {
             <div class="col">
               {" "}
               <div className="container dashboard">
-                {/* {insert data} */}
-                Collab stats
+                {" "}
+                {/* needs data */} Project WL
               </div>
             </div>
           </div>
@@ -340,4 +341,4 @@ function CollabStat() {
   );
 }
 
-export default CollabStat;
+export default ProjectWl;
