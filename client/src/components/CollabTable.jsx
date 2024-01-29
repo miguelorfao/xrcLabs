@@ -5,7 +5,7 @@ import Modal from "./Modal";
 
 function CollabTable() {
   const [collab, setCollab] = useState([]);
-
+  const [editTable, setEditTable] = useState({});
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -18,7 +18,13 @@ function CollabTable() {
     };
     fetchData();
   }, []);
-  const onClickEditHandler = () => {};
+  const onTodoChange = (event) => {
+    setEditTable((prev) => ({
+      ...prev,
+      [event.target.name]: event.target.value,
+    }));
+  };
+  console.log(editTable);
   return (
     <div>
       <div className="container">
@@ -30,27 +36,54 @@ function CollabTable() {
               <th>Allocations</th>
               <th>Entries</th>
               <th>Platform</th>
-              <th>Action</th>
             </tr>
           </thead>
           <tbody>
             {collab.map((collabs) => (
               <tr key={collabs.ID} id={collabs.ID}>
-                <td>{collabs.Date.slice(0, 10)}</td>
-                <td>{collabs.Server}</td>
-                <td>{collabs.Allocation}</td>
-                <td>{collabs.Entries}</td>
-                <td>{collabs.Platform}</td>
-                <td className="d-flex">
-                  <Buttons
-                    label="Edit"
-                    btnClass="btn btn-primary border w-50"
-                    modal="modal"
-                    modalTarget="#editCollab"
+                <td>
+                  {" "}
+                  <input
+                    type="date"
+                    name="date"
+                    value={collabs.Date.slice(0, 10)}
+                    onChange={onTodoChange}
                   />
-                  <Buttons
-                    label="Delete"
-                    btnClass="btn btn-danger border w-50"
+                </td>
+                <td>
+                  {" "}
+                  <input
+                    type="text"
+                    value={collabs.Server}
+                    name="server"
+                    onChange={onTodoChange}
+                  />
+                </td>
+                <td>
+                  {" "}
+                  <input
+                    type="text"
+                    name="allocation"
+                    value={collabs.Allocation}
+                    onChange={onTodoChange}
+                  />
+                </td>
+                <td>
+                  {" "}
+                  <input
+                    type="text"
+                    name="entries"
+                    value={collabs.Entries}
+                    onChange={onTodoChange}
+                  />
+                </td>
+                <td>
+                  {" "}
+                  <input
+                    type="text"
+                    name="platform"
+                    value={collabs.Platform}
+                    onChange={onTodoChange}
                   />
                 </td>
               </tr>

@@ -23,6 +23,7 @@ import EntryRequirements from "./pages/FounderSetUp/EntryRequirements";
 import DiscordWinner from "./pages/FounderSetUp/DiscordWinner";
 import ProjectEnd from "./pages/FounderSetUp/ProjectEnd";
 import PrivateRoutes from "./components/PrivateRoutes";
+import ForgottenPassword from "./pages/Admin/ForgottenPassword";
 
 function App() {
   return (
@@ -50,6 +51,7 @@ function App() {
           <Route element={<ProjectSettings />} path="/ProjectSettings" />
           <Route element={<ProjectWl />} path="/ProjectWL" />
           <Route element={<AdminCollabs />} path="/AdminCollabs" />
+
           {/* Admin routes need to protection */}
           <Route element={<PrivateRoutes />}>
             <Route element={<AdminDashboard />} path="/AdminDashboard" />
@@ -65,6 +67,7 @@ function App() {
           </Route>
 
           <Route element={<AdminLogin />} path="/Admin" />
+          <Route element={<ForgottenPassword />} path="/ForgottenPassword" />
         </Routes>
       </BrowserRouter>
     </div>

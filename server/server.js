@@ -20,6 +20,8 @@ app.use(
 );
 app.use(cookieParser());
 
+// DB connections
+
 const db = mysql.createConnection({
   host: "127.0.0.1",
   user: "root",
@@ -29,7 +31,7 @@ const db = mysql.createConnection({
 
 db.connect();
 
-// Login function
+// Login function for verified user
 const verifyUser = (req, res, next) => {
   const token = req.cookies.token;
   if (!token) {
@@ -48,30 +50,8 @@ const verifyUser = (req, res, next) => {
 app.get("/Admin", verifyUser, (req, res) => {
   return res.json({ Status: "Success", name: req.name });
 });
-app.delete("/AdminAccount/:id", (req, res) => {
-  const q = "DELETE FROM admin WHERE ID = ?";
 
-  db.query(q, [req.params.id], (err, data) => {
-    if (err) return res.json(err);
-    return res.json(data);
-  });
-});
-
-app.put("/AdminAccount/:id", (req, res) => {
-  const q = "UPDATE admin SET Name = ?, Email = ?, Password = ?, WHERE ID = ?";
-  bcrypt.hash(req.body.password.toString(), salt, (err, hash) => {
-    if (err) return res.json({ Error: "Error for hashing password" });
-
-    db.query(
-      q,
-      [req.body.name, req.body.email, hash, req.params.id],
-      (err, data) => {
-        if (err) return console.log(err);
-        return console.log(data);
-      }
-    );
-  });
-});
+// post new admin user from admin account
 app.post("/AdminAccount", (req, res) => {
   const q = "INSERT INTO `admin`(`Name`, `Email`,`Password`) VALUES (?)";
   bcrypt.hash(req.body.password.toString(), salt, (err, hash) => {
@@ -84,6 +64,7 @@ app.post("/AdminAccount", (req, res) => {
   });
 });
 
+// Login user
 app.post("/Admin", (req, res) => {
   const q = "SELECT * FROM `admin` WHERE Email = ?";
   db.query(q, [req.body.email], (err, data) => {
@@ -110,10 +91,52 @@ app.post("/Admin", (req, res) => {
   });
 });
 
+// Delete user from admin account
+app.delete("/AdminAccount/:id", (req, res) => {
+  const q = "DELETE FROM admin WHERE ID = ?";
+
+  db.query(q, [req.params.id], (err, data) => {
+    if (err) return res.json(err);
+    return res.json(data);
+  });
+});
+
+// edit user from Admin Account
+app.put("/AdminAccount/:id", (req, res) => {
+  const q = "UPDATE admin SET Name = ?, Email = ?, Password = ?, WHERE ID = ?";
+  bcrypt.hash(req.body.password.toString(), salt, (err, hash) => {
+    if (err) return res.json({ Error: "Error for hashing password" });
+
+    db.query(
+      q,
+      [req.body.name, req.body.email, hash, req.params.id],
+      (err, data) => {
+        if (err) return console.log(err);
+        return console.log(data);
+      }
+    );
+  });
+});
+
+// logging out and clearing stored cookies
 app.get("/Logout", (req, res) => {
   res.clearCookie("token");
   return res.json({ Status: "Cookies have been cleared" });
 });
+
+// forgotten password
+
+app.put("/ForgottenPassword/:id", (req, res) => {
+  const q = "UPDATE admin SET Password = ? WHERE Email = ?";
+  bcrypt.hash(req.body.password.toString(), salt, (err, hash) => {
+    if (err) return res.json({ Error: "Error for hashing password" });
+    db.query(q, [hash, req.params.id], (err, data) => {
+      if (err) return res.json(err);
+      return res.json({ Status: "Success" });
+    });
+  });
+});
+
 // collecting data
 app.get("/AdminAccount", (req, res) => {
   const q = "SELECT * FROM `admin`";

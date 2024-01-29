@@ -53,8 +53,6 @@ function AdminAccount() {
     setEditAdminUserID(id);
   };
   const onSubmitHandler = async (e) => {
-    console.log(editAdminUserID);
-    console.log(editAdminUser);
     e.preventDefault();
     try {
       await axios
@@ -141,7 +139,7 @@ function AdminAccount() {
         hidden="true"
         title="Add Admin"
       >
-        <form>
+        <form method="POST" onSubmit={onSaveHandler}>
           <div class="mb-3">
             <label for="" class="form-label">
               Admin Name
@@ -153,6 +151,7 @@ function AdminAccount() {
               id="name"
               placeholder="Admin Name"
               onChange={onChangeHandler}
+              required
             />
           </div>
           <div class="mb-3">
@@ -166,6 +165,7 @@ function AdminAccount() {
               id="email"
               placeholder="Admin Email"
               onChange={onChangeHandler}
+              required
             />
           </div>
           <div class="mb-3">
@@ -179,17 +179,18 @@ function AdminAccount() {
               id="password"
               placeholder="Admin Password"
               onChange={onChangeHandler}
+              required
             />
           </div>
 
           <div className="text-danger"></div>
+          <Buttons
+            btnClass="btn btn-primary w-100"
+            label="Save and Next"
+            type="submit"
+          />
         </form>
-        <Buttons
-          btnClass="btn btn-primary w-100"
-          onClick={onSaveHandler}
-          label="Save and Next"
-          type="submit"
-        />
+
         <hr />
       </Modal>
       <Modal

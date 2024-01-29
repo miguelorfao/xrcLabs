@@ -2,6 +2,7 @@ import React from "react";
 
 import Header from "../components/Header";
 import { useNavigate } from "react-router-dom";
+import Buttons from "../components/Buttons";
 
 function Main() {
   const navigate = useNavigate();
@@ -13,24 +14,14 @@ function Main() {
   };
   return (
     <div>
-      <Header
-        label="Login With Discord"
-        btnClass="btn btn-outline-primary"
-        onClick={onClickHandle}
-      />
-      <div className="main-page">
-        <div className="container text-center">
-          <div className="row shadows p-5">
-            <div className="col-12 col-md-12">
-              <h3>Welcome where the WEB3 awaits you!!</h3>
-            </div>
-            <div className="col-6">
-              <p>text</p>
-            </div>
-            <div className="col-6">
-              <p>text</p>
-            </div>
-          </div>
+      <div className="hero">
+        <div>
+          <h2 className="mb-4">Welcome to ZCRLABS</h2>
+          <Buttons
+            label="Login with Discord"
+            btnClass="btn btn-primary w-100 p-2 rounded-pill"
+            onClick={onClickHandle}
+          />
         </div>
       </div>
     </div>

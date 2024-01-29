@@ -1,12 +1,15 @@
 import axios from "axios";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function SignOut() {
+  const navigate = useNavigate();
   const signOutHandler = () => {
     axios
       .get("http://localhost:3001/Logout")
       .then((res) => {
-        window.location.reload(true);
+        navigate("/Admin");
+        window.location.reload();
       })
       .catch((err) => {
         console.log(err);
