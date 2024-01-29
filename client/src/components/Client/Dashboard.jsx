@@ -71,7 +71,7 @@ function Dashboard() {
                       </span>
                     </h3>
                   </div>
-                  <div className="col col-md-4 text-center d-flex justify-content-center mb-3">
+                  <div className="col-12 col-md-4 text-center d-flex justify-content-center mb-3">
                     <Collab />
                   </div>
                   <div className="col-12 col-md-4 text-center d-flex justify-content-center mb-3">

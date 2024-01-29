@@ -1,13 +1,9 @@
-import { useState, useRef } from 'react';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState, useRef } from "react";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-
-
-import {
-  faCloudArrowUp,
-} from "@fortawesome/free-solid-svg-icons";
-
-
+// import {
+//   faCloudArrowUp,
+// } from "@fortawesome/free-solid-svg-icons";
 
 const TemplateUpload = () => {
   const [, setSelectedFile] = useState(null);
@@ -19,12 +15,12 @@ const TemplateUpload = () => {
     const file = event.target.files[0];
 
     // Check if the selected file is a PNG or JPG
-    if (file && (file.type === 'image/png' || file.type === 'image/jpeg')) {
+    if (file && (file.type === "image/png" || file.type === "image/jpeg")) {
       setSelectedFile(file);
     } else {
       // Reset the selected file if it's not a PNG or JPG
       setSelectedFile(null);
-      alert('Please select a valid PNG or JPG file.');
+      alert("Please select a valid PNG or JPG file.");
     }
   };
 
@@ -53,9 +49,9 @@ const TemplateUpload = () => {
           className="hidden"
         />
       </div>
-        <div className="mt-2">
-          {/* <p className="text-sm text-gray-600">Formats: PNG, JPG</p> */}
-        </div>
+      <div className="mt-2">
+        {/* <p className="text-sm text-gray-600">Formats: PNG, JPG</p> */}
+      </div>
     </div>
   );
 };
