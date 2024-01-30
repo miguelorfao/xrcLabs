@@ -92,7 +92,7 @@ function SideNav({ setUserImage, setUserName, show }) {
           <li className="nav-item signOut">
             {" "}
             <Buttons
-              onClick={onClickHandleProjectWL}
+              onClick={onClickHandleSignOut}
               label="Sign Out"
               btnClass="btn  w-100 text-primary bg-primary  text-start px-5 mb-2"
             />
