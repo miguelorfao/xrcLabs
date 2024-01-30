@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 
 function AdminLogin() {
   const navigate = useNavigate();
+  const [errorSuccess, setErrorSuccess] = useState("");
+
   const [adminLogin, setAdmin] = useState({
     email: "",
     password: "",
@@ -21,9 +23,14 @@ function AdminLogin() {
     try {
       axios.post("http://localhost:3001/Admin", adminLogin).then((res) => {
         if (res.data.Status === "Success") {
-          navigate("/AdminDashboard");
+          setErrorSuccess(res.data.Status);
+
+          setTimeout(function () {
+            window.location.replace("/AdminDashboard");
+          }, 5000);
         } else {
-          alert(res.data.Error);
+          setErrorSuccess(res.data.Error);
+          window.location.replace("/Admin");
         }
       });
     } catch (err) {}
@@ -36,12 +43,15 @@ function AdminLogin() {
       <div className="container text-center">
         <div className="row align-items-center adminForm">
           <div className="col-12 col-md-6">
-            <div className="shadows rounded-3 p-4 bg-transparent">
+            <div className="">
               <div className="mb-3">
                 <h3>Admin Login</h3>
                 <hr />
               </div>
-              <form>
+              <form
+                onSubmit={onSaveHandler}
+                className="bg-dark bg-gradient p-4 rounded-5"
+              >
                 {" "}
                 <div className="mb-3">
                   <label for="email" className="form-label">
@@ -74,9 +84,9 @@ function AdminLogin() {
                 <span className="text-danger mb-3"></span>
                 <div className="mb-3">
                   <Buttons
+                    type="submit"
                     label="Login as Admin"
                     btnClass="btn btn-outline-primary w-100"
-                    onClick={onSaveHandler}
                   />
                 </div>
                 <hr></hr>
@@ -97,6 +107,11 @@ function AdminLogin() {
                     }}
                   />
                 </div>
+                {errorSuccess === "Success" ? (
+                  <div className="bg-success">{errorSuccess}</div>
+                ) : (
+                  <div className="bg-danger">{errorSuccess}</div>
+                )}
               </form>
             </div>
           </div>

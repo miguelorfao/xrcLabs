@@ -5,24 +5,46 @@ import { useNavigate } from "react-router-dom";
 
 function ForgottenPassword() {
   const navigate = useNavigate();
+  const [errorSucess, setErrorSucess] = useState("");
   const [getEmail, setGetEmail] = useState({
     password: "",
     email: "",
   });
 
-  const onSubmitHandler = async (event) => {
+  const alertError = document.querySelector(".error");
+  const alertSuccess = document.querySelector(".success");
+
+  const onSubmitHandler = async (e) => {
+    e.preventDefault();
     const id = getEmail.email;
+    console.log(id);
+    try {
+      await axios
+        .put("http://localhost:3001/ForgottenPassword/" + id, getEmail)
+        .then((res) => {
+          console.log(res.data.Status);
+          if (res.data.Status === "Success") {
+            setErrorSucess(res.data.Status);
 
-    await axios
-      .put("http://localhost:3001/ForgottenPassword/" + id, getEmail)
-      .then((res) => {
-        console.log(res.data.Status);
-
-        navigate("/Admin");
-      });
+            setTimeout(function () {
+              alertSuccess.style.display = "block";
+            }, 1000);
+            setTimeout(function () {
+              window.location.replace("/Admin");
+            }, 5000);
+          } else {
+            alert(res.data.Error);
+            navigate("/ForgottenPassword");
+            setErrorSucess(res.data.Status);
+            alertError.style.display = "block";
+          }
+        });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  const emailHandler = (event) => {
+  const onChangeHandler = (event) => {
     setGetEmail((prev) => ({
       ...prev,
       [event.target.name]: event.target.value,
@@ -36,60 +58,68 @@ function ForgottenPassword() {
       <div className="container text-center">
         <div className="row align-items-center adminForm">
           <div className="col-12 col-md-6">
+            <div className="col">
+              {errorSucess === "Success" ? (
+                <div class="alert success mb-3" role="alert">
+                  Password Successfully changed, please wait while we redirect
+                  you
+                </div>
+              ) : (
+                <div class="alert error  mb-3" role="alert">
+                  Oops looks like we have an error, try again or let our team
+                  know.
+                </div>
+              )}
+            </div>
             <form
-              onSubmit={() => {
-                onSubmitHandler(getEmail.email);
-              }}
+              onSubmit={onSubmitHandler}
+              className="bg-dark bg-gradient p-3 shadows"
             >
-              <div className="shadows rounded-3 p-2">
-                <div className="mb-3">
-                  <h4>Forgotten Password</h4>
-                </div>{" "}
-                <div className="mb-3">
-                  <label for="email" className="form-label">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    className="form-control"
-                    name="email"
-                    id="email"
-                    placeholder="Email"
-                    onChange={emailHandler}
-                    required
-                  />
-                </div>
-                <div className="mb-3">
-                  <label for="password" className="form-label">
-                    Password
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    name="password"
-                    id="password"
-                    placeholder="password"
-                    onChange={emailHandler}
-                    required
-                  />{" "}
-                </div>
-                <div className="mb-3">
-                  <Buttons
-                    type="submit"
-                    id="saveEmail"
-                    label="Save"
-                    btnClass="btn btn-outline-primary w-100"
-                  />
-                </div>
-                <hr></hr>
-                <Buttons
-                  label="Return To Login"
-                  btnClass="btn btn-outline-primary w-100"
-                  onClick={() => {
-                    navigate("/Admin");
-                  }}
+              <div class="mb-3">
+                <label for="" class="form-label">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  class="form-control"
+                  name="email"
+                  id="email"
+                  placeholder="Admin Email"
+                  onChange={onChangeHandler}
+                  required
                 />
               </div>
+              <div class="mb-3">
+                <label for="" class="form-label">
+                  Password
+                </label>
+                <input
+                  title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                  type="password"
+                  class="form-control"
+                  name="password"
+                  id="password"
+                  placeholder="Admin Password"
+                  onChange={onChangeHandler}
+                  required
+                />
+              </div>
+              <div className="text-danger"></div>
+              <Buttons
+                btnClass="btn btn-primary w-100"
+                label="Save"
+                type="submit"
+              />
+              <hr />
+              <Buttons
+                btnClass="btn btn-primary w-100"
+                label="Back to login"
+                type="button"
+                onClick={() => {
+                  navigate("/Admin");
+                }}
+              />
             </form>
           </div>
         </div>

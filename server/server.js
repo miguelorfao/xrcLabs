@@ -58,8 +58,8 @@ app.post("/AdminAccount", (req, res) => {
     if (err) return res.json({ Error: "Error for hashing password" });
     const values = [req.body.name, req.body.email, hash];
     db.query(q, [values], (err, data) => {
-      if (err) return res.json(err);
-      return res.json("success");
+      if (err) return res.json({ Error: "Theres seems to be an error" });
+      return res.json({ Status: "Success" });
     });
   });
 });
@@ -96,8 +96,8 @@ app.delete("/AdminAccount/:id", (req, res) => {
   const q = "DELETE FROM admin WHERE ID = ?";
 
   db.query(q, [req.params.id], (err, data) => {
-    if (err) return res.json(err);
-    return res.json(data);
+    if (err) return res.json({ Error: "An Error has happened" });
+    return res.json({ Status: "Success" });
   });
 });
 

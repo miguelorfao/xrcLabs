@@ -102,7 +102,6 @@ form {
 }
 .navbar-nav {
   text-align: end !important;
-  z-index: 9999 !important;
 }
 .actionBtn {
   height: 2rem !important;
@@ -122,9 +121,36 @@ form {
 table tr {
   font-size: 0.5rem !important;
 }
+.admin li {
+  font-size: 12px;
+}
+a {
+  color: #fff !important;
+}
+.admin button {
+  font-size: 12px;
+}
+button {
+  font-size: 12px !important;
+}
 @media screen and (min-width: 480px) {
   table tr {
     font-size: 1rem !important;
+  }
+  .admin li {
+    font-size: 12px;
+    width: 55%;
+    margin: auto;
+  }
+  .admin li {
+    font-size: 18px;
+  }
+  button {
+    font-size: 16px !important;
+  }
+  .success,
+  .error {
+    display: none;
   }
   .collabs,
   .entries,
