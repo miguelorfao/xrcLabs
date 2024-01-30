@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Buttons from "./Buttons";
 import logoImages from "../images/avatar.jpeg";
-function SideNav() {
+function SideNav({setUserImage, setUserName, }) {
   const navigate = useNavigate();
 
   const onClickHandleDashboard = () => {
@@ -34,9 +34,9 @@ function SideNav() {
       <div className="d-flex flex-column align-items-center align-items-sm-start text-white min-vh-100 sideNav">
         <div className="d-flex align-items-center justify-content-around w-100">
           <div className="card text-bg-dark rounded-2 w-100">
-            <img src="" class="avatar" alt="..." />
+            <img src={setUserImage} class="avatar" alt="..." />
             <div className="card-img-overlay d-flex justify-content-center align-items-center">
-              <h3 className="card-title text-uppercase">Username</h3>
+              <h3 className="card-title text-uppercase">{setUserName}</h3>
             </div>
           </div>
         </div>

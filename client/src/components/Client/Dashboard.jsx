@@ -35,7 +35,8 @@ function Dashboard() {
         const bgColor = response.banner_color;
         setUserName(userName);
         setUserBannerCOlor(bgColor);
-        setUserImage(`https://cdn.discordapp.com/avatars/${id}/${avatar}.jpg`);
+        const userImageUrl = `https://cdn.discordapp.com/avatars/${id}/${avatar}.jpg`;
+        setUserImage(userImageUrl);
         document.querySelector(".sideNav").style.backgroundColor = bgColor;
       })
       .catch(console.error);
@@ -46,7 +47,7 @@ function Dashboard() {
         <div class="container-fluid">
           <div class="row flex-nowrap">
             <div class="col-auto col-md-3 col-xl-2  px-0 bg-dark">
-              <SideNav
+              <SideNav setUserImage={userImage} setUserName={userName}
                 navClassName="d-flex flex-column align-items-center align-items-sm-start text-white min-vh-100 sideNav"
                 style={userBannerColor}
               >
