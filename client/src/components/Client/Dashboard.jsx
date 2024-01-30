@@ -6,48 +6,17 @@ import Entries from "../Entries";
 import DiscordUsers from "../DiscordUsers";
 import { useNavigate } from "react-router-dom";
 import SideNav from "../SideNav";
+import useDiscordUserData from './api';
 
 function Dashboard() {
-  const [userName, setUserName] = useState("");
-  const [userImage, setUserImage] = useState("");
-  const [userBannerColor, setUserBannerCOlor] = useState("");
-  const navigate = useNavigate();
-  useEffect(() => {
-    const fragment = new URLSearchParams(window.location.hash.slice(1));
-    const [accessToken, tokenType] = [
-      fragment.get("access_token"),
-      fragment.get("token_type"),
-    ];
-    if (!accessToken) {
-      navigate("/");
-    }
-    fetch("https://discord.com/api/users/@me", {
-      headers: {
-        authorization: `${tokenType} ${accessToken}`,
-      },
-    })
-      .then((result) => result.json())
-      .then((response) => {
-        console.log(response);
-        const userName = response.username;
-        const avatar = response.avatar;
-        const id = response.id;
-        const bgColor = response.banner_color;
-        setUserName(userName);
-        setUserBannerCOlor(bgColor);
-        const userImageUrl = `https://cdn.discordapp.com/avatars/${id}/${avatar}.jpg`;
-        setUserImage(userImageUrl);
-        document.querySelector(".sideNav").style.backgroundColor = bgColor;
-      })
-      .catch(console.error);
-  }, []);
+  const { userName, userImage, userBannerColor } = useDiscordUserData(); 
   return (
     <div>
       <main>
         <div class="container-fluid">
           <div class="row flex-nowrap">
             <div class="col-auto col-md-3 col-xl-2  px-0 bg-dark">
-              <SideNav setUserImage={userImage} setUserName={userName}
+              <SideNav 
                 navClassName="d-flex flex-column align-items-center align-items-sm-start text-white min-vh-100 sideNav"
                 style={userBannerColor}
               >
@@ -73,7 +42,7 @@ function Dashboard() {
                     </h3>
                   </div>
                   <div className="col-12 col-md-4 text-center d-flex justify-content-center mb-3">
-                    <Collab />
+                    <Collab setUserImage={userImage} setUserName={userName} />
                   </div>
                   <div className="col-12 col-md-4 text-center d-flex justify-content-center mb-3">
                     <Entries />

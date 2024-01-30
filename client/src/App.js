@@ -24,10 +24,12 @@ import DiscordWinner from "./pages/FounderSetUp/DiscordWinner";
 import ProjectEnd from "./pages/FounderSetUp/ProjectEnd";
 import PrivateRoutes from "./components/PrivateRoutes";
 import ForgottenPassword from "./pages/Admin/ForgottenPassword";
+import { AuthProvider } from './components/AuthContext';
 
 function App() {
   return (
     <div className="App">
+     <AuthProvider>
       <BrowserRouter>
         <Routes>
           <Route element={<Main />} path="/" exact />
@@ -70,6 +72,7 @@ function App() {
           {/* <Route element={<ProjectSettings />} path="/ProjectSettings" /> */}
         </Routes>
       </BrowserRouter>
+      </AuthProvider>
     </div>
   );
 }
