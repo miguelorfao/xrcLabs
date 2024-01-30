@@ -6,11 +6,13 @@ import Entries from "../Entries";
 import DiscordUsers from "../DiscordUsers";
 import { useNavigate } from "react-router-dom";
 import SideNav from "../SideNav";
+import Header from "../Header";
 
 function Dashboard() {
   const [userName, setUserName] = useState("");
   const [userImage, setUserImage] = useState("");
-
+  const [isOpen, setIsOpen] = useState(false);
+  const [userBannerColor, setUserBannerCOlor] = useState("");
   const navigate = useNavigate();
   useEffect(() => {
     const fragment = new URLSearchParams(window.location.hash.slice(1));
@@ -29,66 +31,46 @@ function Dashboard() {
       .then((result) => result.json())
       .then((response) => {
         console.log(response);
-        const userNames = response.username;
+        const userName = response.username;
         const avatar = response.avatar;
         const id = response.id;
-        setUserName(userNames);
-
-        setUserImage(`https://cdn.discordapp.com/avatars/${id}/${avatar}.jpg`);
+        const bgColor = response.banner_color;
+        setUserName(userName);
+        setUserBannerCOlor(bgColor);
+        const userImageUrl = `https://cdn.discordapp.com/avatars/${id}/${avatar}.jpg`;
+        setUserImage(userImageUrl);
       })
       .catch(console.error);
   }, []);
   return (
     <div>
-      <main>
-        <div class="container-fluid">
-          <div class="row flex-nowrap">
-            <div class="col-auto col-md-3 col-xl-2  px-0 bg-dark">
-              <SideNav
-                navClassName="d-flex flex-column align-items-center align-items-sm-start text-white min-vh-100"
-                userName={userName}
-                userImage={userImage}
-              >
-                <div className="card text-bg-dark">
-                  <img src={userImage} class="avatar" alt="avatar" />
-                  <div className="card-img-overlay d-flex justify-content-center align-items-center">
-                    <h3 className="card-title text-uppercase">{userName}</h3>
-                  </div>
-                </div>
-              </SideNav>
-            </div>
-            <div class="col">
-              {" "}
-              <div className="container dashboard">
-                {" "}
-                <div className="row dashboard justify-content-center w-100">
-                  <div className="col-12 col-md-12 mb-3 text-center">
-                    <h3>
-                      Welcome&nbsp;
-                      <span id="userName" className="text-uppercase">
-                        {userName}
-                      </span>
-                    </h3>
-                  </div>
-                  <div className="row flex-wrap">
-                    <div className="col-12 col-md-4 text-center d-flex justify-content-center mb-3">
-                      <Collab />
-                    </div>
-                    <div className="col-12 col-md-4 text-center d-flex justify-content-center mb-3">
-                      <Entries />
-                    </div>
-                    <div className="col-12 col-md-4 text-center d-flex justify-content-center mb-3">
-                      <DiscordUsers />
-                    </div>
-                  </div>
-
-                  <div className="col-12 col-md-12 text-center gap-2 d-flex justify-content-between mb-3"></div>
-                </div>
-              </div>
-            </div>
-          </div>
+      <Header>
+        <i
+          class="fa-solid fa-bars fa-2x"
+          onClick={() => setIsOpen(!isOpen)}
+        ></i>
+      </Header>
+      <SideNav show={isOpen} />
+      <div className="row dashboard justify-content-center w-100">
+        <div className="col-12 col-md-12 mb-3 text-center">
+          <h3>
+            Welcome&nbsp;
+            <span id="userName" className="text-uppercase">
+              {userName}
+            </span>
+          </h3>
         </div>
-      </main>
+        <div className="col-12 col-md-4 text-center d-flex justify-content-center mb-3">
+          <Collab />
+        </div>
+        <div className="col-12 col-md-4 text-center d-flex justify-content-center mb-3">
+          <Entries />
+        </div>
+        <div className="col-12 col-md-4 text-center d-flex justify-content-center mb-3">
+          <DiscordUsers />
+        </div>
+        <div className="col-12 col-md-12 text-center gap-2 d-flex justify-content-between mb-3"></div>
+      </div>
       <div
         className="modal fade"
         id="projectSetting"

@@ -65,10 +65,9 @@ h2 {
 form {
   position: relative;
 }
-.register,
-.dashboard,
-.adminForm {
-  height: 100vh !important;
+
+.dashboard {
+  height: 90vh !important;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -96,10 +95,7 @@ form {
 .dashboard button {
   font-size: 0.7rem;
 }
-.dropdown-menu {
-  margin-left: -5rem !important;
-  margin-top: 0.5rem !important;
-}
+
 .navbar-nav {
   text-align: end !important;
 }
@@ -133,6 +129,25 @@ a {
 button {
   font-size: 12px !important;
 }
+
+.sidenav {
+  width: 250px;
+  padding: 0 30px;
+  background-color: #011627;
+  position: absolute;
+  height: 95vh;
+  left: -100%;
+  transition: all 1s;
+}
+
+.sidenav.active {
+  left: 0;
+}
+.signOut {
+  width: 200px !important;
+  margin-bottom: 30px;
+}
+
 @media screen and (min-width: 480px) {
   table tr {
     font-size: 1rem !important;
