@@ -41,7 +41,7 @@ function AdminLogin() {
   return (
     <div className="hero vh-100">
       <div className="container text-center">
-        <div className="row align-items-center adminForm">
+        <div className="row align-items-center dashboard">
           <div className="col-12 col-md-6">
             <div className="">
               <div className="mb-3">

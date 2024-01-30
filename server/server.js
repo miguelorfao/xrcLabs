@@ -1,10 +1,10 @@
 import express from "express";
-import mysql from "mysql";
+
 import cors from "cors";
 import jwt, { decode } from "jsonwebtoken";
 import bcrypt from "bcrypt";
 import cookieParser from "cookie-parser";
-
+import db from "./db.config.js";
 const salt = 10;
 import bodyParser from "body-parser";
 const app = express();
@@ -21,13 +21,6 @@ app.use(
 app.use(cookieParser());
 
 // DB connections
-
-const db = mysql.createConnection({
-  host: "127.0.0.1",
-  user: "root",
-  password: "",
-  database: "zrclabs",
-});
 
 db.connect();
 
