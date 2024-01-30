@@ -6,6 +6,8 @@ import axios from "axios";
 
 function AdminAccount() {
   const [adminUser, setAdminUser] = useState([]);
+  const [errorSuccess, setErrorSuccess] = useState("");
+
   const [editAdminUser, setEditAdminUser] = useState([
     { name: "", email: "", password: "" },
   ]);
@@ -35,10 +37,15 @@ function AdminAccount() {
     event.preventDefault();
     try {
       axios.post("http://localhost:3001/AdminAccount", admin).then((res) => {
-        if (res.data === "success") {
-          window.location.reload();
+        if (res.data.Status === "Success") {
+          setErrorSuccess(res.data.Status);
+
+          setTimeout(function () {
+            window.location.reload("");
+          }, 3000);
         } else {
-          alert("Seems we have an error please try again!");
+          setErrorSuccess(res.data.Error);
+          window.location.replace("/AdminAccount");
         }
       });
     } catch (error) {}
@@ -74,9 +81,17 @@ function AdminAccount() {
     try {
       await axios
         .delete("http://localhost:3001/AdminAccount/" + id)
-        .then(() => {
-          console.log("success");
-          window.location.reload();
+        .then((res) => {
+          if (res.data.Status === "Success") {
+            setErrorSuccess(res.data.Status);
+
+            setTimeout(function () {
+              window.location.replace("/AdminAccount");
+            }, 5000);
+          } else {
+            setErrorSuccess(res.data.Error);
+            window.location.replace("/AdminAccount");
+          }
         });
     } catch (error) {
       console.log(error);
@@ -87,8 +102,13 @@ function AdminAccount() {
     <div>
       <NavigationBar />
 
-      <div className="container-fluid my-5 w-50">
+      <div className="container my-5">
         <ul class="list-group list-group-flush mb-4">
+          {errorSuccess === "Success" ? (
+            <div className="bg-success">{errorSuccess}</div>
+          ) : (
+            <div className="bg-danger">{errorSuccess}</div>
+          )}
           <Buttons
             label="Add Admin"
             btnClass="btn btn-primary"
@@ -96,38 +116,40 @@ function AdminAccount() {
             modalTarget="#addAdmin"
           />
         </ul>
+        <hr />
         <div>
-          <ul className="list-group list-group-flush">
-            {adminUser.map((userData) => (
-              <li
-                key={userData.ID}
-                className="list-group-item d-flex align-items-center justify-content-between mb-3"
-              >
-                <div className="d-flex gap-4">
-                  <span>{userData.Name}</span>
-                  <span>{userData.Email}</span>
+          <div className="container admin">
+            <ul className="list-group list-group-flush">
+              {adminUser.map((userData) => (
+                <div className="col-12" key={userData.ID}>
+                  <li className="list-group-item d-flex align-items-center justify-content-between mb-3">
+                    <div className="d-flex gap-2 md-gap-4">
+                      <span>{userData.Name}</span>
+                      <span>{userData.Email}</span>
+                    </div>
+                    <div className="d-flex gap-3">
+                      <Buttons
+                        btnClass="btn btn-primary "
+                        label="Edit"
+                        modal="modal"
+                        modalTarget="#editAdmin"
+                        onClick={() => {
+                          onclickHandler(userData.ID);
+                        }}
+                      />
+                      <Buttons
+                        btnClass="btn btn-danger"
+                        label="Delete"
+                        onClick={() => {
+                          deleteHandler(userData.ID);
+                        }}
+                      />
+                    </div>
+                  </li>
                 </div>
-                <span className="d-flex w-25 gap-3">
-                  <Buttons
-                    btnClass="btn btn-primary w-100"
-                    label="Edit"
-                    modal="modal"
-                    modalTarget="#editAdmin"
-                    onClick={() => {
-                      onclickHandler(userData.ID);
-                    }}
-                  />
-                  <Buttons
-                    btnClass="btn btn-danger w-100"
-                    label="Delete"
-                    onClick={() => {
-                      deleteHandler(userData.ID);
-                    }}
-                  />
-                </span>
-              </li>
-            ))}
-          </ul>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
       <Modal
@@ -139,7 +161,7 @@ function AdminAccount() {
         hidden="true"
         title="Add Admin"
       >
-        <form method="POST" onSubmit={onSaveHandler}>
+        <form onSubmit={onSaveHandler}>
           <div class="mb-3">
             <label for="" class="form-label">
               Admin Name
@@ -173,6 +195,8 @@ function AdminAccount() {
               Password
             </label>
             <input
+              title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
               type="password"
               class="form-control"
               name="password"
@@ -234,6 +258,8 @@ function AdminAccount() {
               Password
             </label>
             <input
+              title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
               type="password"
               class="form-control"
               name="password"

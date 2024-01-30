@@ -6,17 +6,49 @@ import Entries from "../Entries";
 import DiscordUsers from "../DiscordUsers";
 import { useNavigate } from "react-router-dom";
 import SideNav from "../SideNav";
-import useDiscordUserData from './api';
+import Header from "../Header";
+
+import useDiscordUserData from './api';  
 
 function Dashboard() {
-  const { userName, userImage, userBannerColor } = useDiscordUserData(); 
+  
+  const [isOpen, setIsOpen] = useState(false);
+  const { userName, userImage, userBannerColor } = useDiscordUserData();
+
   return (
     <div>
+      <Header>
+        <i
+          class="fa-solid fa-bars fa-2x"
+          onClick={() => setIsOpen(!isOpen)}
+        ></i>
+      </Header>
+      <SideNav show={isOpen} />
+      <div className="row dashboard justify-content-center w-100">
+        <div className="col-12 col-md-12 mb-3 text-center">
+          <h3>
+            Welcome&nbsp;
+            <span id="userName" className="text-uppercase">
+              {userName}
+            </span>
+          </h3>
+        </div>
+        <div className="col-12 col-md-4 text-center d-flex justify-content-center mb-3">
+          <Collab />
+        </div>
+        <div className="col-12 col-md-4 text-center d-flex justify-content-center mb-3">
+          <Entries />
+        </div>
+        <div className="col-12 col-md-4 text-center d-flex justify-content-center mb-3">
+          <DiscordUsers />
+        </div>
+        <div className="col-12 col-md-12 text-center gap-2 d-flex justify-content-between mb-3"></div>
+      </div>
       <main>
         <div class="container-fluid">
           <div class="row flex-nowrap">
             <div class="col-auto col-md-3 col-xl-2  px-0 bg-dark">
-              <SideNav 
+              <SideNav setUserImage={userImage} setUserName={userName}
                 navClassName="d-flex flex-column align-items-center align-items-sm-start text-white min-vh-100 sideNav"
                 style={userBannerColor}
               >

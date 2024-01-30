@@ -1,27 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 
 // import { useNavigate } from "react-router-dom";
 import SideNav from "../SideNav";
-
+import Header from "../Header";
 
 function CollabSheet() {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div>
-      <main>
-        <div class="container-fluid">
-          <div class="row flex-nowrap">
-            <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
-              <SideNav />
-            </div>
-            <div class="col">
-              {" "}
-              <div className="container dashboard">
-                {/* insert data */}Collab sheet
-              </div>
-            </div>
-          </div>
-        </div>
-      </main>
+      <Header>
+        <i
+          class="fa-solid fa-bars fa-2x"
+          onClick={() => setIsOpen(!isOpen)}
+        ></i>
+      </Header>
+      <SideNav show={isOpen} />
       <div
         className="modal fade"
         id="projectSetting"

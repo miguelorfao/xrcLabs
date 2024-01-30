@@ -44,6 +44,7 @@ function CollabTable() {
                 <td>
                   {" "}
                   <input
+                    className="text-black bg-transparent"
                     type="date"
                     name="date"
                     value={collabs.Date.slice(0, 10)}
@@ -53,6 +54,7 @@ function CollabTable() {
                 <td>
                   {" "}
                   <input
+                    className="text-black bg-transparent"
                     type="text"
                     value={collabs.Server}
                     name="server"
@@ -62,6 +64,7 @@ function CollabTable() {
                 <td>
                   {" "}
                   <input
+                    className="text-black bg-transparent"
                     type="text"
                     name="allocation"
                     value={collabs.Allocation}
@@ -71,6 +74,7 @@ function CollabTable() {
                 <td>
                   {" "}
                   <input
+                    className="text-black bg-transparent"
                     type="text"
                     name="entries"
                     value={collabs.Entries}
@@ -80,6 +84,7 @@ function CollabTable() {
                 <td>
                   {" "}
                   <input
+                    className="text-black bg-transparent"
                     type="text"
                     name="platform"
                     value={collabs.Platform}

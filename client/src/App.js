@@ -69,6 +69,7 @@ function App() {
           </Route>
 
           <Route element={<AdminLogin />} path="/Admin" />
+          <Route element={<ForgottenPassword />} path="/ForgottenPassword" />
           {/* <Route element={<ProjectSettings />} path="/ProjectSettings" /> */}
         </Routes>
       </BrowserRouter>
