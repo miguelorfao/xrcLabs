@@ -45,29 +45,33 @@ function ProjectSettings() {
         <div className="container ">
           <div class="col">
             {" "}
-            <div className="">
-              <p class="justify-center text-center mt-5">Project Settings</p>
+            <div className="container">
+              <div className="border-bottom border-top border-primary my-4">
+                <h3 class="justify-center text-center my-2">
+                  Project Settings
+                </h3>
+              </div>
 
-              <div className="flex justify-center">
-                <div className="ml-10 mt-20 ">
+              <div className="row justify-center align-middle">
+                <div className="col-12 col-md-3">
                   <label class="">Project Name</label>
                   <br />
                   <input
-                    class="pl-2 px-20 py-2 rounded text-black focus:outline-none"
+                    class="pl-2 w-100 px-20 py-2 rounded text-black focus:outline-none"
                     placeholder="chains.sol project"
                   />
                   <br />
                   <label class="">WL Spots</label>
                   <br />
                   <input
-                    class="pl-2 px-20 py-2 rounded text-black focus:outline-none"
+                    class="pl-2 w-100 px-20 py-2 rounded text-black focus:outline-none"
                     placeholder="WL Spots"
                   />
                   <br />
                   <label class="">Price</label>
                   <br />
                   <input
-                    class="pl-2 px-20 py-2 rounded text-black focus:outline-none"
+                    class="pl-2 w-100 px-20 py-2 rounded text-black focus:outline-none"
                     placeholder="$50"
                   />
                   <br />
@@ -75,19 +79,19 @@ function ProjectSettings() {
                   <br />
                   <input
                     type="date"
-                    class="pl-2 w-[100%] pr-2 py-2 rounded text-black focus:outline-none"
+                    class="pl-2 w-100 pr-2 py-2 rounded text-black focus:outline-none"
                     placeholder="chains.sol"
                   />
                   <br />
                 </div>
-                <div className="mt-24 ml-12 ">
+                <div className="col-12 col-md-3">
                   <label>Template</label>
                   <br />
                   <TemplateUpload />
                   <br />
                 </div>
-                <div className="ml-24 mt-1 ">
-                  <div className="mt-24 ">
+                <div className="col-12 col-md-3">
+                  <div className="w-100">
                     <label>Image</label>
                     <br />
                     <ImageUpload />
@@ -100,7 +104,7 @@ function ProjectSettings() {
                       <button
                         type="button"
                         onClick={handleCustomButtonClick}
-                        className="bg-blue-500 text-black h-16 w-5/6 px-5 py-2 rounded-md"
+                        className="bg-blue-500 text-black h-16 w-5/6 px-5 py-2 rounded-md w-100"
                         style={{ backgroundColor: myCustomColor }}
                       >
                         Upload Image
@@ -121,32 +125,32 @@ function ProjectSettings() {
                     <br />
                   </div>
                 </div>
-                <div className="ml-24 mt-20 ">
+                <div className="col-12 col-md-3 mb-5">
                   <label class="">Discord Link</label>
                   <br />
                   <input
-                    class="pl-2 px-20 py-2 rounded text-black focus:outline-none"
+                    class="pl-2 px-20 py-2 rounded text-black focus:outline-none w-100"
                     placeholder="link@discord"
                   />
                   <br />
                   <label class="">Twitter Link</label>
                   <br />
                   <input
-                    class="pl-2 px-20 py-2 rounded text-black focus:outline-none"
+                    class="pl-2 px-20 py-2 rounded text-black focus:outline-none w-100"
                     placeholder="twitter@link"
                   />
                   <br />
                   <label class="">Projects Website</label>
                   <br />
                   <input
-                    class="pl-2 px-20 py-2 rounded text-black focus:outline-none"
+                    class="pl-2 px-20 py-2 rounded text-black focus:outline-none w-100"
                     placeholder="www.examplewebsite.com"
                   />
                   <br />
                   <label class="">Contact</label>
                   <br />
                   <input
-                    class="pl-2 px-20 py-2 rounded text-black focus:outline-none"
+                    class="pl-2 px-20 py-2 rounded text-black focus:outline-none w-100"
                     placeholder="+1 234 654 9872"
                   />
                   <br />

@@ -33,7 +33,7 @@ const ImageUpload = () => {
         <button
           type="button"
           onClick={handleCustomButtonClick}
-          className="bg-blue-500 text-black h-28 w-5/6 px-5 py-2 rounded-md"
+          className="bg-blue-500 text-black h-28 w-5/6 px-5 py-2 rounded-md w-100"
           style={{ backgroundColor: myCustomColor }}
         >
           Upload Image
