@@ -25,17 +25,22 @@ import ProjectEnd from "./pages/FounderSetUp/ProjectEnd";
 import PrivateRoutes from "./components/PrivateRoutes";
 import ForgottenPassword from "./pages/Admin/ForgottenPassword";
 import { AuthProvider } from "./components/AuthContext";
+import PageNotFound from "./components/PageNotFound";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route element={<AdminCollabs />} path="/AdminCollabs" />
-          <Route element={<AdminDashboard />} path="/AdminDashboard" />
-          <Route element={<AdminProjects />} path="/AdminProjects" />
-          <Route element={<AdminAccount />} path="/AdminAccount" />
-          <Route element={<AdminLogin />} path="/Admin" />
+          <Route element={<PrivateRoutes />}>
+            <Route element={<AdminCollabs />} path="/AdminCollabs" />
+            <Route element={<AdminDashboard />} path="/AdminDashboard" />
+            <Route element={<AdminProjects />} path="/AdminProjects" />
+            <Route element={<AdminAccount />} path="/AdminAccount" />
+          </Route>
+          <Route element={<ForgottenPassword />} path="/ForgottenPassword" />
+          <Route element={<AdminLogin />} path="/AdminLogin" />
+          <Route element={<PageNotFound />} path="/*" />
         </Routes>
       </BrowserRouter>
       <AuthProvider>
@@ -61,12 +66,6 @@ function App() {
             <Route element={<DiscordStat />} path="/DiscordStats" />
             <Route element={<ProjectSettings />} path="/ProjectSettings" />
             <Route element={<ProjectWl />} path="/ProjectWL" />
-
-            {/* Admin routes need to protection */}
-            <Route element={<PrivateRoutes />}></Route>
-
-            <Route element={<ForgottenPassword />} path="/ForgottenPassword" />
-            {/* <Route element={<ProjectSettings />} path="/ProjectSettings" /> */}
           </Routes>
         </BrowserRouter>
       </AuthProvider>

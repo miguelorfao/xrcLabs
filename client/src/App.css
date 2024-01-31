@@ -91,6 +91,8 @@ form {
   box-shadow: 0 0 30px 5px #48abe0 !important;
 }
 
+/* 404 page */
+
 @media screen and (min-width: 480px) {
   /* main page start */
   .main h1 {

@@ -1,11 +1,14 @@
 import axios from "axios";
-import { onAuthStateChanged } from "firebase/auth";
+
 import React, { useEffect, useState } from "react";
 import { Navigate, Outlet, useNavigate } from "react-router-dom";
 
 function PrivateRoutes() {
+  const navigate = useNavigate();
   axios.defaults.withCredentials = true;
+  console.log(axios.defaults.withCredentials);
   const [auth, setAuth] = useState(true);
+  console.log(auth);
   useEffect(() => {
     axios.get("http://localhost:3001/Admin").then((res) => {
       if (res.data.Status === "Success") {
@@ -14,9 +17,9 @@ function PrivateRoutes() {
         setAuth(false);
       }
     });
-  });
+  }, []);
 
-  return auth ? <Outlet /> : <Navigate to="/Admin" />;
+  return auth ? <Outlet /> : <Navigate to="/AdminLogin" />;
 }
 
 export default PrivateRoutes;

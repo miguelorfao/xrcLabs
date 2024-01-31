@@ -12,7 +12,7 @@ function Main() {
     window.location.replace(url);
   };
   const onClickAdminHandle = () => {
-    window.location.replace("/Admin");
+    window.location.replace("/AdminLogin");
   };
   return (
     <div className="hero main">
