@@ -118,7 +118,7 @@ function AdminAccount() {
         </ul>
         <hr />
         <div>
-          <div className="container admin">
+          <div className="container adminAccount">
             <ul className="list-group list-group-flush">
               {adminUser.map((userData) => (
                 <div className="col-12" key={userData.ID}>

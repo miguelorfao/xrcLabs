@@ -15,7 +15,7 @@ function Main() {
     window.location.replace("/Admin");
   };
   return (
-    <div className="hero">
+    <div className="hero main">
       <div class="gallery">
         <img
           src="https://picsum.photos/id/1059/300/300"

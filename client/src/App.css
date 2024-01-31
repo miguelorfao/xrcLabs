@@ -62,7 +62,7 @@ h1 {
   text-align: center;
   bottom: 300px;
 }
-.hero button {
+.main button {
   /* background-color: transparent; */
   bottom: -300px;
   font-size: 20px !important;
@@ -72,7 +72,7 @@ h1 {
 form {
   position: relative;
 }
-
+.admin,
 .dashboard {
   height: 90vh !important;
   display: flex;
@@ -95,9 +95,9 @@ form {
   font-size: 0.7rem;
 }
 
-.loginAdmin,
+/* .loginAdmin, */
 .shadows {
-  box-shadow: 0px 1px 10px 6px rgba(135, 133, 141, 0.75) !important;
+  box-shadow: 0 0 30px 5px #48abe0 !important;
 }
 .dashboard button {
   font-size: 0.7rem;

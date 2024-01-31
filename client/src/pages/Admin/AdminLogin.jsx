@@ -41,7 +41,7 @@ function AdminLogin() {
   return (
     <div className="hero vh-100">
       <div className="container text-center">
-        <div className="row align-items-center dashboard">
+        <div className="row align-items-center admin">
           <div className="col-12 col-md-6">
             <div className="">
               <div className="mb-3">
@@ -50,7 +50,7 @@ function AdminLogin() {
               </div>
               <form
                 onSubmit={onSaveHandler}
-                className="bg-dark bg-gradient p-4 rounded-5"
+                className="bg-dark bg-gradient p-4 rounded-5 shadows"
               >
                 {" "}
                 <div className="mb-3">
