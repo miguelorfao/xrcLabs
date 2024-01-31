@@ -29,6 +29,15 @@ import { AuthProvider } from "./components/AuthContext";
 function App() {
   return (
     <div className="App">
+      <BrowserRouter>
+        <Routes>
+          <Route element={<AdminCollabs />} path="/AdminCollabs" />
+          <Route element={<AdminDashboard />} path="/AdminDashboard" />
+          <Route element={<AdminProjects />} path="/AdminProjects" />
+          <Route element={<AdminAccount />} path="/AdminAccount" />
+          <Route element={<AdminLogin />} path="/Admin" />
+        </Routes>
+      </BrowserRouter>
       <AuthProvider>
         <BrowserRouter>
           <Routes>
@@ -52,16 +61,10 @@ function App() {
             <Route element={<DiscordStat />} path="/DiscordStats" />
             <Route element={<ProjectSettings />} path="/ProjectSettings" />
             <Route element={<ProjectWl />} path="/ProjectWL" />
-            <Route element={<AdminCollabs />} path="/AdminCollabs" />
 
             {/* Admin routes need to protection */}
-            <Route element={<PrivateRoutes />}>
-              <Route element={<AdminDashboard />} path="/AdminDashboard" />
-              <Route element={<AdminProjects />} path="/AdminProjects" />
-              <Route element={<AdminAccount />} path="/AdminAccount" />
-            </Route>
+            <Route element={<PrivateRoutes />}></Route>
 
-            <Route element={<AdminLogin />} path="/Admin" />
             <Route element={<ForgottenPassword />} path="/ForgottenPassword" />
             {/* <Route element={<ProjectSettings />} path="/ProjectSettings" /> */}
           </Routes>
