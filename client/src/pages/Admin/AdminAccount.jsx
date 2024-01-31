@@ -37,15 +37,14 @@ function AdminAccount() {
     event.preventDefault();
     try {
       axios.post("http://localhost:3001/AdminAccount", admin).then((res) => {
-        if (res.data.Status === "Success") {
+        console.log(res.data);
+        if (res.data.Status === "Employee added Successfully") {
           setErrorSuccess(res.data.Status);
-
           setTimeout(function () {
             window.location.reload("");
           }, 3000);
         } else {
           setErrorSuccess(res.data.Error);
-          window.location.replace("/AdminAccount");
         }
       });
     } catch (error) {}
@@ -103,8 +102,9 @@ function AdminAccount() {
       <NavigationBar />
 
       <div className="container my-5">
-        <ul class="list-group list-group-flush mb-4">
-          {errorSuccess === "Success" ? (
+        <ul class="list-group list-group-flush mb-4 p-2">
+          {errorSuccess === "Employee added Successfully" ||
+          errorSuccess === "Success" ? (
             <div className="bg-success">{errorSuccess}</div>
           ) : (
             <div className="bg-danger">{errorSuccess}</div>
@@ -195,9 +195,9 @@ function AdminAccount() {
               Password
             </label>
             <input
-              title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
-              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-              type="password"
+              title="Password must contain one digit from 1 to 9, one lowercase letter, one uppercase letter, one underscore but no other special character, no space and it must be 8-16 characters long."
+              pattern="(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*_)(?!.*\W)(?!.* ).{8,16}"
+              type="text"
               class="form-control"
               name="password"
               id="password"

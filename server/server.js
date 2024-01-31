@@ -1,5 +1,4 @@
 import express from "express";
-
 import cors from "cors";
 import jwt, { decode } from "jsonwebtoken";
 import bcrypt from "bcrypt";
@@ -20,9 +19,11 @@ app.use(
 );
 app.use(cookieParser());
 
-// DB connections
+// ADMIN ACCOUNT
 
-db.connect();
+// Validation data for users to sign up, login or either edited their details or event forgotten pass word
+// password ar hashed with regex pattern for the following
+// Password must contain one digit from 1 to 9, one lowercase letter, one uppercase letter, one underscore but no other special character, no space and it must be 8 - 16 characters long.
 
 // Login function for verified user
 const verifyUser = (req, res, next) => {
@@ -46,14 +47,24 @@ app.get("/Admin", verifyUser, (req, res) => {
 
 // post new admin user from admin account
 app.post("/AdminAccount", (req, res) => {
-  const q = "INSERT INTO `admin`(`Name`, `Email`,`Password`) VALUES (?)";
-  bcrypt.hash(req.body.password.toString(), salt, (err, hash) => {
-    if (err) return res.json({ Error: "Error for hashing password" });
-    const values = [req.body.name, req.body.email, hash];
-    db.query(q, [values], (err, data) => {
-      if (err) return res.json({ Error: "Theres seems to be an error" });
-      return res.json({ Status: "Success" });
-    });
+  const isValidEmail = "SELECT * FROM `admin` WHERE Email = ?";
+  db.query(isValidEmail, [req.body.email], (err, data) => {
+    if (err) return console.log(err);
+
+    if (data.length > 0) {
+      return res.json({ Error: "Email taken try a different Email" });
+    } else {
+      console.log("Email Available");
+      const q = "INSERT INTO `admin`(`Name`, `Email`,`Password`) VALUES (?)";
+      bcrypt.hash(req.body.password.toString(), salt, (err, hash) => {
+        if (err) return res.json({ Error: "Error for hashing password" });
+        const values = [req.body.name, req.body.email, hash];
+        db.query(q, [values], (err, data) => {
+          if (err) return res.json({ Error: "Theres seems to be an error" });
+          return res.json({ Status: "Employee added Successfully" });
+        });
+      });
+    }
   });
 });
 
@@ -130,6 +141,7 @@ app.put("/ForgottenPassword/:id", (req, res) => {
   });
 });
 
+// collecting data fro db for all signed up Admin staff members
 // collecting data
 app.get("/AdminAccount", (req, res) => {
   const q = "SELECT * FROM `admin`";
@@ -138,30 +150,8 @@ app.get("/AdminAccount", (req, res) => {
     res.json(data);
   });
 });
-app.get("/AdminCollabs", (req, res) => {
-  const q = "SELECT * FROM `collabs`";
-  db.query(q, (err, data) => {
-    if (err) return res.json(err);
-    res.json(data);
-  });
-});
 
-// adding data
-app.post("/AdminCollabs", (req, res) => {
-  const q =
-    "INSERT INTO `collabs`(`Date`, `Server`,`Allocation`,`Entries`, `Platform`) VALUES (?)";
-  const values = [
-    req.body.date,
-    req.body.server,
-    req.body.allocation,
-    req.body.entries,
-    req.body.platform,
-  ];
-  db.query(q, [values], (err, data) => {
-    if (err) return res.json(err);
-    return res.json(data);
-  });
-});
+// The end of admin Account
 
 const port = process.env.PORT || 3001;
 app.listen(port, () => {

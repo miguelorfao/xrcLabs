@@ -24,55 +24,48 @@ import DiscordWinner from "./pages/FounderSetUp/DiscordWinner";
 import ProjectEnd from "./pages/FounderSetUp/ProjectEnd";
 import PrivateRoutes from "./components/PrivateRoutes";
 import ForgottenPassword from "./pages/Admin/ForgottenPassword";
-import { AuthProvider } from './components/AuthContext';
+import { AuthProvider } from "./components/AuthContext";
 
 function App() {
   return (
     <div className="App">
-     <AuthProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route element={<Main />} path="/" exact />
+      <AuthProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route element={<Main />} path="/" exact />
 
-          {/* Founders setup protected */}
-          <Route element={<SetUp />} path="/Setup" />
-          <Route element={<ProjectsName />} path="/ProjectsName" />
-          <Route element={<ProjectsImage />} path="/ProjectsImage" />
-          <Route element={<ProjectSocials />} path="/ProjectsSocials" />
-          <Route element={<ProjectTemplate />} path="/ProjectsTemplate" />
-          <Route element={<MintDetails />} path="/MintDetails" />
-          <Route element={<EntryRequirements />} path="/EntryRequirements" />
-          <Route element={<DiscordWinner />} path="/DiscordWinner" />
-          <Route element={<ProjectEnd />} path="/ProjectEnd" />
+            {/* Founders setup protected */}
+            <Route element={<SetUp />} path="/Setup" />
+            <Route element={<ProjectsName />} path="/ProjectsName" />
+            <Route element={<ProjectsImage />} path="/ProjectsImage" />
+            <Route element={<ProjectSocials />} path="/ProjectsSocials" />
+            <Route element={<ProjectTemplate />} path="/ProjectsTemplate" />
+            <Route element={<MintDetails />} path="/MintDetails" />
+            <Route element={<EntryRequirements />} path="/EntryRequirements" />
+            <Route element={<DiscordWinner />} path="/DiscordWinner" />
+            <Route element={<ProjectEnd />} path="/ProjectEnd" />
 
-          {/* Client routes */}
-          <Route element={<Dashboard />} path="/Dashboard" />
-          <Route element={<CollabStat />} path="/CollabStats" />
-          <Route element={<CollabSheet />} path="/CollabSheet" />
-          <Route element={<DiscordStat />} path="/DiscordStats" />
-          <Route element={<ProjectSettings />} path="/ProjectSettings" />
-          <Route element={<ProjectWl />} path="/ProjectWL" />
-          <Route element={<AdminCollabs />} path="/AdminCollabs" />
+            {/* Client routes */}
+            <Route element={<Dashboard />} path="/Dashboard" />
+            <Route element={<CollabStat />} path="/CollabStats" />
+            <Route element={<CollabSheet />} path="/CollabSheet" />
+            <Route element={<DiscordStat />} path="/DiscordStats" />
+            <Route element={<ProjectSettings />} path="/ProjectSettings" />
+            <Route element={<ProjectWl />} path="/ProjectWL" />
+            <Route element={<AdminCollabs />} path="/AdminCollabs" />
 
-          {/* Admin routes need to protection */}
-          <Route element={<PrivateRoutes />}>
-            <Route element={<AdminDashboard />} path="/AdminDashboard" />
-          </Route>
-          <Route element={<PrivateRoutes />}>
-            {" "}
-            <Route element={<AdminProjects />} path="/AdminProjects" />
-          </Route>
-          <Route element={<PrivateRoutes />}> </Route>
-          <Route element={<PrivateRoutes />}>
-            {" "}
-            <Route element={<AdminAccount />} path="/AdminAccount" />
-          </Route>
+            {/* Admin routes need to protection */}
+            <Route element={<PrivateRoutes />}>
+              <Route element={<AdminDashboard />} path="/AdminDashboard" />
+              <Route element={<AdminProjects />} path="/AdminProjects" />
+              <Route element={<AdminAccount />} path="/AdminAccount" />
+            </Route>
 
-          <Route element={<AdminLogin />} path="/Admin" />
-          <Route element={<ForgottenPassword />} path="/ForgottenPassword" />
-          {/* <Route element={<ProjectSettings />} path="/ProjectSettings" /> */}
-        </Routes>
-      </BrowserRouter>
+            <Route element={<AdminLogin />} path="/Admin" />
+            <Route element={<ForgottenPassword />} path="/ForgottenPassword" />
+            {/* <Route element={<ProjectSettings />} path="/ProjectSettings" /> */}
+          </Routes>
+        </BrowserRouter>
       </AuthProvider>
     </div>
   );

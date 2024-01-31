@@ -36,13 +36,13 @@ function SideNav({ show }) {
 
   return (
     <div className={show ? "sidenav active" : "sidenav"}>
-      <ul className="pt-5 nav nav-pills  align-items-center align-items-sm-start w-100">
+      <ul className="pt-5 nav nav-pills  align-items-center align-items-sm-start w-100 text-white">
         <li className="nav-item w-100 mb-3">
           {" "}
           <Buttons
             onClick={onClickHandleDashboard}
             label="Dashboard"
-            btnClass="btn  w-100 text-primary bg-primary text-start"
+            btnClass="btn  w-100 text-primary bg-primary text-start text-white"
           />
         </li>
         <li className="nav-item w-100 mb-3">
@@ -50,7 +50,7 @@ function SideNav({ show }) {
           <Buttons
             onClick={onClickHandleCollabStat}
             label="Collab Statistics"
-            btnClass="btn  w-100 text-primary bg-primary text-start"
+            btnClass="btn  w-100 text-primary bg-primary text-start text-white"
           />
         </li>
         <li className="nav-item w-100 mb-3">
@@ -58,7 +58,7 @@ function SideNav({ show }) {
           <Buttons
             onClick={onClickHandleCollabSheet}
             label="Collab Sheet"
-            btnClass="btn  w-100 text-primary bg-primary  text-start"
+            btnClass="btn  w-100 text-primary bg-primary  text-start text-white"
           />
         </li>
         <li className="nav-item w-100 mb-3">
@@ -66,7 +66,7 @@ function SideNav({ show }) {
           <Buttons
             onClick={onClickHandleDiscordStats}
             label="Discord Statists"
-            btnClass="btn  w-100 text-primary bg-primary  text-start"
+            btnClass="btn  w-100 text-primary bg-primary  text-start text-white"
           />
         </li>
         <li className="nav-item w-100 mb-3">
@@ -74,7 +74,7 @@ function SideNav({ show }) {
           <Buttons
             onClick={onClickHandleRefresh}
             label="Request a refresh"
-            btnClass="btn  w-100 text-primary bg-primary  text-start"
+            btnClass="btn  w-100 text-primary bg-primary  text-start text-white"
           />
         </li>
         <li className="nav-item w-100 mb-3">
@@ -82,7 +82,7 @@ function SideNav({ show }) {
           <Buttons
             onClick={onClickHandleProjectSettings}
             label="Project Settings"
-            btnClass="btn  w-100 text-primary bg-primary  text-start"
+            btnClass="btn  w-100 text-primary bg-primary  text-start text-white"
           />
         </li>
         <li className="nav-item w-100 mb-3">
@@ -90,7 +90,7 @@ function SideNav({ show }) {
           <Buttons
             onClick={onClickHandleProjectWL}
             label="Request a Project WL"
-            btnClass="btn  w-100 text-primary bg-primary  text-start"
+            btnClass="btn  w-100 text-primary bg-primary  text-start text-white"
           />
         </li>
         <li className="pt-5 nav nav-pills  align-items-center align-items-sm-start bottom-0 position-fixed">
@@ -98,7 +98,7 @@ function SideNav({ show }) {
           <Buttons
             onClick={onClickHandleSignOut}
             label="Sign Out"
-            btnClass="btn  w-100 text-primary bg-primary  text-start px-5 mb-2"
+            btnClass="btn  w-100 text-primary bg-primary  text-start px-5 mb-2 text-white"
           />
         </li>
       </ul>

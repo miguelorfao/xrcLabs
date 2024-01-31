@@ -27,7 +27,7 @@ function AdminLogin() {
 
           setTimeout(function () {
             window.location.replace("/AdminDashboard");
-          }, 5000);
+          }, 3000);
         } else {
           setErrorSuccess(res.data.Error);
           window.location.replace("/Admin");
