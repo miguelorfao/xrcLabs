@@ -30,19 +30,6 @@ import PageNotFound from "./components/PageNotFound";
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route element={<PrivateRoutes />}>
-            <Route element={<AdminCollabs />} path="/AdminCollabs" />
-            <Route element={<AdminDashboard />} path="/AdminDashboard" />
-            <Route element={<AdminProjects />} path="/AdminProjects" />
-            <Route element={<AdminAccount />} path="/AdminAccount" />
-          </Route>
-          <Route element={<ForgottenPassword />} path="/ForgottenPassword" />
-          <Route element={<AdminLogin />} path="/AdminLogin" />
-          <Route element={<PageNotFound />} path="/*" />
-        </Routes>
-      </BrowserRouter>
       <AuthProvider>
         <BrowserRouter>
           <Routes>
@@ -69,6 +56,19 @@ function App() {
           </Routes>
         </BrowserRouter>
       </AuthProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<PrivateRoutes />}>
+            <Route element={<AdminCollabs />} path="/AdminCollabs" />
+            <Route element={<AdminDashboard />} path="/AdminDashboard" />
+            <Route element={<AdminProjects />} path="/AdminProjects" />
+            <Route element={<AdminAccount />} path="/AdminAccount" />
+          </Route>
+          <Route element={<ForgottenPassword />} path="/ForgottenPassword" />
+          <Route element={<AdminLogin />} path="/AdminLogin" />
+          <Route element={<PageNotFound />} path="/*" />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
