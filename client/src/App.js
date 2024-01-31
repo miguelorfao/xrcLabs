@@ -30,12 +30,9 @@ import PageNotFound from "./components/PageNotFound";
 function App() {
   return (
     <div className="App">
-      
       <AuthProvider>
         <BrowserRouter>
           <Routes>
-            <Route element={<Main />} path="/" exact />
-
             {/* Founders setup protected */}
             <Route element={<SetUp />} path="/Setup" />
             <Route element={<ProjectsName />} path="/ProjectsName" />
@@ -59,14 +56,15 @@ function App() {
       </AuthProvider>
       <BrowserRouter>
         <Routes>
+          <Route element={<AdminLogin />} path="/AdminLogin" />
+          <Route element={<ForgottenPassword />} path="/ForgottenPassword" />
           <Route element={<PrivateRoutes />}>
             <Route element={<AdminCollabs />} path="/AdminCollabs" />
             <Route element={<AdminDashboard />} path="/AdminDashboard" />
             <Route element={<AdminProjects />} path="/AdminProjects" />
             <Route element={<AdminAccount />} path="/AdminAccount" />
           </Route>
-          <Route element={<ForgottenPassword />} path="/ForgottenPassword" />
-          <Route element={<AdminLogin />} path="/AdminLogin" />
+          <Route element={<Main />} path="/" exact />
           <Route element={<PageNotFound />} path="/*" />
         </Routes>
       </BrowserRouter>
