@@ -21,7 +21,7 @@ function AdminLogin() {
     axios.defaults.withCredentials = true;
     event.preventDefault();
     try {
-      axios.post("http://localhost:3001/Admin", adminLogin).then((res) => {
+      axios.post("http://localhost:3001/AdminLogin", adminLogin).then((res) => {
         if (res.data.Status === "Success") {
           setErrorSuccess(res.data.Status);
 
@@ -30,7 +30,7 @@ function AdminLogin() {
           }, 3000);
         } else {
           setErrorSuccess(res.data.Error);
-          window.location.replace("/Admin");
+          window.location.replace("/AdminLogin");
         }
       });
     } catch (err) {}
@@ -103,7 +103,7 @@ function AdminLogin() {
                     label="Home Page"
                     btnClass="btn btn-outline-primary w-100"
                     onClick={() => {
-                      navigate("/");
+                      window.location.replace("/");
                     }}
                   />
                 </div>

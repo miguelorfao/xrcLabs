@@ -8,7 +8,7 @@ function SignOut({ className, children, dataBsToggle, signOut }) {
     axios
       .get("http://localhost:3001/Logout")
       .then((res) => {
-        navigate("/Admin");
+        navigate("/AdminLogin");
         window.location.reload();
       })
       .catch((err) => {

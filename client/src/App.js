@@ -30,6 +30,7 @@ import PageNotFound from "./components/PageNotFound";
 function App() {
   return (
     <div className="App">
+      
       <AuthProvider>
         <BrowserRouter>
           <Routes>
