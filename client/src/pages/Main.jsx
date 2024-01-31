@@ -3,7 +3,7 @@ import React from "react";
 import Header from "../components/Header";
 import { useNavigate } from "react-router-dom";
 import Buttons from "../components/Buttons";
-
+import img from "../images/nft.jpeg";
 function Main() {
   const navigate = useNavigate();
   const url = process.env.REACT_APP_API;
@@ -15,43 +15,37 @@ function Main() {
     window.location.replace("/Admin");
   };
   return (
-    <div className="hero">
-      <div class="gallery">
-        <img
-          src="https://picsum.photos/id/1059/300/300"
-          alt="many clothes and pictures"
-        />
-        <img
-          src="https://picsum.photos/id/1060/300/300"
-          alt="someone preparing artisanal coffee"
-        />
-        <img src="https://picsum.photos/id/225/300/300" alt="some tee" />
-        <img
-          src="https://picsum.photos/id/163/300/300"
-          alt="an empty table in a restaurant"
-        />
-        <img
-          src="https://picsum.photos/id/180/300/300"
-          alt="a laptop with a notebook"
-        />
-        <img
-          src="https://picsum.photos/id/20/300/300"
-          alt="a laptop and many books around it"
-        />
-      </div>
-      <div>
-        <h1 className="mb-4">Welcome to ZCRLABS</h1>
-        <Buttons
-          label="Login with Discord"
-          btnClass="btn btn-primary w-100 p-2 rounded-pill mb-5"
-          onClick={onClickHandle}
-        />
+    <div className="hero main">
+      <div className="container">
+        <div className="row text-center">
+          <div className="col-12 mb-5 text-center">
+            <h1 className="mb-4">ZCRLABS</h1>
+          </div>
+          <div className="col-12  mb-5 d-flex justify-center align-middle gap-3">
+            <img src={img} alt="many clothes and pictures" className="img1" />
+            <img src={img} alt="many clothes and pictures" className="img" />
+            <img
+              src={img}
+              alt="someone preparing artisanal coffee"
+              className="img2"
+            />
+          </div>
+          <div className="col-12 my-5 d-flex justify-center ">
+            <div className="w-100 mt-5">
+              <Buttons
+                label="Login with Discord"
+                btnClass="btn btn-primary w-100 p-2 rounded-pill mb-5"
+                onClick={onClickHandle}
+              />
 
-        <Buttons
-          label="Login as Admin"
-          btnClass="btn btn-primary w-100 p-2 rounded-pill"
-          onClick={onClickAdminHandle}
-        />
+              <Buttons
+                label="Login as Admin"
+                btnClass="btn btn-primary w-100 p-2 rounded-pill"
+                onClick={onClickAdminHandle}
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -1,25 +1,15 @@
 body {
   cursor: pointer !important;
 }
-.avatar-img {
-  height: 4rem;
-  width: 4rem;
-}
-.card-img {
-  height: 25vh;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-.preloader {
+/* pages outline */
+.admin,
+.dashboard {
+  height: 90vh !important;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
 }
-
-/* Add styles for your loading spinner or indicator here */
-
+/* home page start*/
 .hero {
   position: relative;
   height: 100vh;
@@ -27,21 +17,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #0f0c29; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #24243e,
-    #302b63,
-    #0f0c29
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #24243e,
-    #302b63,
-    #0f0c29
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  background-image: url("images/download.jpeg");
+  background-position: center center; /* fallback for old browsers */
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .hero::before {
@@ -53,90 +32,36 @@ body {
   left: 0px;
   background-color: rgba(0, 0, 0, 0.25);
 }
-
-h1 {
-  position: relative;
-  color: #ffffff;
-  font-size: 14rem;
-  line-height: 0.9;
-  text-align: center;
-  bottom: 300px;
-}
-.hero button {
-  /* background-color: transparent; */
-  bottom: -300px;
-  font-size: 20px !important;
-  box-shadow: 0 0 30px 5px #48abe0;
-}
-.hero button,
-form {
+.main h1,
+.main img,
+.main button {
   position: relative;
 }
-
-.dashboard {
-  height: 90vh !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.main button {
+  box-shadow: 0 0 30px 5px #48abe0 !important;
+  font-size: 14pt !important;
 }
-.main-page h1 {
-  font-size: 2rem;
-  text-transform: uppercase;
+.main h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa,
+    0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
 }
-.nav-pills button {
-  color: #fff !important;
-  font-size: 16px;
+.main .img1 {
+  transform: skewY(20deg);
+  box-shadow: 0 0 12px 5px #c32006 !important;
 }
-.collabs,
-.entries,
-.discordsers {
-  width: 8rem;
-  height: 8rem;
-  font-size: 0.7rem;
+.main .img2 {
+  transform: skewY(-20deg);
+  box-shadow: 0 0 15px 5px #c32006 !important;
 }
-
-.loginAdmin,
-.shadows {
-  box-shadow: 0px 1px 10px 6px rgba(135, 133, 141, 0.75) !important;
-}
-.dashboard button {
-  font-size: 0.7rem;
+.main .img {
+  display: none;
 }
 
-.navbar-nav {
-  text-align: end !important;
-}
-.actionBtn {
-  height: 2rem !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.avatar {
-  width: 100%;
-  height: 5rem !important;
-  width: 100% !important;
-}
-.overflow {
-  height: 16rem !important;
-  overflow: auto;
-}
-table tr {
-  font-size: 0.5rem !important;
-}
-.admin li {
-  font-size: 12px;
-}
-a {
-  color: #fff !important;
-}
-.admin button {
-  font-size: 12px;
-}
-button {
-  font-size: 12px !important;
-}
-
+/* end of Main */
+/* client side navigation */
 .sidenav {
   width: 250px;
   padding: 0 30px;
@@ -150,81 +75,51 @@ button {
 .sidenav.active {
   left: 0;
 }
-.signOut {
+.nav-pills button {
   width: 200px !important;
-  margin-bottom: 30px;
+  margin-left: -10px;
+  text-align: center !important;
 }
-.gallery {
-  top: -50px;
-  left: 300px;
-  --s: 150px; /* the image size */
-  display: grid;
-  transform-style: preserve-3d;
-  animation: r 15s linear infinite;
+/* End of client side navigation */
+
+form {
   position: relative;
 }
-@keyframes r {
-  0% {
-    transform: perspective(400px) rotateX(-100deg) rotate(0deg);
-  }
-  to {
-    transform: perspective(450px) rotateX(-100deg) rotate(-360deg);
-  }
-}
-.gallery > img {
-  box-shadow: 0 0 20px -5px #d41818;
-  grid-area: 1/1;
-  width: var(--s);
-  aspect-ratio: 1;
-  object-fit: cover;
-  border-radius: 10px 10px 0 0;
-  transform: rotate(var(--_a)) translateY(120%) rotateX(90deg);
-}
-.gallery > img:nth-child(1) {
-  --_a: 0deg;
-}
-.gallery > img:nth-child(2) {
-  --_a: 60deg;
-}
-.gallery > img:nth-child(3) {
-  --_a: 120deg;
-}
-.gallery > img:nth-child(4) {
-  --_a: 180deg;
-}
-.gallery > img:nth-child(5) {
-  --_a: 240deg;
-}
-.gallery > img:nth-child(6) {
-  --_a: 300deg;
+
+/* site addition */
+.shadows {
+  box-shadow: 0 0 30px 5px #48abe0 !important;
 }
 
 @media screen and (min-width: 480px) {
-  table tr {
-    font-size: 1rem !important;
+  /* main page start */
+  .main h1 {
+    font-size: 6rem !important;
   }
-  .admin li {
-    font-size: 12px;
-    width: 55%;
-    margin: auto;
+  .main button {
+    width: 50% !important;
+    margin: 0 auto;
   }
-  .admin li {
-    font-size: 18px;
+  .main .img1 {
+    width: 20rem;
   }
-  button {
-    font-size: 16px !important;
+  .main .img2 {
+    width: 20rem;
   }
+  .main .img {
+    margin: 0 50px;
+    width: 20rem;
+    position: relative;
+    bottom: -70px;
+    display: block;
+    box-shadow: 0 0 30px 5px #c32006 !important;
+  }
+
   .success,
   .error {
     display: none;
   }
-  .collabs,
-  .entries,
-  .discordsers {
-    width: 15rem;
-    height: 15rem;
-    font-size: 1.2rem;
-  }
+
   .dashboard button {
     font-size: 1rem;
   }
