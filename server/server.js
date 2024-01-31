@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(bodyParser.json());
 app.use(
   cors({
-    origin: ["http://localhost:3000/Admin"],
+    origin: [process.env.CORS_ORIGIN],
     methods: ["POST", "GET"],
     credentials: true,
   })
@@ -41,7 +41,7 @@ const verifyUser = (req, res, next) => {
     });
   }
 };
-app.get("/Admin", verifyUser, (req, res) => {
+app.get("/AdminLogin", verifyUser, (req, res) => {
   return res.json({ Status: "Success", name: req.name });
 });
 
@@ -69,7 +69,7 @@ app.post("/AdminAccount", (req, res) => {
 });
 
 // Login user
-app.post("/Admin", (req, res) => {
+app.post("/AdminLogin", (req, res) => {
   const q = "SELECT * FROM `admin` WHERE Email = ?";
   db.query(q, [req.body.email], (err, data) => {
     if (err) return res.json(err);

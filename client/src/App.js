@@ -40,7 +40,7 @@ function App() {
           </Route>
           <Route element={<ForgottenPassword />} path="/ForgottenPassword" />
           <Route element={<AdminLogin />} path="/AdminLogin" />
-          <Route element={<PageNotFound />} path="/*" />
+          {/* <Route element={<PageNotFound />} path="*" /> */}
         </Routes>
       </BrowserRouter>
       <AuthProvider>

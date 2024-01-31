@@ -10,7 +10,7 @@ function PrivateRoutes() {
   const [auth, setAuth] = useState(true);
   console.log(auth);
   useEffect(() => {
-    axios.get("http://localhost:3001/Admin").then((res) => {
+    axios.get("http://localhost:3001/AdminLogin").then((res) => {
       if (res.data.Status === "Success") {
         setAuth(true);
       } else {
