@@ -48,9 +48,7 @@ function Dashboard() {
         <div class="container-fluid">
           <div class="row flex-nowrap">
             <div class="col-auto col-md-3 col-xl-2  px-0 bg-dark">
-              <SideNav
-                setUserImage={userImage}
-                setUserName={userName}
+              <SideNav setUserImage={userImage} setUserName={userName}
                 navClassName="d-flex flex-column align-items-center align-items-sm-start text-white min-vh-100 sideNav"
                 style={userBannerColor}
               >
@@ -76,7 +74,7 @@ function Dashboard() {
                     </h3>
                   </div>
                   <div className="col-12 col-md-4 text-center d-flex justify-content-center mb-3">
-                    <Collab />
+                    <Collab setUserImage={userImage} setUserName={userName} />
                   </div>
                   <div className="col-12 col-md-4 text-center d-flex justify-content-center mb-3">
                     <Entries />
