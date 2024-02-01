@@ -75,23 +75,22 @@ body {
 .sidenav.active {
   left: 0;
 }
-.nav-pills button {
+.sidenav button {
   width: 200px !important;
   margin-left: -10px;
   text-align: center !important;
 }
-/* End of client side navigation */
-
-form {
-  position: relative;
+.sidenav a {
+  text-decoration: none;
 }
+/* End of client side navigation */
 
 /* site addition */
 .shadows {
-  box-shadow: 0 0 30px 5px #48abe0 !important;
+  box-shadow: 0 0 10px 0px #48abe0 !important;
 }
 
-/* 404 page */
+/* Admin Side nav */
 
 @media screen and (min-width: 480px) {
   /* main page start */

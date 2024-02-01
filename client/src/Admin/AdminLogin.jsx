@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Buttons from "../../components/Buttons";
+import Buttons from "./Global/Buttons";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
