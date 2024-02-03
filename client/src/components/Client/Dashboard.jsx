@@ -21,21 +21,20 @@ function Dashboard() {
 
     if (isOpen) {
       // Add event listener to disable scrolling
-      window.addEventListener('scroll', disableScroll);
+      window.addEventListener("scroll", disableScroll);
     } else {
       // Remove the event listener when navigation is closed
-      window.removeEventListener('scroll', disableScroll);
+      window.removeEventListener("scroll", disableScroll);
     }
 
     // Cleanup the event listener when the component is unmounted
     return () => {
-      window.removeEventListener('scroll', disableScroll);
+      window.removeEventListener("scroll", disableScroll);
     };
   }, [isOpen]); // Dependency on isOpen ensures that this effect runs when isOpen changes
 
-
   return (
-    <div >
+    <div>
       <Header>
         <i
           class="fa-solid fa-bars fa-2x"
@@ -43,7 +42,10 @@ function Dashboard() {
         ></i>
       </Header>
       <SideNav show={isOpen} />
-      <div className="row dashboard justify-content-center w-100" className={`min-h-screen  ${isOpen ? 'opacity-20 z-40' : ''}`}>
+      {/* User */}
+      <div
+        className={`min-h-screen row dashboard  justify-content-center w-100  ${isOpen ? "opacity-20 z-40" : ""}`}
+      >
         <div className="col-12 col-md-12 mb-3 text-center">
           <h3>
             Welcome&nbsp;
