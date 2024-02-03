@@ -35,7 +35,7 @@ function Dashboard() {
 
 
   return (
-    <div className={`min-h-screen  ${isOpen ? 'opacity-20 z-40' : ''}`}>
+    <div >
       <Header>
         <i
           class="fa-solid fa-bars fa-2x"
@@ -43,7 +43,7 @@ function Dashboard() {
         ></i>
       </Header>
       <SideNav show={isOpen} />
-      <div className="row dashboard justify-content-center w-100">
+      <div className="row dashboard justify-content-center w-100" className={`min-h-screen  ${isOpen ? 'opacity-20 z-40' : ''}`}>
         <div className="col-12 col-md-12 mb-3 text-center">
           <h3>
             Welcome&nbsp;
