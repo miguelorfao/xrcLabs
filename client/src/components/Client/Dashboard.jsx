@@ -14,8 +14,28 @@ function Dashboard() {
   const [isOpen, setIsOpen] = useState(false);
   const { userName, userImage, userBannerColor } = useDiscordUserData();
 
+  useEffect(() => {
+    const disableScroll = () => {
+      window.scrollTo(0, 0);
+    };
+
+    if (isOpen) {
+      // Add event listener to disable scrolling
+      window.addEventListener('scroll', disableScroll);
+    } else {
+      // Remove the event listener when navigation is closed
+      window.removeEventListener('scroll', disableScroll);
+    }
+
+    // Cleanup the event listener when the component is unmounted
+    return () => {
+      window.removeEventListener('scroll', disableScroll);
+    };
+  }, [isOpen]); // Dependency on isOpen ensures that this effect runs when isOpen changes
+
+
   return (
-    <div>
+    <div className={`min-h-screen  ${isOpen ? 'opacity-20 z-40' : ''}`}>
       <Header>
         <i
           class="fa-solid fa-bars fa-2x"

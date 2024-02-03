@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import Buttons from "./Buttons";
 import logoImages from "../images/avatar.jpeg";
 
+
+
 import useDiscordUserData from "./Client/api";
 function SideNav({ show }) {
   const navigate = useNavigate();
@@ -35,7 +37,7 @@ function SideNav({ show }) {
   const { userName, userImage, userBannerColor } = useDiscordUserData();
 
   return (
-    <div className={show ? "sidenav active" : "sidenav"}>
+    <div className={show ? "sidenav active z-50" : "sidenav"}>
       <ul className="pt-5 nav nav-pills  align-items-center align-items-sm-start w-100 text-white">
         <li className="nav-item w-100 mb-3">
           {" "}
