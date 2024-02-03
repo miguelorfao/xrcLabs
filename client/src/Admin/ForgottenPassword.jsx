@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Buttons from "../../components/Buttons";
+import Buttons from "../components/Buttons";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -30,7 +30,7 @@ function ForgottenPassword() {
               alertSuccess.style.display = "block";
             }, 1000);
             setTimeout(function () {
-              window.location.replace("/Admin");
+              window.location.replace("/AdminLogin");
             }, 5000);
           } else {
             alert(res.data.Error);
@@ -122,7 +122,7 @@ function ForgottenPassword() {
                   label="Back to login"
                   type="button"
                   onClick={() => {
-                    navigate("/Admin");
+                    navigate("/AdminLogin");
                   }}
                 />
               </form>

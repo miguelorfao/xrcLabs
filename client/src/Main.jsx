@@ -1,9 +1,9 @@
 import React from "react";
 
-import Header from "../components/Header";
+import Header from "./components/Header";
 import { useNavigate } from "react-router-dom";
-import Buttons from "../components/Buttons";
-import img from "../images/nft.jpeg";
+import Buttons from "./components/Buttons";
+import img from "./images/nft.jpeg";
 function Main() {
   const navigate = useNavigate();
   const url = process.env.REACT_APP_API;

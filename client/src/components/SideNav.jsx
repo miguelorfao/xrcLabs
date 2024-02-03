@@ -32,6 +32,7 @@ function SideNav({ show }) {
   };
   const onClickHandleSignOut = () => {
     navigate("/");
+    window.location.reload();
   };
 
   const { userName, userImage, userBannerColor } = useDiscordUserData();

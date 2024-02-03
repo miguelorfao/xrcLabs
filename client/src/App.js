@@ -2,41 +2,44 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import "./App.css";
 import Dashboard from "./components/Client/Dashboard";
-import Main from "./pages/Main";
-import AdminLogin from "./pages/Admin/AdminLogin";
-import AdminDashboard from "./pages/Admin/AdminDashboard";
-import AdminProjects from "./pages/Admin/AdminProjects";
-import AdminCollabs from "./pages/Admin/AdminCollabs";
-import AdminAccount from "./pages/Admin/AdminAccount";
+import Main from "./Main";
+
+import AdminLogin from "./Admin/AdminLogin";
+import AdminDashboard from "./Admin/Dashboard/AdminDashboard";
+import AdminProjects from "./Admin/Projects/AdminProjects";
+import AdminCollabs from "./Admin/Collabs/AdminCollabs";
+import AdminAccount from "./Admin/AdminAccount/AdminAccount";
+import ForgottenPassword from "./Admin/ForgottenPassword";
+
 import CollabStat from "./components/Client/CollabStat";
 import CollabSheet from "./components/Client/CollabSheet";
 import DiscordStat from "./components/Client/DiscordStats";
 import ProjectSettings from "./components/Client/ProjectSettings";
 import ProjectWl from "./components/Client/ProjectWL";
-import SetUp from "./pages/FounderSetUp/SetUp";
-import ProjectsName from "./pages/FounderSetUp/ProjectsName";
-import ProjectsImage from "./pages/FounderSetUp/ProjectsImage";
-import ProjectSocials from "./pages/FounderSetUp/ProjectSocials";
-import ProjectTemplate from "./pages/FounderSetUp/ProjectTemplate";
-import MintDetails from "./pages/FounderSetUp/MintDetails";
-import EntryRequirements from "./pages/FounderSetUp/EntryRequirements";
-import DiscordWinner from "./pages/FounderSetUp/DiscordWinner";
-import ProjectEnd from "./pages/FounderSetUp/ProjectEnd";
-import PrivateRoutes from "./components/PrivateRoutes";
-import ForgottenPassword from "./pages/Admin/ForgottenPassword";
+
+import SetUp from "./Founder/FounderSetUp/SetUp";
+import ProjectsName from "./Founder/FounderSetUp/ProjectsName";
+import ProjectsImage from "./Founder/FounderSetUp/ProjectsImage";
+import ProjectSocials from "./Founder/FounderSetUp/ProjectSocials";
+import ProjectTemplate from "./Founder/FounderSetUp/ProjectTemplate";
+import MintDetails from "./Founder/FounderSetUp/MintDetails";
+import EntryRequirements from "./Founder/FounderSetUp/EntryRequirements";
+import DiscordWinner from "./Founder/FounderSetUp/DiscordWinner";
+import ProjectEnd from "./Founder/FounderSetUp/ProjectEnd";
+
+import PrivateRoutes from "./Admin/Global/PrivateRoutes";
+
 import { AuthProvider } from "./components/AuthContext";
 import PageNotFound from "./components/PageNotFound";
 
 function App() {
   return (
     <div className="App">
-      
       <AuthProvider>
         <BrowserRouter>
           <Routes>
-            <Route element={<Main />} path="/" exact />
-
             {/* Founders setup protected */}
+            <Route element={<Main />} path="/" exact />
             <Route element={<SetUp />} path="/Setup" />
             <Route element={<ProjectsName />} path="/ProjectsName" />
             <Route element={<ProjectsImage />} path="/ProjectsImage" />
@@ -59,15 +62,16 @@ function App() {
       </AuthProvider>
       <BrowserRouter>
         <Routes>
+          <Route element={<AdminLogin />} path="/AdminLogin" />
+          <Route element={<ForgottenPassword />} path="/ForgottenPassword" />
           <Route element={<PrivateRoutes />}>
             <Route element={<AdminCollabs />} path="/AdminCollabs" />
             <Route element={<AdminDashboard />} path="/AdminDashboard" />
             <Route element={<AdminProjects />} path="/AdminProjects" />
             <Route element={<AdminAccount />} path="/AdminAccount" />
           </Route>
-          <Route element={<ForgottenPassword />} path="/ForgottenPassword" />
-          <Route element={<AdminLogin />} path="/AdminLogin" />
-          <Route element={<PageNotFound />} path="/*" />
+
+          {/* <Route element={<PageNotFound />} path="/*" /> */}
         </Routes>
       </BrowserRouter>
     </div>
