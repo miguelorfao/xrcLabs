@@ -1,5 +1,5 @@
 import React from "react";
-import NavigationBar from "../Admin/Global/NavigationBar";
+
 import Button from "./Buttons";
 import { useNavigate } from "react-router-dom";
 function Header({ btnClass, onClick, label, children }) {
@@ -7,7 +7,7 @@ function Header({ btnClass, onClick, label, children }) {
 
   return (
     <header>
-      <div className="bg-dark p-2">{children}</div>
+      <div className="p-2">{children}</div>
     </header>
   );
 }

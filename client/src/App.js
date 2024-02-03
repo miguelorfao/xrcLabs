@@ -32,14 +32,31 @@ import PrivateRoutes from "./Admin/Global/PrivateRoutes";
 import { AuthProvider } from "./components/AuthContext";
 import PageNotFound from "./components/PageNotFound";
 
+import Calendars from "./Admin/Calendar/Calendar";
+
 function App() {
   return (
     <div className="App">
+      <BrowserRouter>
+        <Routes>
+          <Route element={<AdminLogin />} path="/AdminLogin" />
+          <Route element={<ForgottenPassword />} path="/ForgottenPassword" />
+          <Route element={<PrivateRoutes />}>
+            <Route element={<AdminCollabs />} path="/AdminCollabs" />
+            <Route element={<AdminDashboard />} path="/AdminDashboard" />
+            <Route element={<AdminProjects />} path="/AdminProjects" />
+            <Route element={<AdminAccount />} path="/AdminAccount" />
+            <Route element={<Calendars />} path="/AdminCalendar" />
+          </Route>
+
+          {/* <Route element={<PageNotFound />} path="/*" /> */}
+        </Routes>
+      </BrowserRouter>
       <AuthProvider>
         <BrowserRouter>
           <Routes>
             {/* Founders setup protected */}
-            <Route element={<Main />} path="/" exact />
+
             <Route element={<SetUp />} path="/Setup" />
             <Route element={<ProjectsName />} path="/ProjectsName" />
             <Route element={<ProjectsImage />} path="/ProjectsImage" />
@@ -57,23 +74,10 @@ function App() {
             <Route element={<DiscordStat />} path="/DiscordStats" />
             <Route element={<ProjectSettings />} path="/ProjectSettings" />
             <Route element={<ProjectWl />} path="/ProjectWL" />
+            <Route element={<Main />} path="/" exact />
           </Routes>
         </BrowserRouter>
       </AuthProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route element={<AdminLogin />} path="/AdminLogin" />
-          <Route element={<ForgottenPassword />} path="/ForgottenPassword" />
-          <Route element={<PrivateRoutes />}>
-            <Route element={<AdminCollabs />} path="/AdminCollabs" />
-            <Route element={<AdminDashboard />} path="/AdminDashboard" />
-            <Route element={<AdminProjects />} path="/AdminProjects" />
-            <Route element={<AdminAccount />} path="/AdminAccount" />
-          </Route>
-
-          {/* <Route element={<PageNotFound />} path="/*" /> */}
-        </Routes>
-      </BrowserRouter>
     </div>
   );
 }

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Buttons from "./Global/Buttons";
+import Buttons from "./Global/buttons/Buttons";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+import "./admin.css";
 function AdminLogin() {
   const navigate = useNavigate();
   const [errorSuccess, setErrorSuccess] = useState("");
@@ -45,16 +45,16 @@ function AdminLogin() {
           <div className="col-12 col-md-6">
             <div className="">
               <div className="mb-3">
-                <h3>Admin Login</h3>
+                <h2>Admin Login</h2>
                 <hr />
               </div>
               <form
                 onSubmit={onSaveHandler}
-                className="bg-dark bg-gradient p-4 rounded-5 shadows"
+                className="bg-dark bg-gradient p-4 rounded-5 shadow"
               >
                 {" "}
                 <div className="mb-3">
-                  <label for="email" className="form-label">
+                  <label for="email" className="form-label text-white">
                     Email
                   </label>
                   <input
@@ -68,7 +68,7 @@ function AdminLogin() {
                   />
                 </div>
                 <div className="mb-3">
-                  <label for="password" className="form-label">
+                  <label for="password" className="form-label text-white">
                     Password
                   </label>
                   <input

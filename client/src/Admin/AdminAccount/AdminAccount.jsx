@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import NavigationBar from "../Global/NavigationBar";
-import Buttons from "../Global/Buttons";
-import Modal from "../Global/Modal";
+import NavigationBar from "../Global/navigation/NavigationBar";
+import Buttons from "../Global/buttons/Buttons";
+import Modal from "../Global/modal/Modal";
 import axios from "axios";
-import Header from "../Global/Header";
+import "./AdminAccount.css";
 
 function AdminAccount() {
   const [adminUser, setAdminUser] = useState([]);
@@ -100,17 +100,13 @@ function AdminAccount() {
 
   return (
     <div>
-      <Header>
-        <i
-          class="fa-solid fa-bars fa-2x"
-          onClick={() => setIsOpen(!isOpen)}
-        ></i>
-      </Header>
-      <div className="d-flex justify-center">
-        {" "}
-        <NavigationBar show={isOpen} />
-        <div className="container my-5">
-          <ul class="list-group list-group-flush mb-4 p-2">
+      {" "}
+      <NavigationBar>
+        <div className="mt-3 text-center admin-accounts">
+          <div className="border-bottom border-black mb-4">
+            <h2>Admin Accounts</h2>
+          </div>
+          <ul class="list-group list-group-flush mb-4">
             {errorSuccess === "Employee added Successfully" ||
             errorSuccess === "Success" ? (
               <div className="bg-success">{errorSuccess}</div>
@@ -126,42 +122,61 @@ function AdminAccount() {
           </ul>
           <hr />
           <div>
-            <div className="container adminAccount">
-              <ul className="list-group list-group-flush">
-                {adminUser.map((userData) => (
-                  <div className="col-12" key={userData.ID}>
-                    <li className="list-group-item d-flex align-items-center justify-content-between mb-3">
-                      <div className="d-flex gap-2 md-gap-4">
-                        <span>{userData.Name}</span>
-                        <span>{userData.Email}</span>
-                      </div>
-                      <div className="d-flex gap-3">
-                        <Buttons
-                          btnClass="btn btn-primary "
-                          label="Edit"
-                          modal="modal"
-                          modalTarget="#editAdmin"
-                          onClick={() => {
-                            onclickHandler(userData.ID);
-                          }}
-                        />
-                        <Buttons
-                          btnClass="btn btn-danger"
-                          label="Delete"
-                          onClick={() => {
-                            deleteHandler(userData.ID);
-                          }}
-                        />
-                      </div>
-                    </li>
-                  </div>
-                ))}
-              </ul>
+            <div className="adminAccount">
+              <div class="table-responsive ">
+                <table class="table table-hover table-borderless align-middle text-center">
+                  <thead className="border-bottom">
+                    <tr className="border-bottom">
+                      <th>Name</th>
+                      <th>Email</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody class="table-group-divider">
+                    {adminUser.map((userData) => (
+                      <tr
+                        class="border-bottom shadow-bottom spacing shadow"
+                        key={userData.ID}
+                      >
+                        <td>
+                          {" "}
+                          <span>{userData.Name}</span>
+                        </td>
+                        <td>
+                          {" "}
+                          <span>{userData.Email}</span>
+                        </td>
+                        <td>
+                          {" "}
+                          <div className="d-flex gap-3">
+                            <Buttons
+                              btnClass="btn w-100 btn-primary"
+                              label="Edit"
+                              modal="modal"
+                              modalTarget="#editAdmin"
+                              onClick={() => {
+                                onclickHandler(userData.ID);
+                              }}
+                            />
+                            <Buttons
+                              btnClass="btn w-100 btn-danger"
+                              label="Delete"
+                              onClick={() => {
+                                deleteHandler(userData.ID);
+                              }}
+                            />
+                          </div>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                  <tfoot></tfoot>
+                </table>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-
+      </NavigationBar>
       <Modal
         modal_className="modal fade"
         id="addAdmin"

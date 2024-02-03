@@ -1,24 +1,45 @@
 import React, { useState } from "react";
-import NavigationBar from "../Global/NavigationBar";
-import Cards from "./Cards";
-import Header from "../Global/Header";
+import NavigationBar from "../Global/navigation/NavigationBar";
 
 function AdminProjects() {
-  const [isOpen, setIsOpen] = useState(false);
   return (
     <div>
-      <Header>
-        <i
-          class="fa-solid fa-bars fa-2x"
-          onClick={() => setIsOpen(!isOpen)}
-        ></i>
-      </Header>
-      <div className="d-flex justify-between w-100">
-        <NavigationBar show={isOpen} />
-        <div className="w-100">
-          <Cards />
+      <NavigationBar>
+        <div className="mt-3 text-center">
+          <div className="border-bottom border-black mb-4">
+            <h2>Projects</h2>
+          </div>
+          <ul class="list-group list-group-flush p-3">
+            <li class="list-group-item mb-1">
+              <div className="d-flex justify-between">
+                <p>Name</p>
+                <p>Name</p>
+                <p>Name</p>
+                <p>Name</p>
+                <p>Name</p>
+              </div>
+            </li>
+            <li class="list-group-item mb-1 shadow">
+              <div className="d-flex justify-between">
+                <p>Name</p>
+                <p>Name</p>
+                <p>Name</p>
+                <p>Name</p>
+                <p>Name</p>
+              </div>
+            </li>
+            <li class="list-group-item mb-1 shadow">
+              <div className="d-flex justify-between">
+                <p>Name</p>
+                <p>Name</p>
+                <p>Name</p>
+                <p>Name</p>
+                <p>Name</p>
+              </div>
+            </li>
+          </ul>
         </div>
-      </div>
+      </NavigationBar>
     </div>
   );
 }

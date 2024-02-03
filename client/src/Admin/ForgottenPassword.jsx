@@ -73,7 +73,7 @@ function ForgottenPassword() {
                 )}
               </div>
               <div className="mb-3">
-                <h3>Forgotten Password</h3>
+                <h2>Forgotten Password</h2>
                 <hr />
               </div>
               <form
@@ -81,7 +81,7 @@ function ForgottenPassword() {
                 className="bg-dark bg-gradient p-3 shadows rounded-3"
               >
                 <div class="mb-3">
-                  <label for="" class="form-label">
+                  <label for="" class="form-label text-white">
                     Email
                   </label>
                   <input
@@ -95,7 +95,7 @@ function ForgottenPassword() {
                   />
                 </div>
                 <div class="mb-3">
-                  <label for="" class="form-label">
+                  <label for="" class="form-label text-white">
                     Password
                   </label>
                   <input
