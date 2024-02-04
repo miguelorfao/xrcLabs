@@ -48,7 +48,7 @@ function ProjectSettings() {
           <div class="col">
             {" "}
             <div className="container">
-              <div className="border-bottom border-top border-primary my-4">
+              <div className="border-bottom border-top border-[#9D9797] my-4">
                 <h3 class="justify-center text-center my-2">
                   Project Settings
                 </h3>

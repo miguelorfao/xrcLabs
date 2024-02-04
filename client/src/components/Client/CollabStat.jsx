@@ -9,9 +9,9 @@ function CollabStat() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div>
-      <Header>
+     <Header>
         <i
-          class="fa-solid fa-bars fa-2x"
+          class="fa-solid z-50 text-black cursor-pointer relative top-1 left-3 px-2 py-1 border-2 border-slate-500 rounded-lg fa-bars fa-2x"
           onClick={() => setIsOpen(!isOpen)}
         ></i>
       </Header>
