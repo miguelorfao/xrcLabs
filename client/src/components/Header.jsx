@@ -7,7 +7,7 @@ function Header({ btnClass, onClick, label, children }) {
 
   return (
     <header>
-      <div className="p-2">{children}</div>
+      <div className="p-2 bg-[#A59F9F]">{children}</div>
     </header>
   );
 }

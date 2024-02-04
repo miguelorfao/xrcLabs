@@ -34,17 +34,19 @@ function Dashboard() {
   }, [isOpen]); // Dependency on isOpen ensures that this effect runs when isOpen changes
 
   return (
-    <div className="cursor-default bg-black text-white">
+    <div className="cursor-default">
       <Header>
         <i
-          class="fa-solid z-50 text-white relative top-2 left-5 rounded-lg p-1 px-2 border fa-bars fa-2x"
+          class="fa-solid z-50 text-black cursor-pointer relative top-1 left-3 px-2 py-1 border-2 border-slate-500 rounded-lg fa-bars fa-2x"
           onClick={() => setIsOpen(!isOpen)}
         ></i>
       </Header>
       <SideNav show={isOpen} />
       {/* User */}
       <div
-        className={`min-h-screen row dashboard  justify-content-center w-100  ${isOpen ? "opacity-20 z-40" : ""}`}
+        className={`min-h-screen row dashboard bg-[#D9D9D9] justify-content-center w-100  ${
+          isOpen ? "opacity-20 z-40" : ""
+        }`}
       >
         <div className="col-12 col-md-12 mb-3 text-center">
           <h3>

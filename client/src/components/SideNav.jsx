@@ -6,6 +6,7 @@ import logoImages from "../images/avatar.jpeg";
 
 
 import useDiscordUserData from "./Client/api";
+const myCustomColor = '#A59F9F'
 function SideNav({ show }) {
   const navigate = useNavigate();
 
@@ -38,7 +39,9 @@ function SideNav({ show }) {
   const { userName, userImage, userBannerColor } = useDiscordUserData();
 
   return (
-    <div className={show ? "sidenav active z-40 relative top-1 pt-5" : "sidenav"}>
+    <div 
+    style={{ backgroundColor: myCustomColor }}
+     className={show ? "sidenav active z-40 relative min-h-screen top-0 pt-5" : "sidenav"}>
       <ul className="pt-5 nav nav-pills  align-items-center align-items-sm-start w-100 text-white">
         <li className="nav-item w-100 mb-3">
           {" "}
