@@ -41,8 +41,12 @@ function SideNav({ show }) {
   return (
     <div 
     style={{ backgroundColor: myCustomColor }}
-     className={show ? "sidenav active z-40 relative min-h-screen top-0 pt-5" : "sidenav"}>
-      <ul className="pt-5 nav nav-pills  align-items-center align-items-sm-start w-100 text-white">
+     className={show ? "sidenav active z-40 relative min-h-screen top-0  pt-5" : "sidenav"}>
+    <div className="flex justify-center text-center relative top-7">
+    <img className="w-16 rounded-2xl" src={userImage}/>
+     <h3 className="text-base mt-4 font-semibold capitalize">{userName}</h3>
+    </div>
+      <ul className="pt-5 nav nav-pills  align-items-center mt-1 align-items-sm-start w-100 text-white">
         <li className="nav-item w-100 mb-3">
           {" "}
           <Buttons
