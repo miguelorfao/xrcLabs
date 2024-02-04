@@ -33,15 +33,17 @@ function ProjectSettings() {
     fileInputRef.current.click();
   };
   return (
-    <div>
+    <div className="cursor-default">
       <Header>
-        <i
-          class="fa-solid fa-bars fa-2x"
+      <i
+          class="fa-solid z-50 text-black cursor-pointer relative top-1 left-3 px-2 py-1 border-2 border-slate-500 rounded-lg fa-bars fa-2x"
           onClick={() => setIsOpen(!isOpen)}
         ></i>
       </Header>
       <SideNav show={isOpen} />
-      <main>
+      <main className={`min-h-screen row dashboard bg-[#D9D9D9] justify-content-center w-100  ${
+          isOpen ? "opacity-20 z-40" : ""
+        }`}>
         <div className="container ">
           <div class="col">
             {" "}
