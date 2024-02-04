@@ -34,10 +34,10 @@ function Dashboard() {
   }, [isOpen]); // Dependency on isOpen ensures that this effect runs when isOpen changes
 
   return (
-    <div>
+    <div className="cursor-default bg-black text-white">
       <Header>
         <i
-          class="fa-solid fa-bars fa-2x"
+          class="fa-solid z-50 text-white relative top-2 left-5 rounded-lg p-1 px-2 border fa-bars fa-2x"
           onClick={() => setIsOpen(!isOpen)}
         ></i>
       </Header>
