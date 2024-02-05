@@ -7,6 +7,7 @@ import SideNav from "../SideNav";
 import TemplateUpload from "./TemplateUpload";
 import ImageUpload from "./ImageUpload";
 import Header from "../Header";
+import '@fontsource/roboto'; 
 
 function ProjectSettings() {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,7 +34,8 @@ function ProjectSettings() {
     fileInputRef.current.click();
   };
   return (
-    <div className="cursor-default">
+    <div className="cursor-default font-roboto ">
+
       <Header>
       <i
           class="fa-solid z-50 text-black cursor-pointer relative top-1 left-3 px-2 py-1 border-2 border-slate-500 rounded-lg fa-bars fa-2x"
@@ -41,10 +43,10 @@ function ProjectSettings() {
         ></i>
       </Header>
       <SideNav show={isOpen} />
-      <main className={`min-h-screen row dashboard bg-[#D9D9D9] justify-content-center w-100  ${
+      <main className={`min-h-screen row dashboard  bg-[#D9D9D9] justify-content-center w-100  ${
           isOpen ? "opacity-20 z-40" : ""
         }`}>
-        <div className="container ">
+        <div className="container -top-10 relative ">
           <div class="col">
             {" "}
             <div className="container">

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Buttons from "./Buttons";
 import logoImages from "../images/avatar.jpeg";
+import '@fontsource/roboto'; 
 
 
 
@@ -41,8 +42,12 @@ function SideNav({ show }) {
   return (
     <div 
     style={{ backgroundColor: myCustomColor }}
-     className={show ? "sidenav active z-40 relative min-h-screen top-0 pt-5" : "sidenav"}>
-      <ul className="pt-5 nav nav-pills  align-items-center align-items-sm-start w-100 text-white">
+     className={show ? "sidenav active z-40 relative min-h-screen top-0  pt-5 font-roboto" : "sidenav"}>
+    <div className="flex border-slate-500 justify-center text-center relative border w-60 rounded-xl py-1 -left-6 top-7">
+    <img className="w-14 rounded-full -ml-14" src={userImage}/>
+     <h3 className="text-base mt-3 font-semibold relative left-2 capitalize">{userName}</h3>
+    </div>
+      <ul className="pt-5 nav nav-pills mt-1 text-start justify-start w-100 text-white">
         <li className="nav-item w-100 mb-3">
           {" "}
           <Buttons
