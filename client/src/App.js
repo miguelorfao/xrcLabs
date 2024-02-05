@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import "./App.css";
 import Dashboard from "./components/Client/Dashboard";
 import Main from "./Main";
 
@@ -33,25 +32,33 @@ import { AuthProvider } from "./components/AuthContext";
 import PageNotFound from "./components/PageNotFound";
 
 import Calendars from "./Admin/Calendar/Calendar";
+import Schedules from "./Admin/Schedules/Schedules";
+
+import "./App.css";
+import { ScheduleProvider } from "./Admin/Global/ScheduleApi";
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route element={<AdminLogin />} path="/AdminLogin" />
-          <Route element={<ForgottenPassword />} path="/ForgottenPassword" />
-          <Route element={<PrivateRoutes />}>
-            <Route element={<AdminCollabs />} path="/AdminCollabs" />
-            <Route element={<AdminDashboard />} path="/AdminDashboard" />
-            <Route element={<AdminProjects />} path="/AdminProjects" />
-            <Route element={<AdminAccount />} path="/AdminAccount" />
-            <Route element={<Calendars />} path="/AdminCalendar" />
-          </Route>
+      <ScheduleProvider>
+        {" "}
+        <BrowserRouter>
+          <Routes>
+            <Route element={<AdminLogin />} path="/AdminLogin" />
+            <Route element={<ForgottenPassword />} path="/ForgottenPassword" />
+            <Route element={<PrivateRoutes />}>
+              <Route element={<AdminCollabs />} path="/AdminCollabs" />
+              <Route element={<AdminDashboard />} path="/AdminDashboard" />
+              <Route element={<AdminProjects />} path="/AdminProjects" />
+              <Route element={<AdminAccount />} path="/AdminAccount" />
+              <Route element={<Calendars />} path="/AdminCalendar" />
+              <Route element={<Schedules />} path="/AdminSchedule" />
+            </Route>
 
-          {/* <Route element={<PageNotFound />} path="/*" /> */}
-        </Routes>
-      </BrowserRouter>
+            {/* <Route element={<PageNotFound />} path="/*" /> */}
+          </Routes>
+        </BrowserRouter>
+      </ScheduleProvider>
       <AuthProvider>
         <BrowserRouter>
           <Routes>

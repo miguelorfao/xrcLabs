@@ -7,8 +7,9 @@ import MenuIcon from "@mui/icons-material/Menu";
 import "./navigationBar.css";
 
 import axios from "axios";
+import Header from "../header/Header";
 function NavigationBar({ children }) {
-  const [collapsed, setCollapsed] = useState(false);
+  const [toggled, setToggled] = useState(false);
   const navigate = useNavigate();
   const signOutHandler = () => {
     axios
@@ -23,55 +24,62 @@ function NavigationBar({ children }) {
   };
   return (
     <div className="admin-navigation w-100">
+      <Header>
+        <div className="d-flex justify-between">
+          <div style={{ padding: 2 }}>
+            <MenuIcon
+              onClick={() => setToggled(!toggled)}
+              sx={{ fontSize: 40 }}
+            />
+            <div></div>
+          </div>
+          <button
+            data-bs-toggle="modal"
+            data-bs-target="#signOut"
+            className="signOut rounded-3 py-1 me-3"
+          >
+            Sign Out
+          </button>
+        </div>
+      </Header>
       <div
         className="d-flex"
-        style={{ display: "flex", height: "100%", minHeight: "100vh" }}
+        style={{ display: "flex", height: "100%", minHeight: "94vh" }}
       >
-        <Sidebar collapsed={collapsed} collapsedWidth="0px">
-          <Menu>
+        <Sidebar
+          onBackdropClick={() => setToggled(false)}
+          toggled={toggled}
+          breakPoint="always"
+          backgroundColor="#e5e5e5"
+        >
+          <Menu transitionDuration={1000}>
             <MenuItem>
-              {" "}
               <Link to="/AdminDashboard">Dashboard</Link>
             </MenuItem>
             <MenuItem>
-              {" "}
               <Link to="/AdminProjects">Projects</Link>
             </MenuItem>
             <MenuItem>
-              {" "}
               <Link to="/AdminCollabs">Collabs</Link>
             </MenuItem>
             <MenuItem>
-              {" "}
               <Link to="/AdminCalendar">Calendar</Link>
             </MenuItem>
             <MenuItem>
-              {" "}
-              <Link to="/AdminAccount">Admin Accounts</Link>
-            </MenuItem>{" "}
+              <Link to="/AdminSchedule">Schedules</Link>
+            </MenuItem>
             <SubMenu label="Settings">
-              <MenuItem>Profile</MenuItem>
-              <hr />
+              <MenuItem> Settings</MenuItem>
               <MenuItem>
-                <button
-                  className="position-relative bottom-0"
-                  type="button"
-                  data-bs-toggle="modal"
-                  data-bs-target="#signOut"
-                >
-                  Sign Out
-                </button>
+                {" "}
+                <Link to="/AdminAccount">Admin Account</Link>
               </MenuItem>
             </SubMenu>
           </Menu>
         </Sidebar>
 
-        <div className="className" style={{ height: "100%", minHeight: "5vh" }}>
-          <MenuIcon onClick={() => setCollapsed(!collapsed)} />
-        </div>
-
         <div className="w-100">
-          <div className="w-100 className">{children}</div>
+          <div className="w-100 mt-2">{children}</div>
         </div>
       </div>
       <div>

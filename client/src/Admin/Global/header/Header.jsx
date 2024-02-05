@@ -1,10 +1,9 @@
 import React from "react";
 
-import "../admin.css";
 function Header({ btnClass, onClick, label, children }) {
   return (
-    <header>
-      <div className="admin-header p-2 border w-100">{children}</div>
+    <header className="border">
+      <div className="admin-header w-100  my-1">{children}</div>
     </header>
   );
 }
