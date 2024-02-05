@@ -47,7 +47,7 @@ function Dashboard() {
       {/* User */}
       <div
         className={`min-h-screen row dashboard bg-[#D9D9D9] justify-content-center w-100  ${
-          isOpen ? "opacity-20 z-40" : ""
+          isOpen ? "opacity-70 z-40 bg-[#D9D9D9]" : ""
         }`}
       >
         <div className="col-12 col-md-12 mb-3 text-center">

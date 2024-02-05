@@ -7,6 +7,7 @@ import SideNav from "../SideNav";
 import TemplateUpload from "./TemplateUpload";
 import ImageUpload from "./ImageUpload";
 import Header from "../Header";
+import '@fontsource/roboto'; 
 
 function ProjectSettings() {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,7 +34,8 @@ function ProjectSettings() {
     fileInputRef.current.click();
   };
   return (
-    <div className="cursor-default">
+    <div className="cursor-default font-roboto ">
+
       <Header>
       <i
           class="fa-solid z-50 text-black cursor-pointer relative top-1 left-3 px-2 py-1 border-2 border-slate-500 rounded-lg fa-bars fa-2x"
