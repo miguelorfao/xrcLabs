@@ -17,7 +17,8 @@ function Calendars() {
   const [task, setTask] = useState({
     startDate: "",
     endDate: "",
-    time: "",
+    startTime: "",
+    endTime: "",
     title: "",
   });
 
@@ -32,13 +33,19 @@ function Calendars() {
   const onClickHandleEvents = (e) => {
     e.preventDefault();
 
-    if (task.title && task.startDate && task.endDate) {
+    if (
+      task.title &&
+      task.startDate &&
+      task.endDate &&
+      task.startTime &&
+      task.endTime
+    ) {
       setCurrentEvents([
         ...currentEvents,
         {
           title: task.title,
-          end: task.endDate,
-          start: task.startDate,
+          end: `${task.endDate}T${task.endTime}`,
+          start: `${task.startDate}T${task.startTime}`,
         },
       ]);
       setTask([{ startDate: "", endDate: "", time: "", title: "" }]);
@@ -93,8 +100,7 @@ function Calendars() {
                   // select={handleDateClick}
                   eventClick={handleEventClick}
                   events={currentEvents}
-                  timeZone="UTC"
-                  locale="gmt"
+                  timeFormat={"H:mm"}
                 />
               </div>
               <div className="col-12 col-md-4 shadow rounded-4">
@@ -141,12 +147,28 @@ function Calendars() {
                     <div class="col-12">
                       <div class="mb-3">
                         <label for="" class="form-label">
-                          Time
+                          Start Time
                         </label>
                         <input
                           type="time"
-                          name="time"
-                          id="time"
+                          name="startTime"
+                          id="startTime"
+                          class="form-control"
+                          placeholder=""
+                          aria-describedby="helpId"
+                          onChange={onChangeHandler}
+                        />
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="mb-3">
+                        <label for="" class="form-label">
+                          End Time
+                        </label>
+                        <input
+                          type="time"
+                          name="endTime"
+                          id="endTime"
                           class="form-control"
                           placeholder=""
                           aria-describedby="helpId"

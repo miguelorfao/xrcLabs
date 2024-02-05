@@ -66,6 +66,9 @@ function Schedules() {
                     <div>
                       <p className="bg-warning">Awaiting</p>
                     </div>
+                    <div className="flex justify-between gap-2">
+                      <button className="btn btn-primary w-100">View</button>
+                    </div>
                   </div>
                 </div>
               </div>
