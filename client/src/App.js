@@ -41,13 +41,13 @@ function App() {
         <Routes>
           <Route element={<AdminLogin />} path="/AdminLogin" />
           <Route element={<ForgottenPassword />} path="/ForgottenPassword" />
-          <Route element={<PrivateRoutes />}>
+          {/* <Route element={<PrivateRoutes />}> */}
             <Route element={<AdminCollabs />} path="/AdminCollabs" />
             <Route element={<AdminDashboard />} path="/AdminDashboard" />
             <Route element={<AdminProjects />} path="/AdminProjects" />
             <Route element={<AdminAccount />} path="/AdminAccount" />
             <Route element={<Calendars />} path="/AdminCalendar" />
-          </Route>
+          {/* </Route> */}
 
           {/* <Route element={<PageNotFound />} path="/*" /> */}
         </Routes>

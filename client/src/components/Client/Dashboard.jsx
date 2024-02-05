@@ -9,6 +9,8 @@ import SideNav from "../SideNav";
 import Header from "../Header";
 
 import useDiscordUserData from "./api";
+import '@fontsource/roboto'; 
+
 
 function Dashboard() {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,7 +36,7 @@ function Dashboard() {
   }, [isOpen]); // Dependency on isOpen ensures that this effect runs when isOpen changes
 
   return (
-    <div className="cursor-default">
+    <div className="cursor-default font-roboto ">
       <Header>
         <i
           class="fa-solid z-50 text-black cursor-pointer relative top-1 left-3 px-2 py-1 border-2 border-slate-500 rounded-lg fa-bars fa-2x"
