@@ -14,6 +14,7 @@ import ForgottenPassword from "./Admin/ForgottenPassword";
 import CollabStat from "./components/Client/CollabStat";
 import CollabSheet from "./components/Client/CollabSheet";
 import DiscordStat from "./components/Client/DiscordStats";
+import ProjectChooseSettings from "./components/Client/ProjectChooseSettings";
 import ProjectSettings from "./components/Client/ProjectSettings";
 import ProjectWl from "./components/Client/ProjectWL";
 
@@ -73,6 +74,7 @@ function App() {
             <Route element={<CollabSheet />} path="/CollabSheet" />
             <Route element={<DiscordStat />} path="/DiscordStats" />
             <Route element={<ProjectSettings />} path="/ProjectSettings" />
+            <Route element={<ProjectChooseSettings />} path="/ProjectChooseSettings" />
             <Route element={<ProjectWl />} path="/ProjectWL" />
             <Route element={<Main />} path="/" exact />
           </Routes>

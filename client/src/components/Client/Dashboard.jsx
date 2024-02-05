@@ -9,8 +9,7 @@ import SideNav from "../SideNav";
 import Header from "../Header";
 
 import useDiscordUserData from "./api";
-import '@fontsource/roboto'; 
-
+import "@fontsource/roboto";
 
 function Dashboard() {
   const [isOpen, setIsOpen] = useState(false);
@@ -42,15 +41,8 @@ function Dashboard() {
           class="fa-solid z-50 text-black cursor-pointer relative top-1 left-3 px-2 py-1 border-2 border-slate-500 rounded-lg fa-bars fa-2x"
           onClick={() => setIsOpen(!isOpen)}
         ></i>
-      </Header>
-      <SideNav show={isOpen} />
-      {/* User */}
-      <div
-        className={`min-h-screen row dashboard bg-[#D9D9D9] justify-content-center w-100  ${
-          isOpen ? "opacity-70 z-40 bg-[#D9D9D9]" : ""
-        }`}
-      >
-        <div className="col-12 col-md-12 mb-3 text-center">
+
+        <div className="h-2 relative -top-8 text-center">
           <h3>
             Welcome&nbsp;
             <span id="userName" className="text-uppercase">
@@ -58,6 +50,14 @@ function Dashboard() {
             </span>
           </h3>
         </div>
+      </Header>
+      <SideNav show={isOpen} />
+      {/* User */}
+      <div
+        className={`min-h-screen row dashboard bg-[#D9D9D9] top-7 relative justify-content-center w-100  ${
+          isOpen ? "opacity-70 z-20 bg-[#D9D9D9]" : ""
+        }`}
+      >
         <div className="col-12 col-md-4 text-center d-flex justify-content-center mb-3">
           <Collab />
         </div>

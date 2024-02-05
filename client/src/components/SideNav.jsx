@@ -24,7 +24,7 @@ function SideNav({ show }) {
     navigate("/DiscordStats");
   };
   const onClickHandleProjectSettings = () => {
-    navigate("/ProjectSettings");
+    navigate("/ProjectChooseSettings");
   };
   const onClickHandleProjectWL = () => {
     navigate("/ProjectWL");
@@ -42,7 +42,7 @@ function SideNav({ show }) {
   return (
     <div 
     style={{ backgroundColor: myCustomColor }}
-     className={show ? "sidenav active z-40 relative min-h-screen top-0  pt-5 font-roboto" : "sidenav"}>
+     className={show ? "sidenav active z-30 relative min-h-screen top-0  pt-5 font-roboto" : "sidenav"}>
     <div className="flex border-slate-500 justify-center text-center relative border w-60 rounded-xl py-1 -left-6 top-7">
     <img className="w-14 rounded-full -ml-14" src={userImage}/>
      <h3 className="text-base mt-3 font-semibold relative left-2 capitalize">{userName}</h3>
