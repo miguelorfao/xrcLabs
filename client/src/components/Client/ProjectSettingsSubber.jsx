@@ -7,7 +7,7 @@ import SideNav from "../SideNav";
 import TemplateUpload from "./TemplateUpload";
 import ImageUpload from "./ImageUpload";
 import Header from "../Header";
-import '@fontsource/roboto'; 
+import "@fontsource/roboto";
 
 function ProjectSettingsSubber() {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,28 +35,26 @@ function ProjectSettingsSubber() {
   };
   return (
     <div className="cursor-default font-roboto ">
-
       <Header>
-      <i
+        <i
           class="fa-solid z-50 text-black cursor-pointer relative top-1 left-3 px-2 py-1 border-2 border-slate-500 rounded-lg fa-bars fa-2x"
           onClick={() => setIsOpen(!isOpen)}
         ></i>
-        <div className="border-bottom border-top border-[#9D9797] my-4">
-                <h3 class="justify-center text-center my-2">
-                  Project Settings
-                </h3>
-              </div>
+
+        <div className="h-2 relative -top-8 text-center">
+          <h3>Project Settings</h3>
+        </div>
       </Header>
       <SideNav show={isOpen} />
-      <main className={`min-h-screen row dashboard  bg-[#D9D9D9] justify-content-center w-100  ${
+      <main
+        className={`min-h-screen row dashboard  bg-[#D9D9D9] justify-content-center w-100  ${
           isOpen ? "opacity-20 z-40" : ""
-        }`}>
+        }`}
+      >
         <div className="container -top-10 relative ">
           <div class="col">
             {" "}
             <div className="container">
-              
-
               <div className="row justify-center align-middle">
                 <div className="col-12 col-md-3">
                   <label class="">Project Name</label>
