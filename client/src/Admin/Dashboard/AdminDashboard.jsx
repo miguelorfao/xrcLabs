@@ -9,34 +9,95 @@ function AdminDashboard() {
   return (
     <div>
       <NavigationBar>
-        <div className="admin-top-header container text-center py-3">
-          <div className="border-bottom border-black mb-4">
-            <h2>Dashboard</h2>
-          </div>
-          <div className="row justify-center gap-2 mb-4 w-100">
-            <div className="col-12 col-md-3 shadow header-data rounded-4 text-center py-3">
-              <h4>Text</h4>
-              <h5>text</h5>
-              <p>text</p>
-            </div>
-            <div className="col-12 col-md-3 shadow header-data rounded-4 text-center py-3">
-              {" "}
-              <h4>Text</h4>
-              <h5>text</h5>
-              <p>text</p>
-            </div>
-            <div className="col-12 col-md-3 shadow header-data rounded-4 text-center py-3">
-              {" "}
-              <h4>Text</h4>
-              <h5>text</h5>
-              <p>text</p>
-            </div>
-          </div>
-          <div className="row justify-between">
-            <div className="col-12">
-              <div className="graph">
-                <div className="lineGraph rounded-4">
+        <div className="admin-top-header container w-100 shadow p-2 rounded-3">
+          <div className="row w-100  justify-between">
+            <div className="col-9">
+              <div className="row top-header-row justify-between gap-2 mb-3">
+                <div className="col-12 col-md-2 top-header-col p-2">
+                  <div>
+                    <h3>Collabs</h3>
+                    <p>Text</p>
+                    <p>100</p>
+                  </div>
+                </div>
+                <div className="col-12 col-md-2 top-header-col p-2">
+                  <div>
+                    <h3>Collabs</h3>
+                    <p>Text</p>
+                    <p>100</p>
+                  </div>
+                </div>
+                <div className="col-12 col-md-2 top-header-col p-2">
+                  <div>
+                    <h3>Collabs</h3>
+                    <p>Text</p>
+                    <p>100</p>
+                  </div>
+                </div>
+                <div className="col-12 col-md-2 top-header-col p-2">
+                  <div>
+                    <h3>Collabs</h3>
+                    <p>Text</p>
+                    <p>100</p>
+                  </div>
+                </div>
+              </div>
+              <div className="row row-graph">
+                <div className="col-12 col-md-12 col-graph">
                   <LineChartGraph />
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-12 col-12">
+                  <div className="text-start my-3 border-bottom border-black">
+                    <h4>Title</h4>
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Collabs</li>
+                    <li class="list-group-item">Item</li>
+                    <li class="list-group-item">Item</li>
+                    <li class="list-group-item">Item</li>
+                    <li class="list-group-item">Item</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div className="col-3">
+              <div className="row">
+                <div className="col-12">
+                  <div className="border-bottom border-black mb-3">
+                    <h4>Upcoming Events</h4>
+                  </div>
+                  <div class="card text-start mb-3">
+                    <div class="card-body">
+                      <h4 class="card-title">Title</h4>
+                      <p class="card-text">Body</p>
+                    </div>
+                  </div>
+                  <div class="card text-start mb-3">
+                    <div class="card-body">
+                      <h4 class="card-title">Title</h4>
+                      <p class="card-text">Body</p>
+                    </div>
+                  </div>
+                  <div class="card text-start mb-3">
+                    <div class="card-body">
+                      <h4 class="card-title">Title</h4>
+                      <p class="card-text">Body</p>
+                    </div>
+                  </div>
+                  <div class="card text-start mb-3">
+                    <div class="card-body">
+                      <h4 class="card-title">Title</h4>
+                      <p class="card-text">Body</p>
+                    </div>
+                  </div>
+                  <div class="card text-start mb-3">
+                    <div class="card-body">
+                      <h4 class="card-title">Title</h4>
+                      <p class="card-text">Body</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

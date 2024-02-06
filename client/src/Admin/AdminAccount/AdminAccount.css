@@ -3,7 +3,7 @@
 :root {
   /* background color */
   --body-bg: #ffffff;
-  --body-secondary-bg: #e5e5e5;
+  --body-secondary-bg: #fafafb;
 
   /* text color */
   --text-color: #030229;
@@ -27,9 +27,15 @@
 .adminAccount {
   width: 340px;
 }
+.admin-accounts .btn-danger {
+  background-color: #d11a2a;
+}
 .adminAccount table {
   width: 100% !important;
   font-size: 10px !important;
+}
+.admin-accounts .addAdmin {
+  width: 300px !important;
 }
 .adminAccount button {
   font-size: 14px;

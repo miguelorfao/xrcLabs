@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import FullCalendar, { formatDate } from "@fullcalendar/react";
 import interactionPlugin from "@fullcalendar/interaction";
 
@@ -10,27 +10,48 @@ import NavigationBar from "../Global/navigation/NavigationBar";
 import "react-calendar/dist/Calendar.css";
 import Calendar from "react-calendar";
 
+import "./Calendar.css";
+import ScheduleContext from "../Global/ScheduleContext";
 function Calendars() {
-  const [currentEvents, setCurrentEvents] = useState([""]);
-  const [isOpen, setIsOpen] = useState(false);
+  const [currentEvents, setCurrentEvents] = useState([]);
+  const [task, setTask] = useState({
+    startDate: "",
+    endDate: "",
+    startTime: "",
+    endTime: "",
+    title: "",
+  });
 
-  const handleDateClick = (selected) => {
-    const title = prompt("Please enter an event title");
-    const calendarApi = selected.view.calendar;
-    console.log(title);
-    calendarApi.unselect();
-
-    if (title) {
-      calendarApi.addEvent({
-        id: `${selected.dateStr}-${title}`,
-        title,
-        start: selected.startStr,
-        end: selected.endStr,
-        allDay: selected.allDay,
-      });
-    }
+  const onChangeHandler = (event) => {
+    setTask((prev) => ({
+      ...prev,
+      [event.target.name]: event.target.value,
+    }));
   };
+  console.log(task);
 
+  const onClickHandleEvents = (e) => {
+    e.preventDefault();
+
+    if (
+      task.title &&
+      task.startDate &&
+      task.endDate &&
+      task.startTime &&
+      task.endTime
+    ) {
+      setCurrentEvents([
+        ...currentEvents,
+        {
+          title: task.title,
+          end: `${task.endDate}T${task.endTime}`,
+          start: `${task.startDate}T${task.startTime}`,
+        },
+      ]);
+      setTask([{ startDate: "", endDate: "", time: "", title: "" }]);
+    }
+    console.log();
+  };
   const handleEventClick = (selected) => {
     if (
       window.confirm(
@@ -45,40 +66,18 @@ function Calendars() {
     <div>
       <NavigationBar>
         {" "}
-        <div className="mt-3 text-center">
+        <div className=" text-center">
           <div className="border-bottom border-black mb-4 ps-5">
             <h2>Calendar</h2>
           </div>
-        </div>
-        <div className="w-100 container">
-          <div className="row justify-around align-middle">
-            <div className="col-12 col-md-3">
-              <div class="card shadow rounded-5" style={{ width: "21rem" }}>
-                <div class="card-body">
-                  <div className="header border-bottom mb-3">
-                    <h4 class="card-title text-center">Agenda</h4>
-                  </div>
-                  <div className="mb-3 w-100">
-                    <Calendar />
-                  </div>
-                  <hr />
-                  <div className="agenda-list">
-                    <ul class="list-group list-group-flush">
-                      {currentEvents.map((events) => (
-                        <li class="list-group-item mb-3 shadow">
-                          <div>{events.title}</div>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-12 col-md-8 d-none d-md-block">
-              <div className="admin-calendar rounded-4 shadow">
+          <div className="calendar">
+            <div className="row justify-around shadow p-3 rounded-4">
+              <div className="col-12 col-md-7 d-none d-md-block shadow p-2 rounded">
                 <FullCalendar
+                  type="timeGrid"
+                  duration={{ days: 4 }}
                   views={{}}
-                  height="85vh"
+                  height="80vh"
                   plugins={[
                     dayGridPlugin,
                     timeGridPlugin,
@@ -92,16 +91,136 @@ function Calendars() {
                     right:
                       "dayGridMonth,timeGridWeek,timeGridDay,multiMonthYear,listMonth",
                   }}
-                  initialView="dayGridMonth"
+                  multiMonthMaxColumns="1"
                   editable={true}
                   selectable={true}
                   dayMaxEvent={true}
                   selectMirror={true}
                   dayMaxEventRows={true}
-                  select={handleDateClick}
+                  // select={handleDateClick}
                   eventClick={handleEventClick}
-                  eventsSet={(events) => setCurrentEvents(events)}
+                  events={currentEvents}
+                  timeFormat={"H:mm"}
                 />
+              </div>
+              <div className="col-12 col-md-4 shadow rounded-4">
+                <div className="my-2 border-bottom border-black">
+                  <h4>Add Schedule</h4>
+                </div>
+                <div>
+                  <form
+                    class="d-flex flex-column"
+                    onSubmit={onClickHandleEvents}
+                  >
+                    <div class="col-12">
+                      <div class="mb-3">
+                        <label for="" class="form-label">
+                          Start Date
+                        </label>
+                        <input
+                          type="date"
+                          name="startDate"
+                          id="startDate"
+                          class="form-control"
+                          placeholder=""
+                          aria-describedby="helpId"
+                          onChange={onChangeHandler}
+                        />
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="mb-3">
+                        <label for="" class="form-label">
+                          End Date
+                        </label>
+                        <input
+                          type="date"
+                          name="endDate"
+                          id="endDate"
+                          class="form-control"
+                          placeholder=""
+                          aria-describedby="helpId"
+                          onChange={onChangeHandler}
+                        />
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="mb-3">
+                        <label for="" class="form-label">
+                          Start Time
+                        </label>
+                        <input
+                          type="time"
+                          name="startTime"
+                          id="startTime"
+                          class="form-control"
+                          placeholder=""
+                          aria-describedby="helpId"
+                          onChange={onChangeHandler}
+                        />
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="mb-3">
+                        <label for="" class="form-label">
+                          End Time
+                        </label>
+                        <input
+                          type="time"
+                          name="endTime"
+                          id="endTime"
+                          class="form-control"
+                          placeholder=""
+                          aria-describedby="helpId"
+                          onChange={onChangeHandler}
+                        />
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="mb-3">
+                        <label for="" class="form-label">
+                          Description
+                        </label>
+                        <textarea
+                          cols={40}
+                          rows={5}
+                          type="text"
+                          name="title"
+                          id="title"
+                          class="form-control"
+                          placeholder=""
+                          aria-describedby="helpId"
+                          onChange={onChangeHandler}
+                        />
+                      </div>
+                    </div>
+                    {/* <div class="col-12">
+                      <div class="mb-3">
+                        <label for="" class="form-label">
+                          Assign Task To
+                        </label>
+
+                        <select
+                          class="form-select"
+                          name="assign"
+                          id="ass"
+                          onChange={onChangeHandler}
+                        >
+                          <option selected>Select one</option>
+                          <option value="">New Delhi</option>
+                          <option value="">Istanbul</option>
+                          <option value="">Jakarta</option>
+                        </select>
+                      </div>
+                    </div> */}
+                    <hr />
+                    <div>
+                      <button className="schedule-btn rounded-4">
+                        Save Project
+                      </button>
+                    </div>
+                  </form>
+                </div>
               </div>
             </div>
           </div>

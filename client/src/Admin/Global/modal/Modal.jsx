@@ -1,46 +1,29 @@
 import React from "react";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
 
-function Modal({
-  modal_className,
-  id,
-  tabindex,
-  role,
-  modalTitleID,
-  hidden,
-  title,
-  children,
-}) {
+function Modals({ children, show, handleClose, ModalHeading, handleClick }) {
   return (
-    <div>
-      <div
-        className={modal_className}
-        id={id}
-        tabindex={tabindex}
-        role={role}
-        aria-labelledby={modalTitleID}
-        aria-hidden={hidden}
-      >
-        <div className="modal-dialog modal-dialog-centered" role="document">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h5 className="modal-title" id="modalTitleId">
-                {title}
-              </h5>
-              <button
-                type="button"
-                className="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div className="modal-body">
-              <div className="container-fluid">{children}</div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div
+      className="modal show"
+      style={{ display: "block", position: "initial" }}
+    >
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>{ModalHeading}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>{children}</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleClick}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 }
 
-export default Modal;
+export default Modals;

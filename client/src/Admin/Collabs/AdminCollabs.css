@@ -3,7 +3,7 @@
 :root {
   /* background color */
   --body-bg: #ffffff;
-  --body-secondary-bg: #fafafa;
+  --body-secondary-bg: #fafafb;
 
   /* text color */
   --text-color: #030229;
@@ -16,32 +16,28 @@
   --success-color: #3a974c;
   --danger-color: #d11a2a;
 }
-.admin-nav-btn {
-  background-color: var(--btn-color) !important;
-  color: var(--white-text-color);
-  width: 100%;
-  height: 40px;
-  font-size: 20px;
-  text-transform: capitalize;
+.collabs {
+  width: 95% !important;
+  height: 800px;
+  padding: 10px 20px;
+  margin: 0 auto;
+  overflow: auto;
 }
-.admin-navigation {
-  width: 250px !important;
-}
-.admin-navigation a {
-  text-decoration: none;
-  color: var(--text-color);
-}
-.admin-navigation li {
-  height: 50px;
-  margin-top: 10px;
-}
-.admin-navigation .signOut {
+.collabs .excel-btn {
   background-color: var(--btn-color);
   width: 200px;
+  padding: 5px 0;
+  margin-bottom: 10px;
   color: var(--white-text-color);
   font-size: 18px;
 }
-.admin-navigation a:hover {
-  background-color: var(--btn-bg) !important;
-  color: var(--btn-color);
+.dropzone {
+  border: 2px dashed #ccc;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.active {
+  border-color: #2196f3;
 }

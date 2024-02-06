@@ -3,6 +3,7 @@
 :root {
   /* background color */
   --body-bg: #ffffff;
+  --body-secondary-bg: #fafafb;
 
   /* text color */
   --text-color: #030229;
@@ -15,22 +16,17 @@
   --success-color: #3a974c;
   --danger-color: #d11a2a;
 }
-.project-tables {
-  width: 100% !important;
-  height: 740px;
-  padding: 0 5rem;
+.calendar {
+  width: 1400px !important;
+  height: 700px;
+  padding: 10px;
   margin: 0 auto;
 }
-.project-tables .project-btn {
+.calendar .schedule-btn {
   background-color: var(--btn-color);
   width: 100%;
   padding: 5px 0;
   margin-bottom: 10px;
   color: var(--white-text-color);
   font-size: 18px;
-}
-.overflow-auto {
-  height: 840px !important;
-  overflow: auto !important;
-  padding: 0 10px;
 }

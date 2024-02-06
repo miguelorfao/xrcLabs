@@ -3,7 +3,6 @@
 :root {
   /* background color */
   --body-bg: #ffffff;
-  --body-secondary-bg: #e5e5e5;
 
   /* text color */
   --text-color: #030229;
@@ -17,13 +16,7 @@
   --danger-color: #d11a2a;
 }
 /* body styling */
-body {
-  background-color: var(--body-secondary-bg) !important;
-  box-sizing: border-box;
-  width: 100%;
-  height: 100vh;
-  font-family: "nunito" !important;
-}
+
 p {
   font-size: 16px;
 }
@@ -43,20 +36,10 @@ h3 {
   width: 300px !important;
   background-color: var(--body-bg);
 }
-
-.agenda-list {
-  max-height: 420px;
-  overflow: auto;
+.admin h2 {
+  color: var(--white-text-color) !important;
+  text-transform: uppercase;
 }
-.agenda-list li {
-  background-color: var(--body-secondary-bg);
-}
-.admin-calendar {
-  background-color: var(--body-bg);
-
-  padding: 10px;
-}
-
 .admin form {
   position: relative !important;
 }
