@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
 import NavigationBar from "../Global/navigation/NavigationBar";
 import LineChartGraph from "./LineChartGraph";
 import "./AdminDashboard.css";
+import ScheduleContext from "../Global/ScheduleContext";
 
 function AdminDashboard() {
-  const [isOpen, setIsOpen] = useState(false);
+  const { assigned, description, taskDate, status, background } =
+    useContext(ScheduleContext);
   return (
     <div>
       <NavigationBar>
@@ -68,34 +70,11 @@ function AdminDashboard() {
                   <div className="border-bottom border-black mb-3">
                     <h4>Upcoming Events</h4>
                   </div>
-                  <div class="card text-start mb-3">
-                    <div class="card-body">
-                      <h4 class="card-title">Title</h4>
-                      <p class="card-text">Body</p>
-                    </div>
-                  </div>
-                  <div class="card text-start mb-3">
-                    <div class="card-body">
-                      <h4 class="card-title">Title</h4>
-                      <p class="card-text">Body</p>
-                    </div>
-                  </div>
-                  <div class="card text-start mb-3">
-                    <div class="card-body">
-                      <h4 class="card-title">Title</h4>
-                      <p class="card-text">Body</p>
-                    </div>
-                  </div>
-                  <div class="card text-start mb-3">
-                    <div class="card-body">
-                      <h4 class="card-title">Title</h4>
-                      <p class="card-text">Body</p>
-                    </div>
-                  </div>
-                  <div class="card text-start mb-3">
-                    <div class="card-body">
-                      <h4 class="card-title">Title</h4>
-                      <p class="card-text">Body</p>
+                  <div className="card text-start mb-3">
+                    <div className="card-body text-center">
+                      <h4 className="card-title">{assigned}</h4>
+                      <p className="card-text">{description}</p>
+                      <p className={background}>{status}</p>
                     </div>
                   </div>
                 </div>

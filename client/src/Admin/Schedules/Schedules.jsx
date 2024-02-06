@@ -8,38 +8,10 @@ import ScheduleContext from "../Global/ScheduleContext";
 import axios from "axios";
 
 function Schedules() {
-  let background;
-  const { assigned, description, taskDate, status } =
+  const { assigned, description, taskDate, status, background } =
     useContext(ScheduleContext);
 
-  //   useEffect(() => {
-  //     try {
-  //       axios.get("/AdminSchedules").then((res) => {
-  //         const data = res.data[0];
-  //         setAssigned(data.Assigned);
-  //         setDescription(data.Description);
-  //         setTaskDate(data.TaskDate);
-  //         setStatus(data.Status);
-  //         switch (status) {
-  //           case "Approved":
-  //             background = "blue";
-  //             break;
-  //           case "Pending":
-  //             background = "amber";
-  //             break;
-  //           case "Completed":
-  //             background = "green";
-  //             break;
-  //           case "Overdue":
-  //             background = "red";
-  //             break;
-  //           default:
-  //             background = "white";
-  //         }
-  //       });
-  //     } catch (error) {}
-  //   }, []);
-
+  console.log(background);
   return (
     <div>
       {" "}
@@ -59,12 +31,13 @@ function Schedules() {
                   {" "}
                   <div className="new-task shadow mx-auto rounded-3 p-2">
                     <div className="text-start">
-                      <h5>Name</h5>
-                      <p>Description</p>
+                      <h5>{assigned}</h5>
+                      <p>{description}</p>
+                      <p>{taskDate}</p>
                     </div>
                     <hr />
                     <div>
-                      <p className="bg-warning">Awaiting</p>
+                      <p className={background}>{status}</p>
                     </div>
                     <div className="flex justify-between gap-2">
                       <button className="btn btn-primary w-100">View</button>
