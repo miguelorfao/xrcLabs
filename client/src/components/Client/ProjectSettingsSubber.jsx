@@ -51,7 +51,7 @@ function ProjectSettingsSubber() {
           isOpen ? "opacity-20 z-40" : ""
         }`}
       >
-        <div className="container -top-10 relative ">
+        <div className="container top-10 relative ">
           <div class="col">
             {" "}
             <div className="container">

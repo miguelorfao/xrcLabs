@@ -53,7 +53,7 @@ function SideNav({ show }) {
           <Buttons
             onClick={onClickHandleDashboard}
             label="Dashboard"
-            btnClass="btn  w-100 text-primary text-start text-white "
+            btnClass="btn  w-100 text-primary bg-[#9D9797] text-start text-white "
             
           />
         </li>
@@ -105,14 +105,7 @@ function SideNav({ show }) {
             btnClass="btn  w-100 text-primary bg-[#9D9797]  text-start text-white"
           />
         </li>
-        <li className="pt-5 nav nav-pills  align-items-center align-items-sm-start bottom-0 position-fixed">
-          {" "}
-          <Buttons
-            onClick={onClickHandleSignOut}
-            label="Sign Out"
-            btnClass="btn  w-100 text-primary bg-black  text-start px-5 mb-2 text-white"
-          />
-        </li>
+        
       </ul>
 
       <ul

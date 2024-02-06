@@ -54,7 +54,7 @@ function Dashboard() {
       <SideNav show={isOpen} />
       {/* User */}
       <div
-        className={`min-h-screen row dashboard bg-[#D9D9D9] top-7 relative justify-content-center w-100  ${
+        className={`min-h-screen row dashboard bg-[#D9D9D9] top-14 relative justify-content-center w-100  ${
           isOpen ? "opacity-70 z-20 bg-[#D9D9D9]" : ""
         }`}
       >

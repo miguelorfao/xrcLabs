@@ -49,7 +49,7 @@ function ProjectSettings() {
       <main className={`min-h-screen row dashboard  bg-[#D9D9D9] justify-content-center w-100  ${
           isOpen ? "opacity-20 z-40" : ""
         }`}>
-        <div className="container -top-10 relative ">
+        <div className="container top-10 relative ">
           <div class="col">
             {" "}
             <div className="container">
