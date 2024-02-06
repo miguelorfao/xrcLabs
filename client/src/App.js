@@ -15,6 +15,7 @@ import CollabStat from "./components/Client/CollabStat";
 import CollabSheet from "./components/Client/CollabSheet";
 import DiscordStat from "./components/Client/DiscordStats";
 import ProjectChooseSettings from "./components/Client/ProjectChooseSettings";
+import ProjectSettingsSubber from "./components/Client/ProjectSettingsSubber";
 import ProjectSettings from "./components/Client/ProjectSettings";
 import ProjectWl from "./components/Client/ProjectWL";
 
@@ -73,8 +74,9 @@ function App() {
             <Route element={<CollabStat />} path="/CollabStats" />
             <Route element={<CollabSheet />} path="/CollabSheet" />
             <Route element={<DiscordStat />} path="/DiscordStats" />
-            <Route element={<ProjectSettings />} path="/ProjectSettings" />
             <Route element={<ProjectChooseSettings />} path="/ProjectChooseSettings" />
+            <Route element={<ProjectSettings />} path="/ProjectChooseSettings/ProjectSettings" />
+            <Route element={<ProjectSettingsSubber />} path="/ProjectChooseSettings/ProjectSettingsSubber" />
             <Route element={<ProjectWl />} path="/ProjectWL" />
             <Route element={<Main />} path="/" exact />
           </Routes>

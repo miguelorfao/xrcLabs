@@ -1,10 +1,18 @@
 import React, { useState } from "react";
 import SideNav from "../SideNav";
 import Header from "../Header";
+import { useNavigate } from "react-router-dom";
+import { Link } from 'react-router-dom';
+
 
 function ProjectChooseSettings() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const navigate = useNavigate();
+
+  const onClickHandleProjectSettings = () => {
+    navigate("/ProjectSettings");
+  };
   return (
     <>
       <div className="cursor-default font-roboto ">
@@ -38,8 +46,13 @@ function ProjectChooseSettings() {
                   </p>
 
                   <div className="text-white space-x-36 text-center">
-                    <button className="px-20 py-1 bg-[#9D9797]">Atlas</button>
-                    <button className="px-20 py-1 bg-[#9D9797]">Subber</button>
+                   <Link to='./ProjectSettings'>
+                   <button className="px-20 py-2 text-white bg-[#9D9797]">Atlas</button>
+                   </Link>
+
+                   <Link to='./ProjectSettingsSubber'>
+                    <button className="px-20 py-2 text-white bg-[#9D9797]">Subber</button>
+                   </Link>
                   </div>
                 </div>
               </div>
