@@ -3,10 +3,10 @@ import React from "react";
 function Entries() {
   return (
     <div>
-      <span className="rounded-circle bg-[#9D9797] h-60 w-60 shadow-slate-600 collabs d-flex justify-content-center align-items-center">
-        <div>
+     <span className=" shadow-slate-600 bg-white h-32 overflow-visible collabs d-flex justify-content-center align-items-center">
+        <div className="mt-2">
+          <p className="font-semibold text-xl">543</p>
           <p>Entires</p>
-          <p>120</p>
           <p>+ 5 from yesterday</p>
         </div>
       </span>

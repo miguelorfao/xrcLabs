@@ -43,22 +43,22 @@ function SideNav({ show }) {
     <div 
     // style={{ backgroundColor: myCustomColor }}
     //  className={show ? "sidenav active z-30 relative min-h-screen top-0  pt-5 font-roboto" : "sidenav"}>
-     className=" w-72 pl-14 active z-30 fixed min-h-screen bg-white top-0 text-gray-200  pt-5 font-roboto">
+     className=" w-72  active z-30 fixed min-h-screen bg-white top-0 text-gray-200  pt-5 font-roboto">
     <div className="flex justify-center text-center relative  w-60 rounded-xl py-1 -left-6 top-7">
     
-     <h3 className="text-base mt-3 font-semibold relative -left-7  uppercase">#project name</h3>
+     <h3 className="text-base whitespace-nowrap mt-3 pl-24 font-semibold relative -left-7  uppercase">#project name</h3>
     </div>
       <ul className="pt-5 nav nav-pills mt-1 text-start justify-start w-100 ">
-        <li className="nav-item w-100 mb-3">
+        <li className="nav-item pl-14 hover:bg-[#615bff4b] hover:from-pink-500 hover:to-blue-500 hover:text-[#605BFF] w-100 mb-3">
           {" "}
           <Buttons
             onClick={onClickHandleDashboard}
             label="Dashboard"
-            btnClass="btn  w-100 text-gray-50 bg-[#9D9797] text-start  "
+            btnClass="btn  w-100 text-gray-50 bg-[#9D9797] text-[#030229] text-start  "
             
           />
         </li>
-        <li className="nav-item w-100 mb-3">
+        <li className="nav-item pl-14 hover:text-[#605BFF] text-[#030229] w-100 mb-3">
           {" "}
           <Buttons
             onClick={onClickHandleCollabStat}
@@ -66,7 +66,7 @@ function SideNav({ show }) {
             btnClass="btn  w-100  bg-[#9D9797] text-start "
           />
         </li>
-        <li className="nav-item w-100 mb-3">
+        <li className="nav-item pl-14 hover:text-[#605BFF] text-[#030229] w-100 mb-3">
           {" "}
           <Buttons
             onClick={onClickHandleCollabSheet}
@@ -74,7 +74,7 @@ function SideNav({ show }) {
             btnClass="btn  w-100  bg-[#9D9797]  text-start "
           />
         </li>
-        <li className="nav-item w-100 mb-3">
+        <li className="nav-item pl-14 hover:text-[#605BFF] text-[#030229] w-100 mb-3">
           {" "}
           <Buttons
             onClick={onClickHandleDiscordStats}
@@ -82,7 +82,7 @@ function SideNav({ show }) {
             btnClass="btn  w-100  bg-[#9D9797]  text-start "
           />
         </li>
-        <li className="nav-item w-100 mb-3">
+        <li className="nav-item pl-14 hover:text-[#605BFF] text-[#030229] w-100 mb-3">
           {" "}
           <Buttons
             onClick={onClickHandleRefresh}
@@ -90,7 +90,7 @@ function SideNav({ show }) {
             btnClass="btn  w-100  bg-[#9D9797]  text-start "
           />
         </li>
-        <li className="nav-item w-100 mb-3">
+        <li className="nav-item pl-14 hover:text-[#605BFF] text-[#030229] w-100 mb-3">
           {" "}
           <Buttons
             onClick={onClickHandleProjectSettings}
@@ -98,7 +98,7 @@ function SideNav({ show }) {
             btnClass="btn  w-100  bg-[#9D9797]  text-start "
           />
         </li>
-        <li className="nav-item w-100 mb-3">
+        <li className="nav-item pl-14 hover:text-[#605BFF] text-[#030229] w-100 mb-3">
           {" "}
           <Buttons
             onClick={onClickHandleProjectWL}
