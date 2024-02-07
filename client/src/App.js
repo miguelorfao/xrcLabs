@@ -56,7 +56,6 @@ function App() {
               <Route element={<Calendars />} path="/AdminCalendar" />
               <Route element={<Schedules />} path="/AdminSchedule" />
             </Route>
-
             {/* <Route element={<PageNotFound />} path="/*" /> */}
           </Routes>
         </BrowserRouter>

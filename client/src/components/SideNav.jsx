@@ -41,19 +41,20 @@ function SideNav({ show }) {
 
   return (
     <div 
-    style={{ backgroundColor: myCustomColor }}
-     className={show ? "sidenav active z-30 relative min-h-screen top-0  pt-5 font-roboto" : "sidenav"}>
-    <div className="flex border-slate-500 justify-center text-center relative border w-60 rounded-xl py-1 -left-6 top-7">
-    <img className="w-14 rounded-full -ml-14" src={userImage}/>
-     <h3 className="text-base mt-3 font-semibold relative left-2 capitalize">{userName}</h3>
+    // style={{ backgroundColor: myCustomColor }}
+    //  className={show ? "sidenav active z-30 relative min-h-screen top-0  pt-5 font-roboto" : "sidenav"}>
+     className=" w-72 pl-14 active z-30 fixed min-h-screen bg-white top-0 text-gray-200  pt-5 font-roboto">
+    <div className="flex justify-center text-center relative  w-60 rounded-xl py-1 -left-6 top-7">
+    
+     <h3 className="text-base mt-3 font-semibold relative -left-7  uppercase">#project name</h3>
     </div>
-      <ul className="pt-5 nav nav-pills mt-1 text-start justify-start w-100 text-white">
+      <ul className="pt-5 nav nav-pills mt-1 text-start justify-start w-100 ">
         <li className="nav-item w-100 mb-3">
           {" "}
           <Buttons
             onClick={onClickHandleDashboard}
             label="Dashboard"
-            btnClass="btn  w-100 text-primary bg-[#9D9797] text-start text-white "
+            btnClass="btn  w-100 text-gray-50 bg-[#9D9797] text-start  "
             
           />
         </li>
@@ -62,7 +63,7 @@ function SideNav({ show }) {
           <Buttons
             onClick={onClickHandleCollabStat}
             label="Collab Statistics"
-            btnClass="btn  w-100 text-primary bg-[#9D9797] text-start text-white"
+            btnClass="btn  w-100  bg-[#9D9797] text-start "
           />
         </li>
         <li className="nav-item w-100 mb-3">
@@ -70,7 +71,7 @@ function SideNav({ show }) {
           <Buttons
             onClick={onClickHandleCollabSheet}
             label="Collab Sheet"
-            btnClass="btn  w-100 text-primary bg-[#9D9797]  text-start text-white"
+            btnClass="btn  w-100  bg-[#9D9797]  text-start "
           />
         </li>
         <li className="nav-item w-100 mb-3">
@@ -78,7 +79,7 @@ function SideNav({ show }) {
           <Buttons
             onClick={onClickHandleDiscordStats}
             label="Discord Statists"
-            btnClass="btn  w-100 text-primary bg-[#9D9797]  text-start text-white"
+            btnClass="btn  w-100  bg-[#9D9797]  text-start "
           />
         </li>
         <li className="nav-item w-100 mb-3">
@@ -86,7 +87,7 @@ function SideNav({ show }) {
           <Buttons
             onClick={onClickHandleRefresh}
             label="Request a refresh"
-            btnClass="btn  w-100 text-primary bg-[#9D9797]  text-start text-white"
+            btnClass="btn  w-100  bg-[#9D9797]  text-start "
           />
         </li>
         <li className="nav-item w-100 mb-3">
@@ -94,7 +95,7 @@ function SideNav({ show }) {
           <Buttons
             onClick={onClickHandleProjectSettings}
             label="Project Settings"
-            btnClass="btn  w-100 text-primary bg-[#9D9797]  text-start text-white"
+            btnClass="btn  w-100  bg-[#9D9797]  text-start "
           />
         </li>
         <li className="nav-item w-100 mb-3">
@@ -102,7 +103,7 @@ function SideNav({ show }) {
           <Buttons
             onClick={onClickHandleProjectWL}
             label="Request a Project WL"
-            btnClass="btn  w-100 text-primary bg-[#9D9797]  text-start text-white"
+            btnClass="btn  w-100  bg-[#9D9797]  text-start "
           />
         </li>
         

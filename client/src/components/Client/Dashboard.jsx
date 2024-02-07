@@ -37,10 +37,11 @@ function Dashboard() {
   return (
     <div className="cursor-default font-roboto ">
       <Header>
-        <i
-          class="fa-solid z-50 text-black cursor-pointer relative top-1 left-3 px-2 py-1 border-2 border-slate-500 rounded-lg fa-bars fa-2x"
+        {/* <i
+          class="fa-solid z-50 lg:hidden block text-black cursor-pointer relative top-1 left-3 px-2 py-1 border-2 border-slate-500 rounded-lg fa-bars fa-2x"
           onClick={() => setIsOpen(!isOpen)}
-        ></i>
+        ></i> */}
+        <h3 className="relative left-20 top-2">zrcLabs</h3>
 
         <div className="h-2 relative -top-8 text-center">
           <h3>
@@ -51,10 +52,11 @@ function Dashboard() {
           </h3>
         </div>
       </Header>
-      <SideNav show={isOpen} />
+      <SideNav />
+      {/* <SideNav show={isOpen} /> */}
       {/* User */}
       <div
-        className={`min-h-screen row dashboard bg-[#D9D9D9] top-14 relative justify-content-center w-100  ${
+        className={`min-h-screen row dashboard w-96 bg-[#D9D9D9] top-14 relative justify-content-center w-100  ${
           isOpen ? "opacity-70 z-20 bg-[#D9D9D9]" : ""
         }`}
       >
