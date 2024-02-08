@@ -9,7 +9,7 @@ import Header from "../Header";
 function ProjectWl() {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div>
+    <div className="cursor-default font-roboto  overflow-x-hidden overflow-y-scroll scrollbar-thumb-blue scrollbar-track-blue">
       <Header>
         {/* <i
           class="fa-solid z-50 lg:hidden block text-black cursor-pointer relative top-1 left-3 px-2 py-1 border-2 border-slate-500 rounded-lg fa-bars fa-2x"
@@ -26,29 +26,12 @@ function ProjectWl() {
         }`}
       >
         <h3 className="h-  relative -left-7 text-center font-semibold">
-          Dashboard <span id="userName" className="text-uppercase"></span>
+        Request Whitelist <span id="userName" className="text-uppercase"></span>
         </h3>
-        <div className="relative top- space-x-4 left-12  flex">
-          <div className=" w-72 text-center  justify-content-center mb-3">
-            <Collab />
-          </div>
-          <div className=" w-72 text-center  justify-content-center mb-3">
-            <Entries />
-          </div>
-          <div className=" w-72 text-center  justify-content-center mb-3">
-            <DiscordUsers />
-          </div>
-        </div>
-        <div className="h-[80%] w-[83%] left-[5.1%] top-10 bg-white relative mb-3">
-          <div className="pl-1">
-            <h4 className="font-semibold text-base text-center relative top-5">
-              User Growth
-            </h4>
-            <h4 className="font-semibold text-2xl float-right relative right-9 -top-5">
-              ...
-            </h4>
-            <img className="-top-5" src={Dashboardchart} />
-          </div>
+        <p className="relative -left-7 text-center">Fill out details</p>
+        
+        <div className="h-[60%] w-96 left-[5.1%] top-10 bg-white relative mb-3">
+          
         </div>
       </div>
     </div>

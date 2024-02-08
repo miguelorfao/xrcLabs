@@ -26,10 +26,10 @@ function SideNav({ show }) {
   const onClickHandleProjectSettings = () => {
     navigate("/ProjectChooseSettings");
   };
-  const onClickHandleProjectWL = () => {
-    navigate("/ProjectWL");
-  };
   const onClickHandleRefresh = () => {
+    navigate("/ProjectChooseSettings");
+  };
+  const onClickHandleProjectWL = () => {
     navigate("/RequestWhitelist");
   };
   const onClickHandleSignOut = () => {
