@@ -10,7 +10,7 @@ import AdminCollabs from "./Admin/Collabs/AdminCollabs";
 import AdminAccount from "./Admin/AdminAccount/AdminAccount";
 import ForgottenPassword from "./Admin/ForgottenPassword";
 
-import CollabStat from "./components/Client/CollabAnalytics";
+import CollabAnalytics from "./components/Client/CollabAnalytics";
 import CollabSheet from "./components/Client/EntrySheet";
 import DiscordStat from "./components/Client/DiscordStats";
 import ProjectChooseSettings from "./components/Client/ProjectChooseSettings";
@@ -77,7 +77,7 @@ function App() {
 
             {/* Client routes */}
             <Route element={<Dashboard />} path="/Dashboard" />
-            <Route element={<CollabStat />} path="/CollabStats" />
+            <Route element={<CollabAnalytics />} path="/CollabAnalytics" />
             <Route element={<CollabSheet />} path="/CollabSheet" />
             <Route element={<DiscordStat />} path="/DiscordStats" />
             <Route element={<ProjectChooseSettings />} path="/ProjectChooseSettings" />

@@ -10,7 +10,7 @@ import Header from "../Header";
 import "./Scrollbar.css";
 import useDiscordUserData from "./api";
 import "@fontsource/roboto";
-import Dashboardchart from '../../images/dashboardchart.png'
+import Dashboardchart from "../../images/dashboardchart.png";
 
 function Dashboard() {
   const [isOpen, setIsOpen] = useState(false);
@@ -77,13 +77,15 @@ function Dashboard() {
         </div>
         <div className="h-[80%] w-[83%] left-[5.1%] top-10 bg-white relative mb-3">
           <div className="pl-1">
-          <h4 className="font-semibold text-base text-center relative top-5">User Growth</h4>
-          <h4 className="font-semibold text-2xl float-right relative right-9 -top-5">...</h4>
-            <img className="-top-5" src={Dashboardchart}/>
+            <h4 className="font-semibold text-base text-center relative top-5">
+              User Growth
+            </h4>
+            <h4 className="font-semibold text-2xl float-right relative right-9 -top-5">
+              ...
+            </h4>
+            <img className="-top-5" src={Dashboardchart} />
           </div>
         </div>
-
-
       </div>
     </div>
   );
