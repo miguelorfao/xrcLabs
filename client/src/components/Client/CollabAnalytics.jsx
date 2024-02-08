@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "@fontsource/roboto";
 
 // import Buttons from "../../components/Buttons";
 // import { useNavigate } from "react-router-dom";
@@ -8,12 +9,17 @@ import Header from "../Header";
 function CollabStat() {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div>
-     <Header>
-        <i
-          class="fa-solid z-50 text-black cursor-pointer relative top-1 left-3 px-2 py-1 border-2 border-slate-500 rounded-lg fa-bars fa-2x"
+    <div className="cursor-default font-roboto  overflow-x-hidden overflow-y-scroll scrollbar-thumb-blue scrollbar-track-blue">
+      <Header>
+        {/* <i
+          class="fa-solid z-50 lg:hidden block text-black cursor-pointer relative top-1 left-3 px-2 py-1 border-2 border-slate-500 rounded-lg fa-bars fa-2x"
           onClick={() => setIsOpen(!isOpen)}
-        ></i>
+        ></i> */}
+        <h3 className="relative left-20 top-2">zrcLabs</h3>
+
+        <div className="h-2 relative left-28 -top-8 text-center">
+          
+        </div>
       </Header>
       <SideNav show={isOpen} />
       <div

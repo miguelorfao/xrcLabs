@@ -61,7 +61,7 @@ function Dashboard() {
           isOpen ? "opacity-70 z-20 bg-[#E5E5E5]" : ""
         }`}
       >
-        <h3 className="h-  relative -left-7 text-center">
+        <h3 className="h-  relative -left-7 text-center font-semibold">
           Dashboard <span id="userName" className="text-uppercase"></span>
         </h3>
         <div className="relative top- space-x-4 left-12  flex">
@@ -77,7 +77,9 @@ function Dashboard() {
         </div>
         <div className="h-[80%] w-[83%] left-[5.1%] top-10 bg-white relative mb-3">
           <div className="pl-1">
-            <img src={Dashboardchart}/>
+          <h4 className="font-semibold text-base text-center relative top-5">User Growth</h4>
+          <h4 className="font-semibold text-2xl float-right relative right-9 -top-5">...</h4>
+            <img className="-top-5" src={Dashboardchart}/>
           </div>
         </div>
 

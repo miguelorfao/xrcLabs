@@ -62,7 +62,7 @@ function SideNav({ show }) {
           {" "}
           <Buttons
             onClick={onClickHandleCollabStat}
-            label="Collab Statistics"
+            label="Collab Analytics"
             btnClass="btn  w-100  bg-[#9D9797] text-start "
           />
         </li>
@@ -70,26 +70,18 @@ function SideNav({ show }) {
           {" "}
           <Buttons
             onClick={onClickHandleCollabSheet}
-            label="Collab Sheet"
+            label="Entry Sheet"
             btnClass="btn  w-100  bg-[#9D9797]  text-start "
           />
         </li>
-        <li className="nav-item pl-14 hover:text-[#605BFF] text-[#030229] w-100 mb-3">
+        {/* <li className="nav-item pl-14 hover:text-[#605BFF] text-[#030229] w-100 mb-3">
           {" "}
           <Buttons
             onClick={onClickHandleDiscordStats}
             label="Discord Statists"
             btnClass="btn  w-100  bg-[#9D9797]  text-start "
           />
-        </li>
-        <li className="nav-item pl-14 hover:text-[#605BFF] text-[#030229] w-100 mb-3">
-          {" "}
-          <Buttons
-            onClick={onClickHandleRefresh}
-            label="Request a refresh"
-            btnClass="btn  w-100  bg-[#9D9797]  text-start "
-          />
-        </li>
+        </li> */}
         <li className="nav-item pl-14 hover:text-[#605BFF] text-[#030229] w-100 mb-3">
           {" "}
           <Buttons
@@ -101,8 +93,16 @@ function SideNav({ show }) {
         <li className="nav-item pl-14 hover:text-[#605BFF] text-[#030229] w-100 mb-3">
           {" "}
           <Buttons
+            onClick={onClickHandleRefresh}
+            label="Schedule call"
+            btnClass="btn  w-100  bg-[#9D9797]  text-start "
+          />
+        </li>
+        <li className="nav-item pl-14 hover:text-[#605BFF] text-[#030229] w-100 mb-3">
+          {" "}
+          <Buttons
             onClick={onClickHandleProjectWL}
-            label="Request a Project WL"
+            label="Request Whitelist"
             btnClass="btn  w-100  bg-[#9D9797]  text-start "
           />
         </li>

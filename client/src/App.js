@@ -10,8 +10,8 @@ import AdminCollabs from "./Admin/Collabs/AdminCollabs";
 import AdminAccount from "./Admin/AdminAccount/AdminAccount";
 import ForgottenPassword from "./Admin/ForgottenPassword";
 
-import CollabStat from "./components/Client/CollabStat";
-import CollabSheet from "./components/Client/CollabSheet";
+import CollabStat from "./components/Client/CollabAnalytics";
+import CollabSheet from "./components/Client/EntrySheet";
 import DiscordStat from "./components/Client/DiscordStats";
 import ProjectChooseSettings from "./components/Client/ProjectChooseSettings";
 import ProjectSettingsSubber from "./components/Client/ProjectSettingsSubber";
