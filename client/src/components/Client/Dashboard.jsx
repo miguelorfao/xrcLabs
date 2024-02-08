@@ -10,6 +10,7 @@ import Header from "../Header";
 import "./Scrollbar.css";
 import useDiscordUserData from "./api";
 import "@fontsource/roboto";
+import Dashboardchart from '../../images/dashboardchart.png'
 
 function Dashboard() {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,7 +36,7 @@ function Dashboard() {
   }, [isOpen]); // Dependency on isOpen ensures that this effect runs when isOpen changes
 
   return (
-    <div className="cursor-default font-roboto   overflow-y-scroll scrollbar-thumb-blue scrollbar-track-blue">
+    <div className="cursor-default font-roboto  overflow-x-hidden overflow-y-scroll scrollbar-thumb-blue scrollbar-track-blue">
       <Header>
         {/* <i
           class="fa-solid z-50 lg:hidden block text-black cursor-pointer relative top-1 left-3 px-2 py-1 border-2 border-slate-500 rounded-lg fa-bars fa-2x"
@@ -56,28 +57,31 @@ function Dashboard() {
       {/* <SideNav show={isOpen} /> */}
       {/* User */}
       <div
-        className={`min-h-screen row dashboard left-[22%] w-[78.9%] bg-[#D9D9D9] top-14 relative justify-content-center   ${
-          isOpen ? "opacity-70 z-20 bg-[#D9D9D9]" : ""
+        className={`min-h-screen overflow-x-hidden  left-[22%] w-[78.9%] pt-7 bg-[#E5E5E5] top-14 relative justify-content-center pb-40  ${
+          isOpen ? "opacity-70 z-20 bg-[#E5E5E5]" : ""
         }`}
       >
-        <h3 className="h-2 relative -left-7 text-center">
-          Dashboard{" "}
-          <span id="userName" className="text-uppercase">
-            
-          </span>
+        <h3 className="h-  relative -left-7 text-center">
+          Dashboard <span id="userName" className="text-uppercase"></span>
         </h3>
-        <div className="relative -top-32 flex">
-        <div className=" w-72 text-center  justify-content-center mb-3">
-          <Collab />
+        <div className="relative top- space-x-4 left-12  flex">
+          <div className=" w-72 text-center  justify-content-center mb-3">
+            <Collab />
+          </div>
+          <div className=" w-72 text-center  justify-content-center mb-3">
+            <Entries />
+          </div>
+          <div className=" w-72 text-center  justify-content-center mb-3">
+            <DiscordUsers />
+          </div>
         </div>
-        <div className=" w-72 text-center  justify-content-center mb-3">
-          <Entries />
+        <div className="h-[80%] w-[83%] left-[5.1%] top-10 bg-white relative mb-3">
+          <div className="pl-1">
+            <img src={Dashboardchart}/>
+          </div>
         </div>
-        <div className=" w-72 text-center  justify-content-center mb-3">
-          <DiscordUsers />
-        </div>
-        </div>
-        {/* <div className="col-12 col-md-12 text-center gap-2 d-flex justify-content-between mb-3"></div> */}
+
+
       </div>
     </div>
   );
