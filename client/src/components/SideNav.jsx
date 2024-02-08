@@ -15,7 +15,7 @@ function SideNav({ show }) {
     navigate("/Dashboard");
   };
   const onClickHandleCollabStat = () => {
-    navigate("/CollabStats");
+    navigate("/CollabAnalytics");
   };
   const onClickHandleCollabSheet = () => {
     navigate("/CollabSheet");
@@ -30,7 +30,7 @@ function SideNav({ show }) {
     navigate("/ProjectWL");
   };
   const onClickHandleRefresh = () => {
-    navigate("/CollabSheet");
+    navigate("/RequestWhitelist");
   };
   const onClickHandleSignOut = () => {
     navigate("/");
