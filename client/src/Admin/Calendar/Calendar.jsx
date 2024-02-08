@@ -12,6 +12,7 @@ import Calendar from "react-calendar";
 
 import "./Calendar.css";
 import ScheduleContext from "../Global/ScheduleContext";
+import axios from "axios";
 function Calendars() {
   const [currentEvents, setCurrentEvents] = useState([]);
   const [task, setTask] = useState({
@@ -31,6 +32,13 @@ function Calendars() {
   console.log(task);
 
   const onClickHandleEvents = (e) => {
+    try {
+      axios.put("", task).then((res) => {
+        console.log(res);
+      });
+    } catch (error) {
+      console.log(error);
+    }
     e.preventDefault();
 
     if (
