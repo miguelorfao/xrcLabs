@@ -16,15 +16,16 @@ export const ScheduleProvider = ({ children }) => {
 
   useEffect(() => {
     try {
-      axios.get("/AdminCalendar").then((res) => {});
-      if (res.data === "Success") {
-        setAssigned("Miguel");
-        setDescription("Description");
-        setTaskDate("2024-02-07");
-        setStatus("Overdue");
-      } else {
-        console.log(res.data);
-      }
+      axios.get("/AdminCalendar").then((res) => {
+        if (res.data === "Success") {
+          setAssigned("Miguel");
+          setDescription("Description");
+          setTaskDate("2024-02-07");
+          setStatus("Overdue");
+        } else {
+          console.log(res.data);
+        }
+      });
     } catch (error) {
       console.log(error);
     }

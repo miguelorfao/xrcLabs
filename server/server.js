@@ -186,7 +186,7 @@ app.delete("/AdminCalendar/:id", (req, res) => {
   });
 });
 
-// end of calendar data API
+// end of calendar data Api
 const port = process.env.PORT || 3001;
 app.listen(port, () => {
   console.log(`Listening on port ${port}...`);
