@@ -42,24 +42,24 @@ import { ScheduleProvider } from "./Admin/Global/ScheduleApi";
 function App() {
   return (
     <div className="App">
-      {/* <ScheduleProvider>
+      <ScheduleProvider>
         {" "}
         <BrowserRouter>
           <Routes>
             <Route element={<AdminLogin />} path="/AdminLogin" />
             <Route element={<ForgottenPassword />} path="/ForgottenPassword" />
-            <Route element={<PrivateRoutes />}>
-              <Route element={<AdminCollabs />} path="/AdminCollabs" />
-              <Route element={<AdminDashboard />} path="/AdminDashboard" />
-              <Route element={<AdminProjects />} path="/AdminProjects" />
-              <Route element={<AdminAccount />} path="/AdminAccount" />
-              <Route element={<Calendars />} path="/AdminCalendar" />
-              <Route element={<Schedules />} path="/AdminSchedule" />
-            </Route>
-            <Route element={<PageNotFound />} path="/*" />
+            {/* <Route element={<PrivateRoutes />}> */}
+            <Route element={<AdminCollabs />} path="/AdminCollabs" />
+            <Route element={<AdminDashboard />} path="/AdminDashboard" />
+            <Route element={<AdminProjects />} path="/AdminProjects" />
+            <Route element={<AdminAccount />} path="/AdminAccount" />
+            <Route element={<Calendars />} path="/AdminCalendar" />
+            <Route element={<Schedules />} path="/AdminSchedule" />
+            {/* </Route> */}
+            {/* <Route element={<PageNotFound />} path="/*" /> */}
           </Routes>
         </BrowserRouter>
-      </ScheduleProvider> */}
+      </ScheduleProvider>
       <AuthProvider>
         <BrowserRouter>
           <Routes>
@@ -80,9 +80,18 @@ function App() {
             <Route element={<CollabAnalytics />} path="/CollabAnalytics" />
             <Route element={<CollabSheet />} path="/CollabSheet" />
             <Route element={<DiscordStat />} path="/DiscordStats" />
-            <Route element={<ProjectChooseSettings />} path="/ProjectChooseSettings" />
-            <Route element={<ProjectSettings />} path="/ProjectChooseSettings/ProjectSettings" />
-            <Route element={<ProjectSettingsSubber />} path="/ProjectChooseSettings/ProjectSettingsSubber" />
+            <Route
+              element={<ProjectChooseSettings />}
+              path="/ProjectChooseSettings"
+            />
+            <Route
+              element={<ProjectSettings />}
+              path="/ProjectChooseSettings/ProjectSettings"
+            />
+            <Route
+              element={<ProjectSettingsSubber />}
+              path="/ProjectChooseSettings/ProjectSettingsSubber"
+            />
             <Route element={<RequestWhitelist />} path="/RequestWhitelist" />
             <Route element={<Main />} path="/" exact />
           </Routes>

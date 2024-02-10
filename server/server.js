@@ -156,35 +156,35 @@ app.get("/AdminAccount", (req, res) => {
 
 // Calender data input, collection as delete
 // Input data to calendar db
-app.put("/AdminCalendar", (req, res) => {
-  const q =
-    "INSERT INTO Calendar (`Title`,`StartDate`, `EndDate`, `startTime`,`endTime`) VALUES (?)";
-  db.query(q, [
-    req.body.title,
-    req.body.startDate,
-    req.body.endDate,
-    req.body.startTime,
-    req.body.endTime,
-  ]);
-  if (err) return res.json({ Error: "An error has happened" });
-  return res.json({ Status: "Success" });
-});
+// app.put("/AdminCalendar", (req, res) => {
+//   const q =
+//     "INSERT INTO Calendar (`Title`,`StartDate`, `EndDate`, `startTime`,`endTime`) VALUES (?)";
+//   db.query(q, [
+//     req.body.title,
+//     req.body.startDate,
+//     req.body.endDate,
+//     req.body.startTime,
+//     req.body.endTime,
+//   ]);
+//   if (err) return res.json({ Error: "An error has happened" });
+//   return res.json({ Status: "Success" });
+// });
 
-app.get("AdminCalendar", (req, res) => {
-  const q = "SELECT * FROM Calendar";
-  db.query(q, (err, data) => {
-    if (err) return res.json(err);
-    return res.json(data);
-  });
-});
+// app.get("AdminCalendar", (req, res) => {
+//   const q = "SELECT * FROM Calendar";
+//   db.query(q, (err, data) => {
+//     if (err) return res.json(err);
+//     return res.json(data);
+//   });
+// });
 
-app.delete("/AdminCalendar/:id", (req, res) => {
-  const q = "DELETE FROM Calendar WHERE ID = ?";
-  db.query(q, [req.params.id], (err, data) => {
-    if (err) return res.json(err);
-    return res.json(data);
-  });
-});
+// app.delete("/AdminCalendar/:id", (req, res) => {
+//   const q = "DELETE FROM Calendar WHERE ID = ?";
+//   db.query(q, [req.params.id], (err, data) => {
+//     if (err) return res.json(err);
+//     return res.json(data);
+//   });
+// });
 
 // end of calendar data Api
 const port = process.env.PORT || 3001;

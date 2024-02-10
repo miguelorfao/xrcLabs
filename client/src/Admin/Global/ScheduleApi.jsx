@@ -14,22 +14,22 @@ export const ScheduleProvider = ({ children }) => {
   // get the status for the current task
   const [status, setStatus] = useState("");
 
-  useEffect(() => {
-    try {
-      axios.get("/AdminCalendar").then((res) => {
-        if (res.data === "Success") {
-          setAssigned("Miguel");
-          setDescription("Description");
-          setTaskDate("2024-02-07");
-          setStatus("Overdue");
-        } else {
-          console.log(res.data);
-        }
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  }, []);
+  // useEffect(() => {
+  //   try {
+  //     axios.get("/AdminCalendar").then((res) => {
+  //       if (res.data === "Success") {
+  //         setAssigned("Miguel");
+  //         setDescription("Description");
+  //         setTaskDate("2024-02-07");
+  //         setStatus("Overdue");
+  //       } else {
+  //         console.log(res.data);
+  //       }
+  //     });
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }, []);
 
   switch (status) {
     case "Approved":

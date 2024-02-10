@@ -32,14 +32,14 @@ function Calendars() {
   console.log(task);
 
   const onClickHandleEvents = (e) => {
-    try {
-      axios.put("", task).then((res) => {
-        console.log(res);
-      });
-    } catch (error) {
-      console.log(error);
-    }
-    e.preventDefault();
+    // try {
+    //   axios.put("", task).then((res) => {
+    //     console.log(res);
+    //   });
+    // } catch (error) {
+    //   console.log(error);
+    // }
+    // e.preventDefault();
 
     if (
       task.title &&

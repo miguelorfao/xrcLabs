@@ -8,7 +8,7 @@ import "./AdminAccount.css";
 function AdminAccount() {
   const [adminUser, setAdminUser] = useState([]);
   const [errorSuccess, setErrorSuccess] = useState("");
-  const [isOpen, setIsOpen] = useState(false);
+
   const [editAdminUser, setEditAdminUser] = useState([
     { name: "", email: "", password: "" },
   ]);
@@ -113,12 +113,14 @@ function AdminAccount() {
             ) : (
               <div className="bg-danger">{errorSuccess}</div>
             )}
-            <Buttons
-              label="Add Admin"
-              btnClass="btn btn-primary"
-              modal="modal"
-              modalTarget="#addAdmin"
-            />
+            <button
+              type="button"
+              class="btn btn-primary btn-lg"
+              data-bs-toggle="modal"
+              data-bs-target="#addAdmin"
+            >
+              Launch
+            </button>
           </ul>
           <hr />
           <div>
@@ -177,133 +179,190 @@ function AdminAccount() {
           </div>
         </div>
       </NavigationBar>
-      <Modal
-        modal_className="modal fade"
+      <div
+        class="modal fade"
         id="addAdmin"
         tabindex="-1"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
         role="dialog"
-        modalTitleID="modalTitleId"
-        hidden="true"
-        title="Add Admin"
+        aria-labelledby="modalTitleId"
+        aria-hidden="true"
       >
-        <form onSubmit={onSaveHandler}>
-          <div class="mb-3">
-            <label for="" class="form-label">
-              Admin Name
-            </label>
-            <input
-              type="text"
-              class="form-control"
-              name="name"
-              id="name"
-              placeholder="Admin Name"
-              onChange={onChangeHandler}
-              required
-            />
-          </div>
-          <div class="mb-3">
-            <label for="" class="form-label">
-              Email
-            </label>
-            <input
-              type="email"
-              class="form-control"
-              name="email"
-              id="email"
-              placeholder="Admin Email"
-              onChange={onChangeHandler}
-              required
-            />
-          </div>
-          <div class="mb-3">
-            <label for="" class="form-label">
-              Password
-            </label>
-            <input
-              title="Password must contain one digit from 1 to 9, one lowercase letter, one uppercase letter, one underscore but no other special character, no space and it must be 8-16 characters long."
-              pattern="(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*_)(?!.*\W)(?!.* ).{8,16}"
-              type="text"
-              class="form-control"
-              name="password"
-              id="password"
-              placeholder="Admin Password"
-              onChange={onChangeHandler}
-              required
-            />
-          </div>
+        <div
+          class="modal-dialog modal-dialog-scrollable modal-dialog-centered "
+          role="document"
+        >
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalTitleId">
+                Add Admijn
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form onSubmit={onSaveHandler}>
+                <div class="mb-3">
+                  <label for="" class="form-label">
+                    Admin Name
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="name"
+                    id="name"
+                    placeholder="Admin Name"
+                    onChange={onChangeHandler}
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="" class="form-label">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    name="email"
+                    id="email"
+                    placeholder="Admin Email"
+                    onChange={onChangeHandler}
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="" class="form-label">
+                    Password
+                  </label>
+                  <input
+                    title="Password must contain one digit from 1 to 9, one lowercase letter, one uppercase letter, one underscore but no other special character, no space and it must be 8-16 characters long."
+                    pattern="(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*_)(?!.*\W)(?!.* ).{8,16}"
+                    type="text"
+                    class="form-control"
+                    name="password"
+                    id="password"
+                    placeholder="Admin Password"
+                    onChange={onChangeHandler}
+                    required
+                  />
+                </div>
 
-          <div className="text-danger"></div>
-          <Buttons
-            btnClass="btn btn-primary w-100"
-            label="Save and Next"
-            type="submit"
-          />
-        </form>
-
-        <hr />
-      </Modal>
-      <Modal
-        modal_className="modal fade"
-        id="editAdmin"
+                <div className="text-danger"></div>
+                <Buttons
+                  btnClass="btn btn-primary w-100"
+                  label="Save and Next"
+                  type="submit"
+                />
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="button" class="btn btn-primary">
+                Save
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="modal fade"
+        id="addAdmin"
         tabindex="-1"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
         role="dialog"
-        modalTitleID="modalTitleId"
-        hidden="true"
-        title="Edit Admin"
+        aria-labelledby="modalTitleId"
+        aria-hidden="true"
       >
-        <form>
-          <div class="mb-3">
-            <label for="" class="form-label">
-              Admin Name
-            </label>
-            <input
-              type="text"
-              class="form-control"
-              name="name"
-              id="editName"
-              placeholder="Admin Name"
-              onChange={onChangeEditHandler}
-            />
-          </div>
-          <div class="mb-3">
-            <label for="" class="form-label">
-              Email
-            </label>
-            <input
-              type="email"
-              class="form-control"
-              name="email"
-              id="editEmail"
-              placeholder="Admin Email"
-              onChange={onChangeEditHandler}
-            />
-          </div>
-          <div class="mb-3">
-            <label for="" class="form-label">
-              Password
-            </label>
-            <input
-              title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
-              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-              type="password"
-              class="form-control"
-              name="password"
-              id="editPassword"
-              placeholder="Admin Password"
-              onChange={onChangeEditHandler}
-            />
-          </div>
+        <div
+          class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm"
+          role="document"
+        >
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalTitleId">
+                Modal title
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-3">
+                  <label for="" class="form-label">
+                    Admin Name
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="name"
+                    id="editName"
+                    placeholder="Admin Name"
+                    onChange={onChangeEditHandler}
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="" class="form-label">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    name="email"
+                    id="editEmail"
+                    placeholder="Admin Email"
+                    onChange={onChangeEditHandler}
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="" class="form-label">
+                    Password
+                  </label>
+                  <input
+                    title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                    type="password"
+                    class="form-control"
+                    name="password"
+                    id="editPassword"
+                    placeholder="Admin Password"
+                    onChange={onChangeEditHandler}
+                  />
+                </div>
 
-          <div className="text-danger"></div>
-        </form>
-        <Buttons
-          btnClass="btn btn-primary w-100"
-          onClick={onSubmitHandler}
-          label="Save and Next"
-          type="submit"
-        />
-        <hr />
-      </Modal>
+                <div className="text-danger"></div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="button" class="btn btn-primary">
+                Save
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
