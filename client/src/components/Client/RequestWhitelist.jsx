@@ -34,28 +34,52 @@ function ProjectWl() {
         <div className="h-96 w-[60%] left-[17%] top-1 rounded-sm bg-white relative mb-3 whitespace-nowrap p-11">
           <div className="flex">
             <div>
-            <label className="text-black text-lg">Project Name</label>
-            <br/>
-            <input className="focus:outline-none placeholder:text-gray-600 bg-gray-100 px-8 rounded-lg py-2.5 mt-2.5" type="text" placeholder="Name" />
+              <label className="text-black text-lg">Project Name</label>
+              <br />
+              <input
+                className="focus:outline-none placeholder:text-gray-600 bg-gray-100 px-8 rounded-lg py-2.5 mt-2.5"
+                type="text"
+                placeholder="Name"
+              />
             </div>
             <div className="ml-10">
-            <label className="text-black text-lg">Twitter</label>
-            <br/>
-            <input className="focus:outline-none placeholder:text-gray-600 bg-gray-100 px-8 rounded-lg py-2.5 mt-2.5" type="text" placeholder="twitter.com/myproject" />
+              <label className="text-black text-lg">Twitter</label>
+              <br />
+              <input
+                className="focus:outline-none placeholder:text-gray-600 bg-gray-100 px-8 rounded-lg py-2.5 mt-2.5"
+                type="text"
+                placeholder="twitter.com/myproject"
+              />
             </div>
           </div>
           <div className="flex mt-8">
-           <div>
-           <label className="text-black text-lg">Website</label>
-            <br/>
-            <input className="focus:outline-none placeholder:text-gray-600 bg-gray-100 px-8 rounded-lg py-2.5 mt-2.5" type="text" placeholder="myproject.com" />
-           </div>
-           <div  className="ml-10">
-           <label className="text-black text-lg">Discord</label>
-            <br/>
-            <input className="focus:outline-none placeholder:text-gray-600 bg-gray-100 px-8 rounded-lg py-2.5 mt-2.5" type="text" placeholder="discord.com" />
-           </div>
+            <div>
+              <label className="text-black text-lg">Website</label>
+              <br />
+              <input
+                className="focus:outline-none placeholder:text-gray-600 bg-gray-100 px-8 rounded-lg py-2.5 mt-2.5"
+                type="text"
+                placeholder="myproject.com"
+              />
+            </div>
+            <div className="ml-10">
+              <label className="text-black text-lg">Discord</label>
+              <br />
+              <input
+                className="focus:outline-none placeholder:text-gray-600 bg-gray-100 px-8 rounded-lg py-2.5 mt-2.5"
+                type="text"
+                placeholder="discord.com"
+              />
+            </div>
           </div>
+
+          <button className="px-7 py-2 relative left-[33%] mt-14 text-white rounded-lg bg-[#605BFF]">Request Whitelist</button>
+        </div>
+        <div className="bg-white w-80 p-14 text-center h-80 absolute">
+          <h5>Whitelist Requested</h5>
+          <p>We will contact you soon</p>
+
+          <button className="px-3 py-2 bg-[#605BFF] rounded-lg text-white">Continue</button>
         </div>
       </div>
     </div>
