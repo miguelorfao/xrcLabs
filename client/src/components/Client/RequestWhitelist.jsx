@@ -26,12 +26,36 @@ function ProjectWl() {
         }`}
       >
         <h3 className="h-  relative -left-7 text-center font-semibold">
-        Request Whitelist <span id="userName" className="text-uppercase"></span>
+          Request Whitelist{" "}
+          <span id="userName" className="text-uppercase"></span>
         </h3>
         <p className="relative -left-7 text-center">Fill out details</p>
-        
-        <div className="h-[60%] w-96 left-[5.1%] top-10 bg-white relative mb-3">
-          
+
+        <div className="h-96 w-[60%] left-[17%] top-1 rounded-sm bg-white relative mb-3 whitespace-nowrap p-11">
+          <div className="flex">
+            <div>
+            <label className="text-black text-lg">Project Name</label>
+            <br/>
+            <input className="focus:outline-none placeholder:text-gray-600 bg-gray-100 px-8 rounded-lg py-2.5 mt-2.5" type="text" placeholder="Name" />
+            </div>
+            <div className="ml-10">
+            <label className="text-black text-lg">Twitter</label>
+            <br/>
+            <input className="focus:outline-none placeholder:text-gray-600 bg-gray-100 px-8 rounded-lg py-2.5 mt-2.5" type="text" placeholder="twitter.com/myproject" />
+            </div>
+          </div>
+          <div className="flex mt-8">
+           <div>
+           <label className="text-black text-lg">Website</label>
+            <br/>
+            <input className="focus:outline-none placeholder:text-gray-600 bg-gray-100 px-8 rounded-lg py-2.5 mt-2.5" type="text" placeholder="myproject.com" />
+           </div>
+           <div  className="ml-10">
+           <label className="text-black text-lg">Discord</label>
+            <br/>
+            <input className="focus:outline-none placeholder:text-gray-600 bg-gray-100 px-8 rounded-lg py-2.5 mt-2.5" type="text" placeholder="discord.com" />
+           </div>
+          </div>
         </div>
       </div>
     </div>
