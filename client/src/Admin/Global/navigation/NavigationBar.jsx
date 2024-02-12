@@ -78,8 +78,8 @@ function NavigationBar({ children }) {
           </Menu>
         </Sidebar>
 
-        <div className="w-100">
-          <div className="w-100 mt-2">{children}</div>
+        <div className="container">
+          <div className="container">{children}</div>
         </div>
       </div>
       <div>

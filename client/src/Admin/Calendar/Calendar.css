@@ -16,12 +16,7 @@
   --success-color: #3a974c;
   --danger-color: #d11a2a;
 }
-.calendar {
-  width: 1400px !important;
-  height: 700px;
-  padding: 10px;
-  margin: 0 auto;
-}
+
 .calendar .schedule-btn {
   background-color: var(--btn-color);
   width: 100%;

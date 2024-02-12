@@ -74,7 +74,7 @@ function Calendars() {
     <div>
       <NavigationBar>
         {" "}
-        <div className=" text-center">
+        <div className="text-center">
           <div className="border-bottom border-black mb-4 ps-5">
             <h2>Calendar</h2>
           </div>

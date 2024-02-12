@@ -21,31 +21,9 @@ function Schedules() {
             <h2>Schedules</h2>
           </div>
 
-          <div className="mx-auto  schedule">
-            <div className="row justify-between p-2 rounded-4 text-center shadow">
-              <div className="col-12 col-md-3 task shadow text-center rounded-4">
-                <div className="new-task-header my-2 border-bottom border-black">
-                  <h3>Todo</h3>
-                </div>
-                <div className="overflow-auto">
-                  {" "}
-                  <div className="new-task shadow mx-auto rounded-3 p-2">
-                    <div className="text-start">
-                      <h5>{assigned}</h5>
-                      <p>{description}</p>
-                      <p>{taskDate}</p>
-                    </div>
-                    <hr />
-                    <div>
-                      <p className={background}>{status}</p>
-                    </div>
-                    <div className="flex justify-between gap-2">
-                      <button className="btn btn-primary w-100">View</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-12 col-md-3 task shadow text-center rounded-4">
+          <div className="mx-auto">
+            <div className="row justify-around rounded-4 text-center shadow">
+              <div className="col-12 col-md-2 task shadow text-center rounded-4">
                 <div className="new-task-header my-2 border-bottom border-black">
                   <h3>Pending</h3>
                 </div>
@@ -63,7 +41,7 @@ function Schedules() {
                   </div>
                 </div>
               </div>
-              <div className="col-12 col-md-3 task shadow text-center rounded-4">
+              <div className="col-12 col-md-2 task shadow text-center rounded-4">
                 <div className="new-task-header my-2   border-bottom border-black">
                   <h3>Progress</h3>
                 </div>
@@ -80,7 +58,7 @@ function Schedules() {
                   </div>
                 </div>
               </div>
-              <div className="col-12 col-md-3 task shadow text-center rounded-4">
+              <div className="col-12 col-md-2 task shadow text-center rounded-4">
                 <div className="new-task-header my-2 border-bottom border-black">
                   <h3>Completed</h3>
                 </div>
