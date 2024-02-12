@@ -12,6 +12,7 @@ import useDiscordUserData from "./api";
 import "@fontsource/roboto";
 import Dashboardchart from "../../images/dashboardchart.png";
 
+
 function Dashboard() {
   const [isOpen, setIsOpen] = useState(false);
   const { userName, userImage, userBannerColor } = useDiscordUserData();
@@ -57,7 +58,7 @@ function Dashboard() {
       {/* <SideNav show={isOpen} /> */}
       {/* User */}
       <div
-        className={`min-h-screen overflow-x-hidden  left-[22%] w-[78.9%] pt-7 bg-[#E5E5E5] top-14 relative justify-content-center pb-40  ${
+        className={`min-h-screen overflow-x-hidden  left-[21%] w-[78.9%] pt-7 bg-[#E5E5E5] top-14 relative justify-content-center pb-40  ${
           isOpen ? "opacity-70 z-20 bg-[#E5E5E5]" : ""
         }`}
       >

@@ -78,7 +78,7 @@ function App() {
             {/* Client routes */}
             <Route element={<Dashboard />} path="/Dashboard" />
             <Route element={<CollabAnalytics />} path="/CollabAnalytics" />
-            <Route element={<CollabSheet />} path="/CollabSheet" />
+            <Route element={<CollabSheet />} path="/EntrySheet" />
             <Route element={<DiscordStat />} path="/DiscordStats" />
             <Route
               element={<ProjectChooseSettings />}

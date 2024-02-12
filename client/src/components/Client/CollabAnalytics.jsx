@@ -27,7 +27,7 @@ function CollabStat() {
       </Header>
       <SideNav show={isOpen} />
       <div
-        className={`min-h-screen overflow-x-hidden  left-[22%] w-[78.9%] pt-7 bg-[#E5E5E5] top-14 relative justify-content-center pb-40  ${
+        className={`min-h-screen overflow-x-hidden  left-[21%] w-[78.9%] pt-7 bg-[#E5E5E5] top-14 relative justify-content-center pb-40  ${
           isOpen ? "opacity-70 z-20 bg-[#E5E5E5]" : ""
         }`}
       >

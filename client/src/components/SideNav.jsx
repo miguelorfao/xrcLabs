@@ -18,7 +18,7 @@ function SideNav({ show }) {
     navigate("/CollabAnalytics");
   };
   const onClickHandleCollabSheet = () => {
-    navigate("/CollabSheet");
+    navigate("/EntrySheet");
   };
   const onClickHandleDiscordStats = () => {
     navigate("/DiscordStats");

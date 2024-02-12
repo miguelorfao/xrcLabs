@@ -8,6 +8,18 @@ import Header from "../Header";
 
 function ProjectWl() {
   const [isOpen, setIsOpen] = useState(false);
+
+  // const [showPopup, setShowPopup] = useState(false);
+
+  // const openPopup = () => {
+  //   setShowPopup(true);
+  //   document.body.classList.add('opacity-50'); // Reduce opacity of the page
+  // };
+
+  // const closePopup = () => {
+  //   setShowPopup(false);
+  //   document.body.classList.remove('opacity-50'); // Restore opacity of the page
+  // };
   return (
     <div className="cursor-default font-roboto  overflow-x-hidden overflow-y-scroll scrollbar-thumb-blue scrollbar-track-blue">
       <Header>
@@ -21,7 +33,7 @@ function ProjectWl() {
       </Header>
       <SideNav show={isOpen} />
       <div
-        className={`min-h-screen overflow-x-hidden  left-[22%] w-[78.9%] pt-7 bg-[#E5E5E5] top-14 relative justify-content-center pb-40  ${
+        className={`min-h-screen overflow-x-hidden  left-[21%] w-[78.9%] pt-7 bg-[#E5E5E5] top-14 relative justify-content-center pb-40  ${
           isOpen ? "opacity-70 z-20 bg-[#E5E5E5]" : ""
         }`}
       >
@@ -73,14 +85,26 @@ function ProjectWl() {
             </div>
           </div>
 
-          <button className="px-7 py-2 relative left-[33%] mt-14 text-white rounded-lg bg-[#605BFF]">Request Whitelist</button>
+          <button data-bs-toggle="modal"
+            data-bs-target="#popup" className="px-7 py-2 relative left-[33%] mt-14 text-white rounded-lg bg-[#605BFF]">Request Whitelist</button>
+          {/* <button onClick={openPopup} className="px-7 py-2 relative left-[33%] mt-14 text-white rounded-lg bg-[#605BFF]">Request Whitelist</button> */}
         </div>
-        <div className="bg-white w-80 p-14 text-center h-80 absolute">
-          <h5>Whitelist Requested</h5>
-          <p>We will contact you soon</p>
 
-          <button className="px-3 py-2 bg-[#605BFF] rounded-lg text-white">Continue</button>
+
+        {/* {showPopup && ( */}
+        <div 
+          id="popup"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="modalTitleId"
+          aria-hidden="true" className="bg-white w-80 z-50 p-14 opacity-0.5 text-center h-80 rounded-lg absolute top-28 left-[32%]">
+          <h5>Whitelist Requested</h5>
+          <p className=" relative top-8">We will contact you soon</p>
+
+          <button data-bs-dismiss="modal" className="px-3 py-2 bg-[#605BFF] relative top-20 rounded-lg text-white">Continue</button>
+          {/* <button onClick={closePopup} className="px-3 py-2 bg-[#605BFF] relative top-20 rounded-lg text-white">Continue</button> */}
         </div>
+        {/* )} */}
       </div>
     </div>
   );
