@@ -115,11 +115,11 @@ function AdminAccount() {
             )}
             <button
               type="button"
-              class="btn btn-primary btn-lg"
+              class="btn btn-primary w-28"
               data-bs-toggle="modal"
               data-bs-target="#addAdmin"
             >
-              Launch
+              Add Admin
             </button>
           </ul>
           <hr />

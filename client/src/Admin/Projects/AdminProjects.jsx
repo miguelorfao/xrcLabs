@@ -3,32 +3,40 @@ import NavigationBar from "../Global/navigation/NavigationBar";
 import "./AdminProject.css";
 function AdminProjects() {
   return (
-    <div>
+    <div className="project">
       <NavigationBar>
-        <div className="mt-3 text-center">
+        <div className="mt-3 text-center container">
           <div className="border-bottom border-black mb-4">
             <h2>Projects</h2>
           </div>
           <div className="project-tables">
             <div className="row justify-around">
               <div className="col-12 col-md-7 shadow rounded-3">
-                <div class="w-100">
-                  <ul>
-                    <li className="flex justify-between border-bottom border-black">
-                      <span>text</span>
-                      <span>text</span>
-                      <span>complete</span>
-                    </li>
-                  </ul>
-                  <ul>
-                    <li className="flex justify-between align-middle border border-black bg-white rounded-3">
-                      <span className=" w-100">text</span>
-                      <span className=" w-100">text</span>
-                      <span className="bg-success rounded-pill w-100">
-                        complete
-                      </span>
-                    </li>
-                  </ul>
+                <div class="table-responsive w-100">
+                  <table class="table list">
+                    <thead>
+                      <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Project</th>
+                        <th scope="col">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="shadow rounded-5">
+                        <td scope="row">First Name</td>
+                        <td>Email Address</td>
+                        <td>Projects Name</td>
+                        <td className="text-success">Completed</td>
+                      </tr>
+                      <tr class="shadow rounded-5">
+                        <td scope="row">First Name</td>
+                        <td>Email Address</td>
+                        <td>Projects Name</td>
+                        <td className="text-danger">Overdue</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
               <div className="col-12 col-md-4 shadow">

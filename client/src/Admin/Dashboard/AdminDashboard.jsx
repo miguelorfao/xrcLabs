@@ -15,28 +15,28 @@ function AdminDashboard() {
           <div className="row w-100  justify-between">
             <div className="col-9">
               <div className="row top-header-row justify-between gap-2 mb-3">
-                <div className="col-12 col-md-2 top-header-col p-2">
+                <div className="col-12 col-md-2 top-header-col p-2 text-center">
                   <div>
                     <h3>Collabs</h3>
                     <p>Text</p>
                     <p>100</p>
                   </div>
                 </div>
-                <div className="col-12 col-md-2 top-header-col p-2">
+                <div className="col-12 col-md-2 top-header-col p-2 text-center">
                   <div>
                     <h3>Collabs</h3>
                     <p>Text</p>
                     <p>100</p>
                   </div>
                 </div>
-                <div className="col-12 col-md-2 top-header-col p-2">
+                <div className="col-12 col-md-2 top-header-col p-2 text-center">
                   <div>
                     <h3>Collabs</h3>
                     <p>Text</p>
                     <p>100</p>
                   </div>
                 </div>
-                <div className="col-12 col-md-2 top-header-col p-2">
+                <div className="col-12 col-md-2 top-header-col p-2 text-center">
                   <div>
                     <h3>Collabs</h3>
                     <p>Text</p>
