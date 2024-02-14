@@ -37,7 +37,7 @@ function ProjectChooseSettings() {
             <span id="userName" className="text-uppercase"></span>
           </h3>
           <div className="relative top- space-x-4 left-12  flex">
-          <div className="h-96 w-[55.8%] left-[-1.3%]  top-1 rounded-sm bg-white relative mb-3 whitespace-nowrap p-10">
+          <div className="h-[98%] w-[55.8%] left-[-1.3%]  top-1 rounded-sm bg-white relative mb-3 whitespace-nowrap p-10">
             <div className="flex space-x-12">
               <div className="justify-center text-center">
                 <p className="relative top-9">Logo</p>
@@ -69,7 +69,7 @@ function ProjectChooseSettings() {
               <label className="text-black text-lg">Mint Date</label>
               <br />
               <input
-                className="focus:outline-none placeholder:text-gray-600 bg-gray-100 px-8 rounded-lg py-2.5 mt-2.5"
+                className="focus:outline-none placeholder:text-gray-600 bg-gray-100 px-[37%] rounded-lg py-2.5 mt-2.5"
                 type="date"
                 // placeholder="twitter.com/myproject"
               />
@@ -94,13 +94,23 @@ function ProjectChooseSettings() {
                 placeholder="Solana"
               />
             </div>
-            <textarea placeholder="This will accept text, images & video format"/>
+            
           </div>
+            <div className="mt-4">
+              <label className="text-black text-lg">Template</label>
+              <br />
+              <textarea
+                className="focus:outline-none h-60 w-[104%] placeholder:text-gray-600 bg-gray-100 px-8 rounded-lg py-2.5 mt-2.5"
+                type="text"
+                placeholder="This will accept text, images & video format"
+                
+              />
+            </div>
             </div>
             
 
           <button data-bs-toggle="modal"
-            data-bs-target="#popup" className="px-7 py-2 relative left-[33%] mt-14 text-white rounded-lg bg-[#605BFF]">Request Whitelist</button>
+            data-bs-target="#popup" className="px-11 py-2 relative left-[68.5%] mt-14 text-white rounded-lg bg-[#605BFF]">Save Settings</button>
           {/* <button onClick={openPopup} className="px-7 py-2 relative left-[33%] mt-14 text-white rounded-lg bg-[#605BFF]">Request Whitelist</button> */}
         </div>
             <div className="relative top- space-x-4 left-12  flex"></div>
