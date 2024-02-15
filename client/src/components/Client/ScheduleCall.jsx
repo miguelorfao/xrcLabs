@@ -56,6 +56,7 @@ function ProjectSettings() {
         </h3>
         <p className="relative -left-7 text-center">with our team</p>
       </div>
+      <div></div>
     </div>
   );
 }
