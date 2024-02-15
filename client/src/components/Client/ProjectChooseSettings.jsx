@@ -124,7 +124,7 @@ function ProjectChooseSettings() {
             </div>
           </div>
 
-          <div className="h-96 w-[37%] right-0 top-[7.8pc] rounded-sm bg-white relative whitespace-nowrap p-9">
+          <div className="h-[98%] w-[37%] right-0 top-[7.8pc] rounded-sm bg-white relative whitespace-nowrap p-9">
             <div className="flex">
               <div>
                 <label className="text-black text-lg">Project Name</label>
@@ -190,6 +190,17 @@ function ProjectChooseSettings() {
               Save Settings
             </button> */}
             {/* <button onClick={openPopup} className="px-7 py-2 relative left-[33%] mt-14 text-white rounded-lg bg-[#605BFF]">Request Whitelist</button> */}
+
+            <div className="bg-gray-100 h-96 w-[104%] p-5 ">
+              <div className="flex space-x-40 bg-white relative right-6 p-3 rounded-lg w-[117%] h-16">
+                <p className="mt-1">Follow on Twitter</p>
+                <p className="p-1 bg-[#FAE8EA] rounded-full -mt-0.5 cursor-pointer text-[#D11A2A] -left-2 relative px-4 w-24 py-2 pt-[5%] h-10">Cancel</p>
+              </div>
+              <div className="flex space-x-40 mt-4 bg-white relative right-6 p-3 rounded-lg w-[117%] h-16">
+                <p className="mt-1">Follow on Twitter</p>
+                <p className="p-1 bg-[#FAE8EA] rounded-full -mt-0.5 cursor-pointer text-[#D11A2A] -left-2 relative px-4 w-24 py-2 pt-[5%] h-10">Cancel</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
