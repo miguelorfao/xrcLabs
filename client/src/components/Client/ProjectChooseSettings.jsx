@@ -27,9 +27,9 @@ function ProjectChooseSettings() {
         </Header>
         <SideNav show={isOpen} />
 
-        <div className="flex -space-x-44">
+        <div className="flex -space-x-60">
           <div
-            className={`min-h-screen overflow-x-hidden  left-[21%] w-[78.9%] pt-7 bg-[#E5E5E5] top-14 relative justify-content-center pb-40  ${
+            className={`min-h-screen overflow-x-hidden  left-[20%] w-[100%] pt-7 bg-[#E5E5E5] top-14 relative justify-content-center pb-40  ${
               isOpen ? "opacity-70 z-20 bg-[#E5E5E5]" : ""
             }`}
           >
@@ -114,7 +114,7 @@ function ProjectChooseSettings() {
                 <button
                   data-bs-toggle="modal"
                   data-bs-target="#popup"
-                  className="px-11 py-2 relative left-[68.5%] mt-14 text-white rounded-lg bg-[#605BFF]"
+                  className="px-14 py-2 relative left-[55%] mt-14 text-white rounded-lg bg-[#605BFF]"
                 >
                   Save Settings
                 </button>
@@ -124,7 +124,7 @@ function ProjectChooseSettings() {
             </div>
           </div>
 
-          <div className="h-96 w-[36.5%] right-9 top-32 rounded-sm bg-white relative whitespace-nowrap p-9">
+          <div className="h-96 w-[37%] right-0 top-[7.8pc] rounded-sm bg-white relative whitespace-nowrap p-9">
             <div className="flex">
               <div>
                 <label className="text-black text-lg">Project Name</label>
@@ -156,8 +156,8 @@ function ProjectChooseSettings() {
                 />
               </div>
               <div className="ml-4">
-                <label className="text-black text-lg">Discord</label>
-                <br />
+                <label className="text-black text-lg">Discord Whitelist Role ID</label>
+                <br /> 
                 <input
                   className="focus:outline-none placeholder:text-gray-600 bg-gray-100 px-3 rounded-lg py-2.5 mt-2.5"
                   type="text"
@@ -165,14 +165,30 @@ function ProjectChooseSettings() {
                 />
               </div>
             </div>
+              <div className="mt-4">
+                <label className="text-black text-lg">Website</label>
+                <br />
+                <input
+                  className="focus:outline-none placeholder:text-gray-600 bg-gray-100 px-3 rounded-lg py-2.5 mt-2.5"
+                  type="text"
+                  placeholder="myproject.com"
+                />
+              </div>
 
             <button
               data-bs-toggle="modal"
               data-bs-target="#popup"
-              className="px-7 py-2 relative left-[33%] mt-14 text-white rounded-lg bg-[#605BFF]"
+              className="px-9 py-2 relative left-[66%] -top-11 text-white rounded-lg bg-[#605BFF]"
             >
-              Request Whitelist
+              Add
             </button>
+            {/* <button
+              data-bs-toggle="modal"
+              data-bs-target="#popup"
+              className="px-14 py-2 relative left-[33%] mt-14 text-white rounded-lg bg-[#605BFF]"
+            >
+              Save Settings
+            </button> */}
             {/* <button onClick={openPopup} className="px-7 py-2 relative left-[33%] mt-14 text-white rounded-lg bg-[#605BFF]">Request Whitelist</button> */}
           </div>
         </div>
