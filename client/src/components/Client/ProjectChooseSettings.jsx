@@ -166,12 +166,12 @@ function ProjectChooseSettings() {
               </div>
             </div>
               <div className="mt-4">
-                <label className="text-black text-lg">Website</label>
+                <label className="text-black text-lg">Requirements</label>
                 <br />
                 <input
                   className="focus:outline-none placeholder:text-gray-600 bg-gray-100 px-3 rounded-lg py-2.5 mt-2.5"
                   type="text"
-                  placeholder="myproject.com"
+                  placeholder="#dropdown"
                 />
               </div>
 
@@ -182,25 +182,25 @@ function ProjectChooseSettings() {
             >
               Add
             </button>
-            {/* <button
-              data-bs-toggle="modal"
-              data-bs-target="#popup"
-              className="px-14 py-2 relative left-[33%] mt-14 text-white rounded-lg bg-[#605BFF]"
-            >
-              Save Settings
-            </button> */}
-            {/* <button onClick={openPopup} className="px-7 py-2 relative left-[33%] mt-14 text-white rounded-lg bg-[#605BFF]">Request Whitelist</button> */}
 
-            <div className="bg-gray-100 h-96 w-[104%] p-5 ">
+            <div className="bg-gray-100 h-[71vh] w-[104%] p-5 ">
               <div className="flex space-x-40 bg-white relative right-6 p-3 rounded-lg w-[117%] h-16">
                 <p className="mt-1">Follow on Twitter</p>
                 <p className="p-1 bg-[#FAE8EA] rounded-full -mt-0.5 cursor-pointer text-[#D11A2A] -left-2 relative px-4 w-24 py-2 pt-[5%] h-10">Cancel</p>
               </div>
-              <div className="flex space-x-40 mt-4 bg-white relative right-6 p-3 rounded-lg w-[117%] h-16">
-                <p className="mt-1">Follow on Twitter</p>
+              <div className="flex space-x-48 mt-4 bg-white relative right-6 p-3 rounded-lg w-[117%] h-16">
+                <p className="mt-1">Join Discord</p>
                 <p className="p-1 bg-[#FAE8EA] rounded-full -mt-0.5 cursor-pointer text-[#D11A2A] -left-2 relative px-4 w-24 py-2 pt-[5%] h-10">Cancel</p>
               </div>
             </div>
+            <button
+              data-bs-toggle="modal"
+              data-bs-target="#popup"
+              className="px-14 py-2 relative left-[55.5%] mt-14 text-white rounded-lg bg-[#605BFF]"
+            >
+              Save Settings
+            </button>
+            {/* <button onClick={openPopup} className="px-7 py-2 relative left-[33%] mt-14 text-white rounded-lg bg-[#605BFF]">Request Whitelist</button> */}
           </div>
         </div>
       </div>
