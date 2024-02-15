@@ -24,10 +24,10 @@ function SideNav({ show }) {
     navigate("/DiscordStats");
   };
   const onClickHandleProjectSettings = () => {
-    navigate("/ProjectChooseSettings");
+    navigate("/ProjectSettings");
   };
   const onClickHandleRefresh = () => {
-    navigate("/ProjectChooseSettings");
+    navigate("/ScheduleCall");
   };
   const onClickHandleProjectWL = () => {
     navigate("/RequestWhitelist");

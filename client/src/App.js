@@ -13,9 +13,9 @@ import ForgottenPassword from "./Admin/ForgottenPassword";
 import CollabAnalytics from "./components/Client/CollabAnalytics";
 import CollabSheet from "./components/Client/EntrySheet";
 import DiscordStat from "./components/Client/DiscordStats";
-import ProjectChooseSettings from "./components/Client/ProjectChooseSettings";
-import ProjectSettingsSubber from "./components/Client/ProjectSettingsSubber";
 import ProjectSettings from "./components/Client/ProjectSettings";
+import ProjectSettingsSubber from "./components/Client/ProjectSettingsSubber";
+import ScheduleCall from "./components/Client/ScheduleCall";
 import RequestWhitelist from "./components/Client/RequestWhitelist";
 
 import SetUp from "./Founder/FounderSetUp/SetUp";
@@ -81,12 +81,12 @@ function App() {
             <Route element={<CollabSheet />} path="/EntrySheet" />
             <Route element={<DiscordStat />} path="/DiscordStats" />
             <Route
-              element={<ProjectChooseSettings />}
-              path="/ProjectChooseSettings"
+              element={<ScheduleCall />}
+              path="/ScheduleCall"
             />
             <Route
               element={<ProjectSettings />}
-              path="/ProjectChooseSettings/ProjectSettings"
+              path="/ProjectSettings"
             />
             <Route
               element={<ProjectSettingsSubber />}
