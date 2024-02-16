@@ -11,75 +11,92 @@ function AdminDashboard() {
   return (
     <div>
       <NavigationBar>
-        <div className="admin-top-header container w-100 shadow p-2 rounded-3">
-          <div className="row w-100  justify-between">
-            <div className="col-9">
-              <div className="row top-header-row justify-between gap-2 mb-3">
-                <div className="col-12 col-md-2 top-header-col p-2 text-center">
-                  <div>
-                    <h3>Collabs</h3>
-                    <p>Text</p>
-                    <p>100</p>
-                  </div>
-                </div>
-                <div className="col-12 col-md-2 top-header-col p-2 text-center">
-                  <div>
-                    <h3>Collabs</h3>
-                    <p>Text</p>
-                    <p>100</p>
-                  </div>
-                </div>
-                <div className="col-12 col-md-2 top-header-col p-2 text-center">
-                  <div>
-                    <h3>Collabs</h3>
-                    <p>Text</p>
-                    <p>100</p>
-                  </div>
-                </div>
-                <div className="col-12 col-md-2 top-header-col p-2 text-center">
-                  <div>
-                    <h3>Collabs</h3>
-                    <p>Text</p>
-                    <p>100</p>
-                  </div>
-                </div>
-              </div>
-              <div className="row row-graph">
-                <div className="col-12 col-md-12 col-graph">
-                  <LineChartGraph />
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-12 col-12">
-                  <div className="text-start my-3 border-bottom border-black">
-                    <h4>Title</h4>
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Collabs</li>
-                    <li class="list-group-item">Item</li>
-                    <li class="list-group-item">Item</li>
-                    <li class="list-group-item">Item</li>
-                    <li class="list-group-item">Item</li>
-                  </ul>
-                </div>
-              </div>
+        <div className="admin-dashboard shadow p-3">
+          <div className="d-flex gap-4 m-3">
+            <div className="shadow w-25 text-center rounded-3 p-3">
+              <h3>Collabs</h3>
+              <p>Text</p>
+              <p>100</p>
             </div>
-            <div className="col-3">
-              <div className="row">
-                <div className="col-12">
-                  <div className="border-bottom border-black mb-3">
-                    <h4>Upcoming Events</h4>
-                  </div>
-                  <div className="card text-start mb-3">
-                    <div className="card-body text-center">
-                      <h4 className="card-title">{assigned}</h4>
-                      <p className="card-text">{description}</p>
-                      <p className={background}>{status}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className="shadow w-25 text-center rounded-3 p-3">
+              <h3>Collabs</h3>
+              <p>Text</p>
+              <p>100</p>
             </div>
+            <div className="shadow w-25 text-center rounded-3 p-3">
+              <h3>Collabs</h3>
+              <p>Text</p>
+              <p>100</p>
+            </div>
+            <div className="shadow w-25 text-center rounded-3 p-3">
+              <h3>Collabs</h3>
+              <p>Text</p>
+              <p>100</p>
+            </div>
+            <div className="shadow w-25 text-center rounded-3 p-3">
+              <h3>Collabs</h3>
+              <p>Text</p>
+              <p>100</p>
+            </div>
+          </div>
+          <div className="graph">
+            <div className="lineGraph">
+              <LineChartGraph />
+            </div>
+          </div>
+          <div class="table-responsive w-100 text-center admin-task-update">
+            <caption>
+              <h3>Schedules</h3>
+            </caption>
+            <hr />
+            <table class="table list mt-3">
+              <thead className="sticky top-0">
+                <tr>
+                  <th scope="col">Title</th>
+                  <th scope="col">Discord User</th>
+                  <th scope="col">Date & Time</th>
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="shadow rounded-5">
+                  <td scope="row">Call</td>
+                  <td>DiscordUser</td>
+                  <td>10/10/10 20:00</td>
+                  <td className="text-success">Completed</td>
+                </tr>
+                <tr class="shadow rounded-5">
+                  <td scope="row">Call</td>
+                  <td>DiscordUser</td>
+                  <td>10/10/10 20:00</td>
+                  <td className="text-success">Completed</td>
+                </tr>
+                <tr class="shadow rounded-5">
+                  <td scope="row">Call</td>
+                  <td>DiscordUser</td>
+                  <td>10/10/10 20:00</td>
+                  <td className="text-success">Completed</td>
+                </tr>
+                <tr class="shadow rounded-5">
+                  <td scope="row">Call</td>
+                  <td>DiscordUser</td>
+                  <td>10/10/10 20:00</td>
+                  <td className="text-success">Completed</td>
+                </tr>
+                <tr class="shadow rounded-5">
+                  <td scope="row">Call</td>
+                  <td>DiscordUser</td>
+                  <td>10/10/10 20:00</td>
+                  <td className="text-success">Completed</td>
+                </tr>
+                <tr class="shadow rounded-5">
+                  <td scope="row">Call</td>
+                  <td>DiscordUser</td>
+                  <td>10/10/10 20:00</td>
+                  <td className="text-success">Completed</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </NavigationBar>

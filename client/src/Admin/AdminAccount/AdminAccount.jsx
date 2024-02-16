@@ -128,7 +128,7 @@ function AdminAccount() {
               <div class="table-responsive ">
                 <table class="table table-hover table-borderless align-middle text-center">
                   <thead className="border-bottom">
-                    <tr className="border-bottom">
+                    <tr className="border-bottom shadow">
                       <th>Name</th>
                       <th>Email</th>
                       <th>Action</th>
@@ -136,10 +136,7 @@ function AdminAccount() {
                   </thead>
                   <tbody class="table-group-divider">
                     {adminUser.map((userData) => (
-                      <tr
-                        class="border-bottom shadow-bottom spacing shadow"
-                        key={userData.ID}
-                      >
+                      <tr class="shadow" key={userData.ID}>
                         <td>
                           {" "}
                           <span>{userData.Name}</span>

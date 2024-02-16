@@ -25,24 +25,8 @@ h2,
 h1 {
   color: var(--text-color);
 }
-
-.header-data {
-  color: var(--text-color);
-}
-
-.task {
-  width: 340px !important;
-  height: 816px;
-}
-.task .new-task-header {
-  width: 100%;
-  height: 56px;
-}
-.task .overflow-auto {
-  height: 700px;
+.tasks {
+  width: 400px;
+  height: 80vh;
   overflow: auto;
-}
-.task .new-task {
-  width: 290px;
-  min-height: 126px;
 }

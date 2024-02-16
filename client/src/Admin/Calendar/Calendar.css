@@ -25,3 +25,7 @@
   color: var(--white-text-color);
   font-size: 18px;
 }
+.schedules-tasks {
+  height: 73vh;
+  overflow: auto;
+}

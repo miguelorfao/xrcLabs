@@ -1,7 +1,14 @@
 import React, { useContext, useEffect, useState } from "react";
 import FullCalendar, { formatDate } from "@fullcalendar/react";
 import interactionPlugin from "@fullcalendar/interaction";
-
+import ScheduleContext from "../Global/ScheduleContext";
+import {
+  // fa-solid,
+  faFlag,
+  faClock,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Buttons from "../Global/buttons/Buttons";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import multiMonthPlugin from "@fullcalendar/multimonth";
@@ -11,8 +18,9 @@ import "react-calendar/dist/Calendar.css";
 import Calendar from "react-calendar";
 
 import "./Calendar.css";
-import ScheduleContext from "../Global/ScheduleContext";
+// import ScheduleContext from "../Global/ScheduleContext";
 import axios from "axios";
+
 function Calendars() {
   const [currentEvents, setCurrentEvents] = useState([]);
   const [task, setTask] = useState({
@@ -32,6 +40,7 @@ function Calendars() {
   console.log(task);
 
   const onClickHandleEvents = (e) => {
+    e.preventDefault();
     // try {
     //   axios.put("", task).then((res) => {
     //     console.log(res);
@@ -113,127 +122,189 @@ function Calendars() {
               </div>
               <div className="col-12 col-md-4 shadow rounded-4">
                 <div className="my-2 border-bottom border-black">
-                  <h4>Add Schedule</h4>
+                  <Buttons
+                    btnClass="btn w-100 btn-primary mb-3"
+                    label="Add Schedule"
+                    modal="modal"
+                    modalTarget="#addSchedule"
+                  />
                 </div>
-                <div>
-                  <form
-                    class="d-flex flex-column"
-                    onSubmit={onClickHandleEvents}
-                  >
-                    <div class="col-12">
-                      <div class="mb-3">
-                        <label for="" class="form-label">
-                          Start Date
-                        </label>
-                        <input
-                          type="date"
-                          name="startDate"
-                          id="startDate"
-                          class="form-control"
-                          placeholder=""
-                          aria-describedby="helpId"
-                          onChange={onChangeHandler}
-                        />
-                      </div>
-                    </div>
-                    <div class="col-12">
-                      <div class="mb-3">
-                        <label for="" class="form-label">
-                          End Date
-                        </label>
-                        <input
-                          type="date"
-                          name="endDate"
-                          id="endDate"
-                          class="form-control"
-                          placeholder=""
-                          aria-describedby="helpId"
-                          onChange={onChangeHandler}
-                        />
-                      </div>
-                    </div>
-                    <div class="col-12">
-                      <div class="mb-3">
-                        <label for="" class="form-label">
-                          Start Time
-                        </label>
-                        <input
-                          type="time"
-                          name="startTime"
-                          id="startTime"
-                          class="form-control"
-                          placeholder=""
-                          aria-describedby="helpId"
-                          onChange={onChangeHandler}
-                        />
-                      </div>
-                    </div>
-                    <div class="col-12">
-                      <div class="mb-3">
-                        <label for="" class="form-label">
-                          End Time
-                        </label>
-                        <input
-                          type="time"
-                          name="endTime"
-                          id="endTime"
-                          class="form-control"
-                          placeholder=""
-                          aria-describedby="helpId"
-                          onChange={onChangeHandler}
-                        />
-                      </div>
-                    </div>
-                    <div class="col-12">
-                      <div class="mb-3">
-                        <label for="" class="form-label">
-                          Description
-                        </label>
-                        <textarea
-                          cols={40}
-                          rows={5}
-                          type="text"
-                          name="title"
-                          id="title"
-                          class="form-control"
-                          placeholder=""
-                          aria-describedby="helpId"
-                          onChange={onChangeHandler}
-                        />
-                      </div>
-                    </div>
-                    {/* <div class="col-12">
-                      <div class="mb-3">
-                        <label for="" class="form-label">
-                          Assign Task To
-                        </label>
+                <div className="schedules-tasks shadow rounded-4">
+                  <div className="sticky top-0 bg-white z-10 border-bottom border-primary p-2">
+                    <h4>Updated Schedules</h4>
+                  </div>
 
-                        <select
-                          class="form-select"
-                          name="assign"
-                          id="ass"
-                          onChange={onChangeHandler}
-                        >
-                          <option selected>Select one</option>
-                          <option value="">New Delhi</option>
-                          <option value="">Istanbul</option>
-                          <option value="">Jakarta</option>
-                        </select>
-                      </div>
-                    </div> */}
-                    <hr />
-                    <div>
-                      <button className="schedule-btn rounded-4">
-                        Save Project
-                      </button>
+                  <div className="progress-task shadow p-3 rounded-3 m-3">
+                    <div className="text-start">
+                      <h5>Call Nft</h5>
+                      <h6>Time: 20:00</h6>
+                      <p>Call taken by: Reefli</p>
                     </div>
-                  </form>
+                    <hr />
+                    <div className="d-flex justify-around">
+                      <FontAwesomeIcon icon={faFlag} />
+                      <div className="d-flex gap-3">
+                        <FontAwesomeIcon icon={faClock} />
+                        <span>Mar 4</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </NavigationBar>
+      <div
+        class="modal fade"
+        id="addSchedule"
+        tabindex="-1"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        role="dialog"
+        aria-labelledby="modalTitleId"
+        aria-hidden="true"
+      >
+        <div
+          class="modal-dialog modal-dialog-scrollable modal-dialog-centered"
+          role="document"
+        >
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalTitleId">
+                Schedule New Task
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form class="d-flex flex-column" onSubmit={onClickHandleEvents}>
+                <div class="col-12">
+                  <div class="mb-3">
+                    <label for="" class="form-label">
+                      Start Date
+                    </label>
+                    <input
+                      type="date"
+                      name="startDate"
+                      id="startDate"
+                      class="form-control"
+                      placeholder=""
+                      aria-describedby="helpId"
+                      onChange={onChangeHandler}
+                    />
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="mb-3">
+                    <label for="" class="form-label">
+                      End Date
+                    </label>
+                    <input
+                      type="date"
+                      name="endDate"
+                      id="endDate"
+                      class="form-control"
+                      placeholder=""
+                      aria-describedby="helpId"
+                      onChange={onChangeHandler}
+                    />
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="mb-3">
+                    <label for="" class="form-label">
+                      Start Time
+                    </label>
+                    <input
+                      type="time"
+                      name="startTime"
+                      id="startTime"
+                      class="form-control"
+                      placeholder=""
+                      aria-describedby="helpId"
+                      onChange={onChangeHandler}
+                    />
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="mb-3">
+                    <label for="" class="form-label">
+                      End Time
+                    </label>
+                    <input
+                      type="time"
+                      name="endTime"
+                      id="endTime"
+                      class="form-control"
+                      placeholder=""
+                      aria-describedby="helpId"
+                      onChange={onChangeHandler}
+                    />
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="mb-3">
+                    <label for="" class="form-label">
+                      Title
+                    </label>
+                    <input
+                      type="text"
+                      name="title"
+                      id="title"
+                      class="form-control"
+                      placeholder=""
+                      aria-describedby="helpId"
+                      onChange={onChangeHandler}
+                    />
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="mb-3">
+                    <label for="" class="form-label">
+                      Assign Task To
+                    </label>
+
+                    <select
+                      class="form-select"
+                      name="assign"
+                      id="ass"
+                      onChange={onChangeHandler}
+                    >
+                      <option selected>Select one</option>
+                      <option value="">New Delhi</option>
+                      <option value="">Istanbul</option>
+                      <option value="">Jakarta</option>
+                    </select>
+                  </div>
+                </div>
+                <hr />
+                <div className="d-flex gap-3">
+                  <button
+                    type="button"
+                    class="btn btn-secondary w-100"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                  <button
+                    type="submit"
+                    class="btn btn-primary w-100"
+                    data-bs-dismiss="modal"
+                  >
+                    Save
+                  </button>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer"></div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

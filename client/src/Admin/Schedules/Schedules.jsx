@@ -1,10 +1,16 @@
 import React, { useContext, useEffect } from "react";
 import NavigationBar from "../Global/navigation/NavigationBar";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Schedules.css";
 
-import { Schedule } from "../Global/ScheduleApi";
+// import { Schedule } from "../Global/ScheduleApi";
 import ScheduleContext from "../Global/ScheduleContext";
+import {
+  // fa-solid,
+  faFlag,
+  faClock,
+  faEllipsis,
+} from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 
 function Schedules() {
@@ -22,57 +28,69 @@ function Schedules() {
           </div>
 
           <div className="mx-auto">
-            <div className="row justify-around rounded-4 text-center shadow">
-              <div className="col-12 col-md-2 task shadow text-center rounded-4">
-                <div className="new-task-header my-2 border-bottom border-black">
-                  <h3>Pending</h3>
+            <div className="schedule-tasks w-100 h-auto p-3 d-flex gap-4 ju">
+              <div className="tasks shadow">
+                <div className="sticky top-0 bg-white z-10 border-bottom border-warning p-2">
+                  <h4>Pending Tasks</h4>
                 </div>
-                <div className="overflow-auto">
-                  {" "}
-                  <div className="new-task shadow mx-auto rounded-3 p-2">
-                    <div className="text-start">
-                      <h5>Name</h5>
-                      <p>Description</p>
+                <div className="pending-task shadow p-3 rounded-3 m-3">
+                  <div className="text-start">
+                    <h5>Call Title</h5>
+                    <h6>Time: 20:00</h6>
+                    <p>Call taken by: Reefli</p>
+                  </div>
+                  <hr />
+                  <div className="d-flex justify-around">
+                    <FontAwesomeIcon icon={faFlag} />
+                    <div className="d-flex gap-3">
+                      <FontAwesomeIcon icon={faClock} />
+                      <span>Mar 4</span>
                     </div>
-                    <hr />
-                    <div>
-                      <p className="bg-primary">Pending</p>
-                    </div>
+
+                    <FontAwesomeIcon icon={faEllipsis} />
                   </div>
                 </div>
               </div>
-              <div className="col-12 col-md-2 task shadow text-center rounded-4">
-                <div className="new-task-header my-2   border-bottom border-black">
-                  <h3>Progress</h3>
+              <div className="tasks shadow">
+                <div className="sticky top-0 bg-white z-10 border-bottom border-primary p-2">
+                  <h4>Progress Tasks</h4>
                 </div>
-                <div className="overflow-auto">
-                  <div className="new-task shadow mx-auto rounded-3 p-2">
-                    <div className="text-start">
-                      <h5>Name</h5>
-                      <p>Description</p>
+
+                <div className="progress-task shadow p-3 rounded-3 m-3">
+                  <div className="text-start">
+                    <h5>Call Title</h5>
+                    <h6>Time: 20:00</h6>
+                    <p>Call taken by: Reefli</p>
+                  </div>
+                  <hr />
+                  <div className="d-flex justify-around">
+                    <FontAwesomeIcon icon={faFlag} />
+                    <div className="d-flex gap-3">
+                      <FontAwesomeIcon icon={faClock} />
+                      <span>Mar 4</span>
                     </div>
-                    <hr />
-                    <div>
-                      <p className="bg-dark text-white">Progress</p>
-                    </div>
+                    <FontAwesomeIcon icon={faEllipsis} />
                   </div>
                 </div>
               </div>
-              <div className="col-12 col-md-2 task shadow text-center rounded-4">
-                <div className="new-task-header my-2 border-bottom border-black">
-                  <h3>Completed</h3>
+              <div className="tasks shadow">
+                <div className="sticky top-0 bg-white z-10 border-bottom border-success p-2">
+                  <h4>Completed Tasks</h4>
                 </div>
-                <div className="overflow-auto">
-                  {" "}
-                  <div className="new-task shadow mx-auto rounded-3 p-2">
-                    <div className="text-start">
-                      <h5>Name</h5>
-                      <p>Description</p>
+                <div className="completed-task shadow p-3 rounded-3 m-3">
+                  <div className="text-start">
+                    <h5>Call Title</h5>
+                    <h6>Time: 20:00</h6>
+                    <p>Call taken by: Reefli</p>
+                  </div>
+                  <hr />
+                  <div className="d-flex justify-around">
+                    <FontAwesomeIcon icon={faFlag} />
+                    <div className="d-flex gap-3">
+                      <FontAwesomeIcon icon={faClock} />
+                      <span>Mar 4</span>
                     </div>
-                    <hr />
-                    <div>
-                      <p className="bg-success">Complete</p>
-                    </div>
+                    <FontAwesomeIcon icon={faEllipsis} />
                   </div>
                 </div>
               </div>
