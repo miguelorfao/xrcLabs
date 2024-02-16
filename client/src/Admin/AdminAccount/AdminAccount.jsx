@@ -109,9 +109,13 @@ function AdminAccount() {
           <ul class="list-group list-group-flush mb-4">
             {errorSuccess === "Employee added Successfully" ||
             errorSuccess === "Success" ? (
-              <div className="bg-success">{errorSuccess}</div>
+              <div class="alert alert-success d-block" role="alert">
+                {errorSuccess}
+              </div>
             ) : (
-              <div className="bg-danger">{errorSuccess}</div>
+              <div class="alert alert-danger" role="alert">
+                {errorSuccess}
+              </div>
             )}
             <button
               type="button"
@@ -274,7 +278,7 @@ function AdminAccount() {
       </div>
       <div
         class="modal fade"
-        id="addAdmin"
+        id="editAdmin"
         tabindex="-1"
         data-bs-backdrop="static"
         data-bs-keyboard="false"
@@ -289,7 +293,7 @@ function AdminAccount() {
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="modalTitleId">
-                Modal title
+                Edit Admin
               </h5>
               <button
                 type="button"

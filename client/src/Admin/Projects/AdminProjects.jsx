@@ -28,13 +28,13 @@ function AdminProjects() {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr class="shadow rounded-5">
+                  <tr class="shadow ">
                     <td scope="row">First Name</td>
                     <td>Email Address</td>
                     <td>Projects Name</td>
                     <td className="text-success">Completed</td>
                   </tr>
-                  <tr class="shadow rounded-5">
+                  <tr class="shadow">
                     <td scope="row">First Name</td>
                     <td>Email Address</td>
                     <td>Projects Name</td>

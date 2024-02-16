@@ -43,6 +43,9 @@ td {
 h1 {
   color: green;
 }
+.alert {
+  display: none;
+}
 @media screen and (min-width: 480px) {
   .adminAccount {
     width: 100%;
